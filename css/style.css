@@ -3,10 +3,26 @@ body {
     
 }
 
+.title{
+    font-size: 5em;
+}
+
+
 .layout {
     display: flex;
+/*    justify-content: center;*/
     border-style: solid;
     border-color: hotpink;
+}
+
+.text {
+/*    display: inline-flex;*/
+    background-color: aqua;
+    display: block;
+    width: 35%;
+    
+    
+    
 }
 
 /*
@@ -15,11 +31,35 @@ path:hover {
 }
 */
 
+/*
+.step {
+    opacity: 0;
+}
+*/
+
 .maps {
+/*    float: left;*/
     border-style: solid;
     border-color: darkcyan;
     width: 75%;
+    display: block;
+    flex-direction: column;
+    background-color: black;
+    left: 0;
+    right
 }
+
+svg {
+    background-color: aliceblue;
+}
+
 .explanation {
+/*    opacity: 0;*/
+    background-color: darksalmon;
+/*    position: sticky;*/
+}
+
+.caption {
+    position:fixed;
     
 }

@@ -1,4 +1,5 @@
-var dataset = d3.csv("csv/states2.csv", translateCells, function (data) {
+//var showHiv = function(){
+    dataset = d3.csv("csv/states2.csv", translateCells, function (data) {
 
     console.log(data);
 
@@ -41,6 +42,7 @@ var dataset = d3.csv("csv/states2.csv", translateCells, function (data) {
                     return "#C5DBD7";
                 }
             })
+//            .style("opacity", 0)
             .style("stroke", "white")
             .style("stroke-width", .75)
             .on("mouseover", function (d) {
@@ -64,6 +66,12 @@ var svg3 = d3.select("#map3")
     .append("svg")
     .attr("width", w)
     .attr("height", h);
+
+//};
+
+//showHiv();
+
+
 
 //
 //        //define legend
