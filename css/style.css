@@ -1,3 +1,25 @@
+body {
+    margin: 0 auto;
+    
+}
+
+.layout {
+    display: flex;
+    border-style: solid;
+    border-color: hotpink;
+}
+
+/*
 path:hover {
     fill-opacity: .8;
+}
+*/
+
+.maps {
+    border-style: solid;
+    border-color: darkcyan;
+    width: 75%;
+}
+.explanation {
+    
 }

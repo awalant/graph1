@@ -1,37 +1,34 @@
-  //Width and height
-  var w = 1000;
-  var h = 800;
-
-  //Define map projection
-  var projection = d3.geoAlbersUsa()
-      .translate([w / 2, h / 2])
-      .scale([1350]);
-
-
-
-
-  //      Make a function for translating the data and store it as the variable translateCells to be called when binding the csv.
-  var translateCells = function (d) {
-      return {
-          id: parseFloat(d.id),
-          name: d.name,
-          sex_ed_mandated: parseFloat(d.sex_ed_mandated),
-          age_appr: parseFloat(d.age_appr),
-          hiv_ed_mandated: parseFloat(d.hiv_ed_mandated)
-
-
-      };
-
-  };
-
-  //colors from https://blog.graphiq.com/finding-the-right-color-palettes-for-data-visualizations-fcd4e707a283 optimized to be okay for color blindness as well as for promoting readability of the map
-  var colorScale = ["#501A73", "#A73B8F", "#EE8695"];
-
-
-  //        Uses a quantize scale to take the value of the data and make it one of the two colors listed. By making this function its own variable, I can call it later within the function where I bind the data.
-
-  var color = d3.scaleQuantize()
-      .range(colorScale);
+//  //Width and height
+//  var w = 800;
+//  var h = 600;
+//
+//  //Define map projection
+//  var projection = d3.geoAlbersUsa()
+//      .translate([w / 2, h / 2])
+//      .scale([1000]);
+//
+//
+//
+//
+//  //      Make a function for translating the data and store it as the variable translateCells to be called when binding the csv.
+//  var translateCells = function (d) {
+//      return {
+//          id: parseFloat(d.id),
+//          name: d.name,
+//          age_appr: parseFloat(d.age_appr)
+//
+//
+//      };
+//
+//  };
+//
+//  var colorScale = ["#FFC1D1", "#FF92AF", "#FF1654"];
+//
+//
+//  //        Uses a quantize scale to take the value of the data and make it one of the two colors listed. By making this function its own variable, I can call it later within the function where I bind the data.
+//
+//  var color = d3.scaleQuantize()
+//      .range(colorScale);
 
   var dataset = d3.csv("csv/states2.csv", translateCells, function (data) {
 
@@ -46,9 +43,7 @@
               //this assigns each cell from the column 'name' to dataName so that it can be cross-checked with the name of the states in the json
               var dataName = data[i].name;
               //this parses the data from the column sex_ed_mandated into a number, then stores it in the variable dataNumber to later be assigned a value to determine the color
-
-
-              var dataNumber = parseFloat(data[i].sex_ed_mandated);
+              var dataNumber = parseFloat(data[i].age_appr);
 
               //This goes through the features of the json object 
               for (var j = 0; j < json.features.length; j++) {
@@ -62,10 +57,9 @@
                   }
               }
           }
-          
 
           //select all of the svgs that are paths from the geoJSON file, then apply the data from json.features and make those paths fill according to the value. Since the CSV value is somewhere between 0 and 1, then if the value of the property of the json is greater than or equal to 0, send the value through the color function. Otherwise, make it light grey. For all, apply a stroke of .5 
-          svg1.selectAll("path")
+          svg2.selectAll("path")
               .data(json.features)
               .enter()
               .append("path")
@@ -82,15 +76,7 @@
               .style("stroke", "white")
               .style("stroke-width", .75)
               .on("mouseover", function (d) {
-                var result = d.properties.value;
-              
-              if (result == 1){
-                  console.log(d.properties.name + " has mandatory sex ed! :)");
-              } else if (result == 0) {
-                  console.log(d.properties.name + " does not have mandatory sex ed :(");
-              }
-              
-//                  console.log(d.properties.name + result);
+                  console.log(d.properties.name + d.properties.value);
               })
               .append("title")
               .text(function (d) {
@@ -106,11 +92,10 @@
   var path = d3.geoPath(projection);
 
   //Create SVG element
-  var svg1 = d3.select("#map1")
+  var svg2 = d3.select("#map2")
       .append("svg")
       .attr("width", w)
       .attr("height", h);
-
 
   //
   //        //define legend

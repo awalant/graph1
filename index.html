@@ -5,30 +5,41 @@
     <meta charset="utf-8">
     <title>D3: Setting path fills</title>
     <script type="text/javascript" src="d3.js"></script>
-<!--    <script type="text/javascript" src="scrollama.min.js"></script>-->
-    <style src="css/style.css"></style>
+    <!--    <script type="text/javascript" src="scrollama.min.js"></script>-->
+    <link rel="stylesheet" type="text/css" href="css/style.css">
 
 </head>
 
 <body>
     <div class="title">Sex Ed in the US</div>
+    <div class="layout">
+        <div class="maps">
+            <div class="step" id="map1" data-step="1">
+            </div>
+            <div class="step" id="map2" data-step="2">
+            </div>
+            <div class="step" id="map3" data-step="3">
+            </div>
+        </div>
+
+        <div class="explanation">
+            <div class="caption">Here is some text that explains my graph!</div>
+        </div>
+    </div>
+    <!--
     <button type="button" id="mandSex">Mandated Sex Ed</button>
     <button type="button" id="mandHiv">Mandated HIV</button>
     <button type="button" id="ageAppr">Age Appr</button>
-    <div class="step" id="map1" data-step="1">
-    </div>
-    <div class="step" id="map2" data-step="2">
-    </div>
-    <div class="step" id="map3" data-step="3">
-    </div>
+-->
 
 
 </body>
 <script src="js/main.js"></script>
 <script src="js/sexEdMand.js"></script>
-    <script src="js/selectAgeAppr.js"></script>
-    <script src="js/selectMandSex.js"></script>
-<!--<script src="js/ageAppr.js"></script>-->
+<script src="js/selectAgeAppr.js"></script>
+<script src="js/selectMandSex.js"></script>
+<script src="js/ageAppr.js"></script>
+<script src="js/hivMand.js"></script>
 
 
 </html>

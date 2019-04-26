@@ -11,7 +11,7 @@ var dataset = d3.csv("csv/states2.csv", translateCells, function (data) {
             //this assigns each cell from the column 'name' to dataName so that it can be cross-checked with the name of the states in the json
             var dataName = data[i].name;
             //this parses the data from the column sex_ed_mandated into a number, then stores it in the variable dataNumber to later be assigned a value to determine the color
-            var dataNumber = parseFloat(data[i].age_appr);
+            var dataNumber = parseFloat(data[i].hiv_ed_mandated);
 
             //This goes through the features of the json object 
             for (var j = 0; j < json.features.length; j++) {
@@ -27,7 +27,7 @@ var dataset = d3.csv("csv/states2.csv", translateCells, function (data) {
         }
 
         //select all of the svgs that are paths from the geoJSON file, then apply the data from json.features and make those paths fill according to the value. Since the CSV value is somewhere between 0 and 1, then if the value of the property of the json is greater than or equal to 0, send the value through the color function. Otherwise, make it light grey. For all, apply a stroke of .5 
-        svg2.selectAll("path")
+        svg3.selectAll("path")
             .data(json.features)
             .enter()
             .append("path")
@@ -60,7 +60,7 @@ var dataset = d3.csv("csv/states2.csv", translateCells, function (data) {
 var path = d3.geoPath(projection);
 
 //Create SVG element
-var svg2 = d3.select("#map2")
+var svg3 = d3.select("#map3")
     .append("svg")
     .attr("width", w)
     .attr("height", h);
