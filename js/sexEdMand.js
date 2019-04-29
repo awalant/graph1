@@ -1,50 +1,5 @@
-//code for responsive window sizing from https://stackoverflow.com/questions/3437786/get-the-size-of-the-screen-current-web-page-and-browser-window?noredirect=1&lq=1
 
-var width = window.innerWidth
-|| document.documentElement.clientWidth 
-|| document.body.clientWidth;
-
-
-var height = window.innerHeight
-|| document.documentElement.clientHeight
-|| document.body.clientHeight;
-
-
-//width, heigh, translate and scale all derived from playing with this block http://bl.ocks.org/radiocontrolled/7698088
-
-//Width and height
-  var w = width*.97;
-  var h = width/1.85;
-
-  //Define map projection
-  var projection = d3.geoAlbersUsa()
-      .translate([w / 3, h / 2])
-      .scale([w/1.2]);
-
-  //      Make a function for translating the data and store it as the variable translateCells to be called when binding the csv.
-  var translateCells = function (d) {
-      return {
-          id: parseFloat(d.id),
-          name: d.name,
-          sex_ed_mandated: parseFloat(d.sex_ed_mandated),
-          age_appr: parseFloat(d.age_appr),
-          hiv_ed_mandated: parseFloat(d.hiv_ed_mandated)
-
-
-      };
-
-  };
-
-  //colors from https://blog.graphiq.com/finding-the-right-color-palettes-for-data-visualizations-fcd4e707a283 optimized to be okay for color blindness as well as for promoting readability of the map
-  var colorScale = ["#501A73", "#A73B8F", "#EE8695"];
-
-
-  //        Uses a quantize scale to take the value of the data and make it one of the two colors listed. By making this function its own variable, I can call it later within the function where I bind the data.
-
-  var color = d3.scaleQuantize()
-      .range(colorScale);
-
-  var dataset = d3.csv("csv/states2.csv", translateCells, function (data) {
+  var dataset = d3.csv("csv/states_pt1.csv", translateCellsCsv1, function (data) {
 
       console.log(data);
 
@@ -87,7 +42,7 @@ var height = window.innerHeight
                   if (value >= 0) {
                       return color(value);
                   } else {
-                      return "#C5DBD7";
+                      return nothing;
                   }
               })
               .style("stroke", "white")
@@ -119,7 +74,7 @@ var height = window.innerHeight
   //Create SVG element
   var svg1 = d3.select("#map1")
       .append("svg")
-      .attr("width", w)
+      .attr("width", w2)
       .attr("height", h);
 
 
