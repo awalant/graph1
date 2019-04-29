@@ -1,5 +1,13 @@
 "use strict"
 
+
+
+
+
+
+
+
+
 //This is how to set up the library Scrollama.
 var scroller = scrollama();
 
@@ -26,10 +34,23 @@ function handleStepEnter(response) {
     function changeCaption(){
         if (scrollVal == 1) {
             d3.select("#caption")
-                .text("LOOK AT THIS STUFF");
+                .text(function(){
+                return d3.select("#caption1")
+                        .classed("active", true);
+                console.log(d3.select("#caption1"));
+            });
+            
+            
+            
+            
         } else if (scrollVal == 2) {
             d3.select("#caption")
                 .text("ISN'T IT NEAT");
+            
+            
+            
+            
+            
         } else if (scrollVal == 3){
             d3.select("#caption")
                 .text("WOULDN'T YOU SAY MY COLLECTION'S COMPLETE");
@@ -49,3 +70,5 @@ scroller
         offset: 0.3
     })
     .onStepEnter(handleStepEnter);
+
+

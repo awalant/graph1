@@ -25,6 +25,16 @@ body {
     
 }
 
+.caption1 active{
+    opacity: 1;
+}
+
+.caption1 {
+    opacity: 0;
+}
+
+
+
 /*
 path:hover {
     fill-opacity: .8;

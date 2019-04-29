@@ -1,14 +1,25 @@
-  //Width and height
-  var w = 1000;
-  var h = 800;
+//code for responsive window sizing from https://stackoverflow.com/questions/3437786/get-the-size-of-the-screen-current-web-page-and-browser-window?noredirect=1&lq=1
+
+var width = window.innerWidth
+|| document.documentElement.clientWidth 
+|| document.body.clientWidth;
+
+
+var height = window.innerHeight
+|| document.documentElement.clientHeight
+|| document.body.clientHeight;
+
+
+//width, heigh, translate and scale all derived from playing with this block http://bl.ocks.org/radiocontrolled/7698088
+
+//Width and height
+  var w = width*.97;
+  var h = width/1.85;
 
   //Define map projection
   var projection = d3.geoAlbersUsa()
-      .translate([w / 2, h / 2])
-      .scale([1350]);
-
-
-
+      .translate([w / 3, h / 2])
+      .scale([w/1.2]);
 
   //      Make a function for translating the data and store it as the variable translateCells to be called when binding the csv.
   var translateCells = function (d) {
@@ -111,6 +122,8 @@
       .attr("width", w)
       .attr("height", h);
 
+
+    
 
   //
   //        //define legend
