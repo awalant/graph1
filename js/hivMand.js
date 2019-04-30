@@ -67,13 +67,3 @@ var svg3 = d3.select("#map3")
     .attr("width", w2)
     .attr("height", h);
 
-//};
-
-//showHiv();
-
-
-
-//
-//        //define legend
-//        var legend = svg.append("g")
-//            .attr("transform", "translate(" + (width - 10), +"," + (height / 4) + ")");

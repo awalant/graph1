@@ -25,14 +25,13 @@ body {
     
 }
 
-.caption1 active{
-    opacity: 1;
+.caption.hidden {
+    visibility: hidden;
 }
 
-.caption1 {
-    opacity: 0;
+.caption{
+    visibility: visible;
 }
-
 
 
 /*
@@ -54,13 +53,19 @@ path:hover {
     width: 75%;
     display: block;
     flex-direction: column;
-    background-color: black;
+/*    background-color: black;*/
     left: 0;
     right
 }
 
+h1{
+    display: block;
+    top:0;
+}
+
 svg {
-    background-color: aliceblue;
+/*    background-color: aliceblue;*/
+    display:inline-block;
 }
 
 .explanation {

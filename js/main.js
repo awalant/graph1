@@ -58,7 +58,10 @@ function resize() {
     //width and height to be applied: select svgs, give them width and heights.
     d3.selectAll("svg").attr("width", w2).attr("height", h);
     d3.selectAll("path").attr("d", path);
-
+    
+//    https://pudding.cool/process/responsive-scrollytelling/ 
+    d3.selectAll(".step")
+        .style("height", height +"px");
 
 }
 
@@ -97,6 +100,8 @@ var reverseColorScale = [colorPos, colorMid, colorNeg];
 var color = d3.scaleQuantize()
     .range(colorScale);
 
+var colorRev = d3.scaleQuantize()
+    .range(reverseColorScale);
 
 
 
@@ -106,68 +111,60 @@ var color = d3.scaleQuantize()
 var scroller = scrollama();
 
 
+
 //handleStepEnter is a function that takes the argument "response" which is the object tracked by scrollama, which says the element that's being passed, its number in the array, and what direction the user is scrolling.
 function handleStepEnter(response) {
 
-    //if (response.index == 0){
-    //    console.log("hello");
-    //    } else if (response.index == 1){
-    //        console.log("howdy");
-    //    } else if (response.index == 2){
-    //        console.log("adios");
-    //    }
-    //    
 
     //variable for tracking the name of the element being passed
     var scrollStep = d3.select(response.element);
 
     //variable for tracking the number of the element being passed. the 'data-step' is set by me in the HTML so the program can keep better track of what's going on, as per best practices outlined on Scrollama's github
     var scrollVal = scrollStep.attr('data-step');
-
-
-    function changeCaption() {
-        if (scrollVal == 1) {
-            d3.select(".caption")
-                .text("hi");
-
-
-
-            //                .text("States with mandated sex ed")
-            //                .style("color", colorPos)
-            //            
-            //                .append("text")
-            //                .text("States without mandated sex ed")
-            //                .style("color", colorNeg)
-            //            
-            //                .append("text")
-            //                .text("States without data")
-            //                .style("color", nothing);
-            //                .text(function(){
-            //                return d3.select("#caption1")
-            //                        .classed("active", true);
-            //                console.log(d3.select("#caption1"));
-            //            });
-
-
-
-
-        } else if (scrollVal == 2) {
-            d3.select("#caption")
-                .text("ISN'T IT NEAT");
-
-
-
-
-
-        } else if (scrollVal == 3) {
-            d3.select("#caption")
-                .text("WOULDN'T YOU SAY MY COLLECTION'S COMPLETE");
-        }
-    }
-    changeCaption();
+    
+    d3.select(".caption").classed("hidden", function(d, i){
+        
+        i !== scrollVal;
+    });
 
     console.log(response);
+    
+    
+//    function changeCaption() {
+//        if (scrollVal == 1) {
+//            d3.select(".caption")
+//                .text("LOOK AT THIS STUFF");
+//
+//
+//
+//
+//        } else if (scrollVal == 2) {
+//            d3.select("#caption")
+//                .text("ISN'T IT NEAT");
+//
+//
+//
+//
+//
+//        } else if (scrollVal == 3) {
+//            d3.select("#caption")
+//                .text("WOULDN'T YOU SAY MY COLLECTION'S COMPLETE");
+//        }
+//    }
+//    changeCaption();
 
+}
+
+function handleStepExit(response){
+
+    var scrollStep = d3.select(response.element);
+    var scrollVal = scrollStep.attr('data-step');
+    
+        d3.select(".caption")
+            .attr("class", function(d, i){
+        
+        i == scrollVal;
+    });
 }
 
 
@@ -177,4 +174,5 @@ scroller
         debug: true,
         offset: 0.3
     })
-    .onStepEnter(handleStepEnter);
+    .onStepEnter(handleStepEnter)
+    .onStepExit(handleStepExit);
