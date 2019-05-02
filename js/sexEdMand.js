@@ -46,34 +46,54 @@ var dataset = d3.csv("csv/states_pt1.csv", translateCellsCsv1, function (data) {
             })
             .style("stroke", "white")
             .style("stroke-width", .75)
-//            .on("mouseover", function(d){
-//                tip.transition()
-//                .duration(200)
-//                .style("opacity", .9);
-//                tip.html(d.properties.name)
-//        });
-//            .on("mouseover", tip.show);
-            .on("mouseover", function (d) {
-//
-//                var xPos = parseFloat(d3.select(this)
-//                                      .attr("x")
-//                                     );
-//                var yPos = parseFloat(d3.select(this)
-//                                      .attr("y")
-//                                     );
-//                console.log(xPos, yPos);
+            //            .on("mouseover", function(d){
+            //                tip.transition()
+            //                .duration(200)
+            //                .style("opacity", .9);
+            //                tip.html(d.properties.name)
+            //        });
+            //            .on("mouseover", tip.show);
 
-                                var result = d.properties.value;
+            //anytime mouse moves over element
+            .on("mousemove", function (d) {
+                var value;
+                //if d.properties.value = true
+                if (d.properties.value === 1) {
+                    value = " has mandatory sex ed"; //whatever goes in if true
+                } else {
+                    value = " does not have mandatory sex ed";
+                }
+                //           
+                var label = d.properties.name + value;
+                var tooltip = document.getElementById("tooltip-1");
+                var top = d3.event.clientY + "px";
+                var left = d3.event.clientX + "px";
+                tooltip.innerHTML = label;
+                tooltip.style.top = top;
+                tooltip.style.left = left;
+                console.log("I AM IN TOOLTIPS");
 
-                
-                                if (result == 1) {
 
-
-                                    console.log(d.properties.name + " has mandatory sex ed! :)");
-                                } else if (result == 0) {
-                                    console.log(d.properties.name + " does not have mandatory sex ed :(");
-                                }
-            });
+                //                var condish = function () {
+                //                    if (result == 1) {
+                //                        return "has mandatory sex ed";
+                //                    } else if (result == 0) {
+                //                        console.log(d.properties.name + " does not have mandatory sex ed :(");
+                //                    }
+                //                }
+            })
+            .on("mouseover", function(d){
+                d3.select("#tooltip-1")
+                .classed("hidden", false);
+            
+            
+        })
+            .on("mouseout", function (d){
+            d3.select("#tooltip-1")
+                .classed("hidden", true);
+        })
+        
+        ;
         //            .append("title")
         //            .text(function (d) {
         //                return d.properties.name;

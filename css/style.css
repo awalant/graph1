@@ -118,7 +118,7 @@ h1{
 }
 
 svg {
-/*    background-color: aliceblue;*/
+    background-color: yellow;
     display:inline-block;
 }
 
@@ -131,4 +131,18 @@ svg {
     
     background-color: darksalmon;
 /*    position: sticky;*/
+}
+
+
+.tooltip{
+    position: fixed;
+    background: black;
+    z-index:10;
+    color:white;
+    margin-top:-20px;
+    visibility: visible;
+}
+
+.tooltip.hidden {
+    visibility: hidden;
 }
