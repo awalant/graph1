@@ -12,7 +12,7 @@
 </head>
 
 <body>
-    <div class="step">
+    <div class="step" data-step="0">
         <div class="title">The United State of Sex Education</div>
         <div class="text">
             <p>
@@ -41,7 +41,13 @@
             <div id="map3" class="step" data-step="3">
             </div>
             <div id="map4" class="step" data-step="4">
+                <button type="button" id="refSkills">Refusal skills</button>
+                <button type="button" id="sexOr">Sexual orientation</button>
+                <button type="button" id="contraception">Contraception</button>
+                <button type="button" id="hivMand">HIV mandated</button>
+                <button type="button" id="antiRel">Anti-religious</button>
             </div>
+
         </div>
 
         <div class="explanation">
@@ -87,6 +93,11 @@
                     Only <span class="colorPos">seven states </span>do not allow children to be pulled from these classes.
                 </p>
             </div>
+            <div class="caption hidden">
+                <p>
+                    This is where users select some variables to view the map as it changes
+                </p>
+            </div>
             <!--            <p class="caption1">THINK I CAN BE PART OF THIS WORLD</p> -->
             <!--</div>-->
 
@@ -103,6 +114,9 @@
 <!--<script src="js/hivMand.js"></script>-->
 <script src="js/medAcc.js"></script>
 <script src="js/parentsOpt.js"></script>
+<script src="js/changeMap.js"></script>
+<script src="js/selected/hivMand.js"></script>
+<script src="js/selected/antiRel.js"></script>
 
 
 </html>
