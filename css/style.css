@@ -1,3 +1,36 @@
+/*https://github.com/Caged/d3-tip/blob/master/examples/example-styles.css*/
+
+.d3-tip {
+  line-height: 1;
+  font-weight: bold;
+  padding: 12px;
+  background: rgba(0, 0, 0, 0.8);
+  color: #fff;
+  border-radius: 2px;
+  pointer-events: none;
+}
+
+/* Creates a small triangle extender for the tooltip */
+.d3-tip:after {
+  box-sizing: border-box;
+  display: inline;
+  font-size: 10px;
+  width: 100%;
+  line-height: 1;
+  color: rgba(0, 0, 0, 0.8);
+  position: absolute;
+  pointer-events: none;
+}
+
+/*http://bl.ocks.org/davegotz/bd54b56723c154d25eedde6504d30ad7*/
+/*
+.d3-tip.n:after {
+      margin: -2px 0 0 0;
+      top: 100%;
+      left: 0;
+    }
+*/
+
 body {
     margin: 0 auto;
     
@@ -11,56 +44,77 @@ body {
 .layout {
     display: flex;
 /*    justify-content: center;*/
-    border-style: solid;
-    border-color: hotpink;
+/*    border-style: solid;*/
+/*    border-color: hotpink;*/
 }
 
 .text {
 /*    display: inline-flex;*/
-    background-color: aqua;
+/*    background-color: aqua;*/
     display: block;
-    width: 35%;
+    width: 60%;
+    padding-left: 5em;
     
-    
-    
+}
+
+.intro{
+    padding-top: 5em;
 }
 
 .caption.hidden {
     visibility: hidden;
 }
 
-.caption{
-    visibility: visible;
+.hidden{
+    visibility: hidden;
 }
 
+.caption{
+    visibility: visible;
+    position: fixed;
+    top:30%;
+/*    padding-top: 2em;*/
+}
 
-/*
+.colorPos{
+    background-color: #EE8695;
+}
+
+.colorMid{
+    background-color:#A73B8F;
+    color:white;
+}
+
+.colorNeg{
+    background-color:#501A73;
+    color:white;
+}
+
+.nothing{
+    background-color:#C5DBD7;
+}
+
 path:hover {
     fill-opacity: .8;
 }
-*/
 
-/*
-.step {
-    opacity: 0;
-}
-*/
 
 .maps {
 /*    float: left;*/
-    border-style: solid;
-    border-color: darkcyan;
+/*    border-style: solid;*/
+/*    border-color: darkcyan;*/
     width: 75%;
     display: block;
     flex-direction: column;
 /*    background-color: black;*/
     left: 0;
-    right
 }
 
 h1{
     display: block;
     top:0;
+    font-size: 5vw;
+    background-color: aquamarine;
 }
 
 svg {
@@ -70,11 +124,11 @@ svg {
 
 .explanation {
 /*    opacity: 0;*/
+/*
+    float:left;
+    margin-left: 0;
+*/
+    
     background-color: darksalmon;
 /*    position: sticky;*/
-}
-
-.caption {
-    position:fixed;
-    
 }

@@ -5,6 +5,16 @@ var colorMid = "#A73B8F";
 var colorNeg = "#501A73";
 var nothing = "#C5DBD7";
 
+//https://github.com/caged/d3-tip
+var tip = d3.selectAll(".maps")
+.append("div")
+.attr("class", "d3-tip")
+.style("opacity", 0);
+
+//d3.selectAll("svg").call(tip);
+
+
+
 //code for responsive window sizing from https://stackoverflow.com/questions/3437786/get-the-size-of-the-screen-current-web-page-and-browser-window?noredirect=1&lq=1
 
 var width = window.innerWidth ||
@@ -20,7 +30,7 @@ var height = window.innerHeight ||
 
 //Width and height
 var w = width * .97;
-var h = height * 1.2;
+var h = w / 1.85;
 var w2 = width * .75;
 
 function resize() {
@@ -35,33 +45,33 @@ function resize() {
         document.documentElement.clientHeight ||
         document.body.clientHeight;
 
-    w = width * .97;
-    h = w/1.85; //height*1.2
+    w = width * .97; //*.97
+    h = w / 1.85; //height*1.2
     w2 = width * .75;
 
-//    console.log(w, h);
+    //    console.log(w, h);
 
     //projection scale translate
-        projection = d3.geoAlbersUsa()
+    projection = d3.geoAlbersUsa()
         .scale([w / 1.2])
         .translate([w / 3, h / 2]);
-    
-    
-    
+
+
+
     d3.selectAll("path")
-              .enter()
-              .append("path")
-              .attr("d", path);
-    
+        .enter()
+        .append("path")
+        .attr("d", path);
+
     path = d3.geoPath(projection);
 
     //width and height to be applied: select svgs, give them width and heights.
     d3.selectAll("svg").attr("width", w2).attr("height", h);
     d3.selectAll("path").attr("d", path);
-    
-//    https://pudding.cool/process/responsive-scrollytelling/ 
+
+    //    https://pudding.cool/process/responsive-scrollytelling/ 
     d3.selectAll(".step")
-        .style("height", height +"px");
+        .style("height", height + "px");
 
 }
 
@@ -121,58 +131,59 @@ function handleStepEnter(response) {
 
     //variable for tracking the number of the element being passed. the 'data-step' is set by me in the HTML so the program can keep better track of what's going on, as per best practices outlined on Scrollama's github
     var scrollVal = scrollStep.attr('data-step');
-    
-    d3.select(".caption").classed("hidden", function(d, i){
-        
-        i !== scrollVal;
+
+    //from Aarthy
+    d3.selectAll(".caption").classed("hidden", function (data, index) {
+        return index !== (Number(scrollVal));
     });
+
 
     console.log(response);
-    
-    
-//    function changeCaption() {
-//        if (scrollVal == 1) {
-//            d3.select(".caption")
-//                .text("LOOK AT THIS STUFF");
-//
-//
-//
-//
-//        } else if (scrollVal == 2) {
-//            d3.select("#caption")
-//                .text("ISN'T IT NEAT");
-//
-//
-//
-//
-//
-//        } else if (scrollVal == 3) {
-//            d3.select("#caption")
-//                .text("WOULDN'T YOU SAY MY COLLECTION'S COMPLETE");
-//        }
-//    }
-//    changeCaption();
+
+
+    //    function changeCaption() {
+    //        if (scrollVal == 1) {
+    //            d3.select(".caption")
+    //                .text("LOOK AT THIS STUFF");
+    //
+    //
+    //
+    //
+    //        } else if (scrollVal == 2) {
+    //            d3.select("#caption")
+    //                .text("ISN'T IT NEAT");
+    //
+    //
+    //
+    //
+    //
+    //        } else if (scrollVal == 3) {
+    //            d3.select("#caption")
+    //                .text("WOULDN'T YOU SAY MY COLLECTION'S COMPLETE");
+    //        }
+    //    }
+    //    changeCaption();
 
 }
 
-function handleStepExit(response){
-
-    var scrollStep = d3.select(response.element);
-    var scrollVal = scrollStep.attr('data-step');
-    
-        d3.select(".caption")
-            .attr("class", function(d, i){
-        
-        i == scrollVal;
-    });
-}
+//function handleStepExit(response){
+//
+//    var scrollStep = d3.select(response.element);
+//    var scrollVal = scrollStep.attr('data-step');
+//    
+//        d3.select(".caption")
+//            .attr("class", function(d, i){
+//        
+//        i == scrollVal;
+//    });
+//}
 
 
 scroller
     .setup({
         step: ".step",
-        debug: true,
-        offset: 0.3
+//        debug: true,
+        offset: 0.35
     })
-    .onStepEnter(handleStepEnter)
-    .onStepExit(handleStepExit);
+    .onStepEnter(handleStepEnter);
+//    .onStepExit(handleStepExit);
