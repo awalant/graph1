@@ -51,8 +51,10 @@ var dataset = d3.csv("csv/states_pt1.csv", translateCellsCsv1, function (data) {
                 var value;
                 if (d.properties.value === 1) {
                     value = " has mandatory sex ed"; //whatever goes in if true
-                } else {
+                } else if (d.properties.value === 0) {
                     value = " does not have mandatory sex ed";
+                } else {
+                    value = " does not have corrosponding data";
                 }
                 //           
                 var label = d.properties.name + value;
@@ -62,7 +64,7 @@ var dataset = d3.csv("csv/states_pt1.csv", translateCellsCsv1, function (data) {
                 tooltip.innerHTML = label;
                 tooltip.style.top = top;
                 tooltip.style.left = left;
-                console.log("I AM IN TOOLTIPS");
+//                console.log("I AM IN TOOLTIPS");
             })
             .on("mouseover", function(d){
                 d3.select("#tooltip-1")

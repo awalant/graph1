@@ -39,19 +39,41 @@
                 if (value >= 0) {
                     return color(value);
                 } else {
-                    return "#C5DBD7";
+                    return nothing;
                 }
             })
 //            .style("opacity", 0)
             .style("stroke", "white")
             .style("stroke-width", .75)
-            .on("mouseover", function (d) {
-                console.log(d.properties.name + d.properties.value);
-            })
-            .append("title")
-            .text(function (d) {
-                return d.properties.name;
-            });
+            .on("mousemove", function (d) {
+                        var value;
+                        if (d.properties.value === 1) {
+                            value = " must provide medically accurate information"; //whatever goes in if true
+                        } else if (d.properties.value === 0){
+                            value = " does not mandate medically accurate information";
+                        } else {
+                            value = " does not have corrosponding data";
+                        }
+                        //           
+                        var label = d.properties.name + value;
+                        var tooltip = document.getElementById("tooltip-1");
+                        var top = d3.event.clientY + "px";
+                        var left = d3.event.clientX + "px";
+                        tooltip.innerHTML = label;
+                        tooltip.style.top = top;
+                        tooltip.style.left = left;
+//                        console.log("I AM IN TOOLTIPS");
+                    })
+                    .on("mouseover", function (d) {
+                        d3.select("#tooltip-1")
+                            .classed("hidden", false);
+
+
+                    })
+                    .on("mouseout", function (d) {
+                        d3.select("#tooltip-1")
+                            .classed("hidden", true);
+                    });
 
     });
 

@@ -135,6 +135,7 @@ svg {
     color:white;
     margin-top:-20px;
     visibility: visible;
+/*    width: 20%;*/
 }
 
 .tooltip.hidden {

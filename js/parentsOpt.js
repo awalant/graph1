@@ -1,5 +1,5 @@
 //var showHiv = function(){
-    dataset = d3.csv("csv/states_pt1.csv", translateCellsCsv1, function (data) {
+dataset = d3.csv("csv/states_pt1.csv", translateCellsCsv1, function (data) {
 
     console.log(data);
 
@@ -39,18 +39,42 @@
                 if (value >= 0) {
                     return colorRev(value);
                 } else {
-                    return "#C5DBD7";
+                    return nothing;
                 }
             })
-//            .style("opacity", 0)
+            //            .style("opacity", 0)
             .style("stroke", "white")
             .style("stroke-width", .75)
-            .on("mouseover", function (d) {
-                console.log(d.properties.name + d.properties.value);
+            .on("mousemove", function (d) {
+                var value;
+                if (d.properties.value === 1) {
+                    value = " allows parents to pull their children out of sex ed related classes"; //whatever goes in if true
+                } else if (d.properties.value === 0) {
+                    value = " does not allow parents to pull their children from sex ed related classes";
+                } else if (d.properties.value == .5) {
+                    value = " allows parents to pull their children out of HIV ed relatied classes";
+                } else {
+                    value = " does not have corrosponding data";
+                }
+                //           
+                var label = d.properties.name + value;
+                var tooltip = document.getElementById("tooltip-1");
+                var top = d3.event.clientY + "px";
+                var left = d3.event.clientX + "px";
+                tooltip.innerHTML = label;
+                tooltip.style.top = top;
+                tooltip.style.left = left;
+                //                        console.log("I AM IN TOOLTIPS");
             })
-            .append("title")
-            .text(function (d) {
-                return d.properties.name;
+            .on("mouseover", function (d) {
+                d3.select("#tooltip-1")
+                    .classed("hidden", false);
+
+
+            })
+            .on("mouseout", function (d) {
+                d3.select("#tooltip-1")
+                    .classed("hidden", true);
             });
 
     });
@@ -66,4 +90,3 @@ var svg3 = d3.select("#map3")
     .append("svg")
     .attr("width", w2)
     .attr("height", h);
-

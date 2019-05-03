@@ -47,18 +47,36 @@ d3.select("#hivMand")
                     })
                     .style("stroke", "white")
                     .style("stroke-width", .75)
-                    .on("mouseover", function (d) {
-                        var result = d.properties.value;
-
-
-                        if (result == 1) {
-
-
-                            console.log(d.properties.name + ":)");
-                        } else if (result == 0) {
-                            console.log(d.properties.name + ":(");
+                    .on("mousemove", function (d) {
+                        var value;
+                        if (d.properties.value === 1) {
+                            value = " covers HIV education"; //whatever goes in if true
+                        } else if (d.properties.value === 0){
+                            value = " does not cover HIV education";
+                        } else {
+                            value = " does not have corrosponding data";
                         }
+                        //           
+                        var label = d.properties.name + value;
+                        var tooltip = document.getElementById("tooltip-1");
+                        var top = d3.event.clientY + "px";
+                        var left = d3.event.clientX + "px";
+                        tooltip.innerHTML = label;
+                        tooltip.style.top = top;
+                        tooltip.style.left = left;
+//                        console.log("I AM IN TOOLTIPS");
+                    })
+                    .on("mouseover", function (d) {
+                        d3.select("#tooltip-1")
+                            .classed("hidden", false);
+
+
+                    })
+                    .on("mouseout", function (d) {
+                        d3.select("#tooltip-1")
+                            .classed("hidden", true);
                     });
+
                 //            .append("title")
                 //            .text(function (d) {
                 //                return d.properties.name;

@@ -1,7 +1,7 @@
-d3.select("#antiRel")
+d3.select("#contraception")
     .on("click", function () {
 
-        dataset = d3.csv("csv/states_pt1.csv", translateCellsCsv1, function (data) {
+        dataset = d3.csv("csv/states_pt2.csv", translateCellsCsv2, function (data) {
 
             console.log(data);
 
@@ -16,7 +16,7 @@ d3.select("#antiRel")
                     //this parses the data from the column sex_ed_mandated into a number, then stores it in the variable dataNumber to later be assigned a value to determine the color
 
 
-                    var dataNumber = parseFloat(data[i].anti_religion);
+                    var dataNumber = parseFloat(data[i].contraception);
 
                     //This goes through the features of the json object 
                     for (var j = 0; j < json.features.length; j++) {
@@ -42,6 +42,7 @@ d3.select("#antiRel")
                         if (value >= 0) {
                             return color(value);
                         } else {
+
                             return nothing;
                         }
                     })
@@ -50,9 +51,9 @@ d3.select("#antiRel")
                     .on("mousemove", function (d) {
                         var value;
                         if (d.properties.value === 1) {
-                            value = " has rules in place to block religious influence on sex education lessons"; //whatever goes in if true
+                            value = " mandates that schools cover contraception"; //whatever goes in if true
                         } else if (d.properties.value === 0){
-                            value = " does not have rules in place to block religious influence on sex education lessons";
+                            value = " does not mandate that schools cover contraception";
                         } else {
                             value = " does not have corrosponding data";
                         }
@@ -76,13 +77,9 @@ d3.select("#antiRel")
                         d3.select("#tooltip-1")
                             .classed("hidden", true);
                     });
-                //            .append("title")
-                //            .text(function (d) {
-                //                return d.properties.name;
-                //            });
-                //            .on("mouseout", tip.hide);
-                
-                
+               
+
+
                 states.transition()
                     .duration(1500)
                     .text(console.log("hi"));

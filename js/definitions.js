@@ -15,11 +15,21 @@ var translateCellsCsv1 = function (d) {
 
 };
 
+var translateCellsCsv2 = function (d) {
+    return {
+        id: parseFloat(d.id),
+        name: d.name,
+        contraception: parseFloat(d.contraception),
+        refusal: parseFloat(d.refusal),
+        orientation: parseFloat(d.orientation)
+    }
+}
+
 
 var colorPos = "#EE8695";
 var colorMid = "#A73B8F";
 var colorNeg = "#501A73";
-var nothing = "#C5DBD7";
+var nothing = "#FFF";
 
 //code for responsive window sizing from https://stackoverflow.com/questions/3437786/get-the-size-of-the-screen-current-web-page-and-browser-window?noredirect=1&lq=1
 
