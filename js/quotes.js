@@ -1,6 +1,9 @@
+//when the page is ready, run this function
+
 $(document).ready(function () {
     //               console.log("JQUERY WORKS");
 
+    //run through the csv that's saved as the variable quotesData and for each element see if it applies to the topic (column name) and if yes, put it in that topic.
     for (var i = 0; i < quotesData.length; i++) {
         console.log(quotesData[i]);
 
@@ -11,10 +14,26 @@ $(document).ready(function () {
         
         //if element[i] in array has its property lgbtq set to yes, then send through function renderQuote
         if (quotesData[i].lgbtq == "yes") {
-            console.log("yes to lgbtq");
+//            console.log("yes to lgbtq");
             renderQuote(quotesData[i].quote, "lgbtq", i);
         }
         //add conditions for other topics, one for each
+        
+        if (quotesData[i].sexEdu == "yes") {
+//            console.log("yes to sex");
+            renderQuote(quotesData[i].quote, "sexEdu", i);
+        }
+        
+          if (quotesData[i].sexAssault == "yes") {
+//            console.log("yes to sex");
+            renderQuote(quotesData[i].quote, "sexAssault", i);
+        }
+        
+        if (quotesData[i].sexExp == "yes") {
+//            console.log("yes to sex");
+            renderQuote(quotesData[i].quote, "sexExp", i);
+        }
+        
         //make corrosponding divs
         //
         //how to structure data so doesn't have to happen???
@@ -24,6 +43,8 @@ $(document).ready(function () {
 
     }
 
+    
+    //select the class .quote-topic-link when it's clicked, and change the topic to the topic of whatever button has been clicked, then run it through the function showTopic
     $(".quote-topic-link").click(function (event) {
         var topic = $(this).data("topic");
         console.log(topic);
@@ -35,10 +56,10 @@ $(document).ready(function () {
 });
 
 
-//pulling quote from above
+//pulling quote from above, as well as the topic
 function renderQuote(quote, topic, i) {
     console.log(quote);
-    //selector for jQuery
+    //variable that collects the topic inside a jQuery selector
     var container = $("#" + topic);
 
     //each topic will have own class quote-[topic]
@@ -47,6 +68,7 @@ function renderQuote(quote, topic, i) {
         .addClass("quote-" + topic)
         .html(quote);
 
+    //appends a div with the classes quote, and quote-[topic] to the div in the HTML already named for the topic
     container.append(element);
 }
 
