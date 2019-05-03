@@ -5,6 +5,8 @@
     <meta charset="utf-8">
     <title>forni_education</title>
     <script type="text/javascript" src="d3.js"></script>
+    <script type="text/javascript" src="jquery.min.js"></script>
+    <!--    slick-->
     <script type="text/javascript" src="scrollama.min.js"></script>
     <script type="text/javascript" src="index.js"></script>
     <link rel="stylesheet" type="text/css" href="css/style.css">
@@ -33,7 +35,7 @@
     </div>
     <div class="layout">
 
-        <div class="maps">
+        <div class="sections">
             <div id="map1" class="step" data-step="1">
             </div>
             <div id="tooltip-1" class="tooltip"></div>
@@ -48,62 +50,75 @@
                 <button type="button" id="hivMand">HIV mandated</button>
                 <button type="button" id="antiRel">Anti-religious</button>
             </div>
+            <div id="quotes">
+                <div id="quotes-sidebar">
+                    <a href="#consent" class="quote-topic-link" data-topic="consent">consent</a>
+                    <a href="#lgbtq" class="quote-topic-link" data-topic="lgbtq">lgbtq</a>
+                    <!--                <a href="#LGBTQ">LGBTQ</a>-->
+                </div>
+                <div id="quotes-main">
+                    <div id="consent" class="topic hidden"></div>
+                    <div id="lgbtq" class="topic hidden"></div>
+                </div>
 
+
+            </div>
+
+
+
+            <div class="explanation">
+                <div class="caption hidden">
+                    <p> </p>
+                </div>
+                <div class="caption hidden">
+                    <h3>
+                        States with mandated sexual education
+                    </h3>
+                    <p>
+                        In the US, only 24 states (plus the District of Columbia) have it legally mandated for sex education to be taught in schools.
+                    </p>
+                    <p class="nothing">
+                        Alaska, Arkansas, Nebraska, South Dakota, and Wyoming currently have no laws or legislation regarding sexual health and wellness, so they have not been included.
+                    </p>
+                    <p>
+                        The states in <span class="colorPos">light pink</span> are the states that call for it, and the states that are in <span class="colorNeg">dark purple</span> currently do not.
+                    </p>
+                </div>
+                <div class="caption hidden">
+                    <h3>
+                        States with medically accurate information
+                    </h3>
+                    <p>
+                        So far, only <span class="colorPos">13 states require</span> that their provided education on the topics must be medically accurate–<span class="colorNeg">all the others</span> do not require this.
+                    </p>
+                    <p>
+                        Fun fact: this is as many as the original colonies of the United States in 1607-1776, and includes five states that do not mandate sex nor HIV education: Colorado, Florida, Louisiana, Texas, and Virginia
+                    </p>
+                </div>
+                <div class="caption hidden">
+                    <h3>
+                        States where parents are allowed to remove their kids from the class
+                    </h3>
+                    <p>
+                        <span class="colorNeg">37 states</span>, just over 80% of the states with relevant legislation, allow parents to remove their children from courses covering the topics of sex or HIV education.
+                    </p>
+                    <p>
+                        <span class="colorMid">Three states</span>, Arizona, New York, and Pennsylvania allow students to be removed only from classes focused on HIV material.
+                    </p>
+                    <p>
+                        Only <span class="colorPos">seven states </span>do not allow children to be pulled from these classes.
+                    </p>
+                </div>
+                <div class="caption hidden">
+                    <p>
+                        This is where users select some variables to view the map as it changes
+                    </p>
+                </div>
+                <!--            <p class="caption1">THINK I CAN BE PART OF THIS WORLD</p> -->
+                <!--</div>-->
+
+            </div>
         </div>
-
-        <div class="explanation">
-            <div class="caption hidden">
-                <p> </p>
-            </div>
-            <div class="caption hidden">
-                <h3>
-                    States with mandated sexual education
-                </h3>
-                <p>
-                    In the US, only 24 states (plus the District of Columbia) have it legally mandated for sex education to be taught in schools.
-                </p>
-                <p class="nothing">
-                    Alaska, Arkansas, Nebraska, South Dakota, and Wyoming currently have no laws or legislation regarding sexual health and wellness, so they have not been included.
-                </p>
-                <p>
-                    The states in <span class="colorPos">light pink</span> are the states that call for it, and the states that are in <span class="colorNeg">dark purple</span> currently do not.
-                </p>
-            </div>
-            <div class="caption hidden">
-                <h3>
-                    States with medically accurate information
-                </h3>
-                <p>
-                    So far, only <span class="colorPos">13 states require</span> that their provided education on the topics must be medically accurate–<span class="colorNeg">all the others</span> do not require this.
-                </p>
-                <p>
-                    Fun fact: this is as many as the original colonies of the United States in 1607-1776, and includes five states that do not mandate sex nor HIV education: Colorado, Florida, Louisiana, Texas, and Virginia
-                </p>
-            </div>
-            <div class="caption hidden">
-                <h3>
-                    States where parents are allowed to remove their kids from the class
-                </h3>
-                <p>
-                    <span class="colorNeg">37 states</span>, just over 80% of the states with relevant legislation, allow parents to remove their children from courses covering the topics of sex or HIV education.
-                </p>
-                <p>
-                    <span class="colorMid">Three states</span>, Arizona, New York, and Pennsylvania allow students to be removed only from classes focused on HIV material.
-                </p>
-                <p>
-                    Only <span class="colorPos">seven states </span>do not allow children to be pulled from these classes.
-                </p>
-            </div>
-            <div class="caption hidden">
-                <p>
-                    This is where users select some variables to view the map as it changes
-                </p>
-            </div>
-            <!--            <p class="caption1">THINK I CAN BE PART OF THIS WORLD</p> -->
-            <!--</div>-->
-
-        </div>
-    </div>
 
 
 </body>
@@ -119,7 +134,9 @@
 <script src="js/changeMap.js"></script>
 <script src="js/selected/hivMand.js"></script>
 <script src="js/selected/antiRel.js"></script>
-    <script src="js/main.js"></script>
+<script src="js/main.js"></script>
+<script src="json/quotes.json"></script>
+<script src="js/quotes.js"></script>
 
 
 </html>

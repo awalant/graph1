@@ -1,3 +1,5 @@
+var svg1;
+
 var dataset = d3.csv("csv/states_pt1.csv", translateCellsCsv1, function (data) {
 
     console.log(data);
@@ -37,7 +39,6 @@ var dataset = d3.csv("csv/states_pt1.csv", translateCellsCsv1, function (data) {
             .attr("d", path)
             .style("fill", function (d) {
                 var value = d.properties.value;
-
                 if (value >= 0) {
                     return color(value);
                 } else {
@@ -46,18 +47,8 @@ var dataset = d3.csv("csv/states_pt1.csv", translateCellsCsv1, function (data) {
             })
             .style("stroke", "white")
             .style("stroke-width", .75)
-            //            .on("mouseover", function(d){
-            //                tip.transition()
-            //                .duration(200)
-            //                .style("opacity", .9);
-            //                tip.html(d.properties.name)
-            //        });
-            //            .on("mouseover", tip.show);
-
-            //anytime mouse moves over element
             .on("mousemove", function (d) {
                 var value;
-                //if d.properties.value = true
                 if (d.properties.value === 1) {
                     value = " has mandatory sex ed"; //whatever goes in if true
                 } else {
@@ -72,15 +63,6 @@ var dataset = d3.csv("csv/states_pt1.csv", translateCellsCsv1, function (data) {
                 tooltip.style.top = top;
                 tooltip.style.left = left;
                 console.log("I AM IN TOOLTIPS");
-
-
-                //                var condish = function () {
-                //                    if (result == 1) {
-                //                        return "has mandatory sex ed";
-                //                    } else if (result == 0) {
-                //                        console.log(d.properties.name + " does not have mandatory sex ed :(");
-                //                    }
-                //                }
             })
             .on("mouseover", function(d){
                 d3.select("#tooltip-1")
@@ -91,14 +73,7 @@ var dataset = d3.csv("csv/states_pt1.csv", translateCellsCsv1, function (data) {
             .on("mouseout", function (d){
             d3.select("#tooltip-1")
                 .classed("hidden", true);
-        })
-        
-        ;
-        //            .append("title")
-        //            .text(function (d) {
-        //                return d.properties.name;
-        //            });
-        //            .on("mouseout", tip.hide);
+        });
     });
 
 
@@ -111,7 +86,7 @@ var dataset = d3.csv("csv/states_pt1.csv", translateCellsCsv1, function (data) {
 var path = d3.geoPath(projection);
 
 //Create SVG element
-var svg1 = d3.select("#map1")
+ svg1 = d3.select("#map1")
     .append("svg")
     .attr("width", w2)
     .attr("height", h);
@@ -121,7 +96,6 @@ var svg1 = d3.select("#map1")
 //    .attr("text-anchor", "middle")
 //    .text("LOOK A TITLE")
 //    .enter();
-
 
 
 

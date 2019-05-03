@@ -73,50 +73,16 @@ function handleStepEnter(response) {
 
     console.log(response);
 
-
-    //    function changeCaption() {
-    //        if (scrollVal == 1) {
-    //            d3.select(".caption")
-    //                .text("LOOK AT THIS STUFF");
-    //
-    //
-    //
-    //
-    //        } else if (scrollVal == 2) {
-    //            d3.select("#caption")
-    //                .text("ISN'T IT NEAT");
-    //
-    //
-    //
-    //
-    //
-    //        } else if (scrollVal == 3) {
-    //            d3.select("#caption")
-    //                .text("WOULDN'T YOU SAY MY COLLECTION'S COMPLETE");
-    //        }
-    //    }
-    //    changeCaption();
-
 }
 
-//function handleStepExit(response){
-//
-//    var scrollStep = d3.select(response.element);
-//    var scrollVal = scrollStep.attr('data-step');
-//    
-//        d3.select(".caption")
-//            .attr("class", function(d, i){
-//        
-//        i == scrollVal;
-//    });
-//}
+
 
 
 scroller
     .setup({
         step: ".step",
-        debug: true,
+//        debug: true,
         offset: 0.35
     })
     .onStepEnter(handleStepEnter);
-//    .onStepExit(handleStepExit);
+
