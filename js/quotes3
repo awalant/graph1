@@ -5,14 +5,36 @@ $(document).ready(function () {
                 quote: quotesData[i].quote,
                 id: quotesData[i].id
             });
-            //            consentAuthors.push(quotesData[i].id);
-
 
         }
+
+        if (quotesData[i].lgbtq == "yes") {
+            lgbtqQuotes.push({
+                quote: quotesData[i].quote,
+                id: quotesData[i].id
+            });
+        }
+
+        if (quotesData[i].sexEdu == "yes") {
+            sexEduQuotes.push({
+                quote: quotesData[i].quote,
+                id: quotesData[i].id
+            });
+        }
+        if (quotesData[i].sexExp == "yes") {
+            sexExpQuotes.push({
+                quote: quotesData[i].quote,
+                id: quotesData[i].id
+            });
+        }
+        if (quotesData[i].sexAssault == "yes") {
+            sexAssaultQuotes.push({
+                quote: quotesData[i].quote,
+                id: quotesData[i].id
+            });
+        }
+
     }
-
-//    console.log(consentQuotes);
-
 });
 
 
@@ -20,32 +42,59 @@ $(document).ready(function () {
 
 //create array to track the consent relevant quotes
 var consentQuotes = [];
-//console.log(consentQuotes);
 
+var lgbtqQuotes = [];
+
+var sexEduQuotes = [];
+
+var sexAssaultQuotes = [];
+
+var sexExpQuotes = [];
+//        console.log(lgbtqQuotes);
 
 
 $(".quoteBtn").click(
     function (event) {
         var topic = $(this).data("topic");
         console.log(topic);
-        
+
         showTopic(topic);
 
-//        console.log("where in the world is carmen sandiego");
-        var randomNum = Math.floor(Math.random()*consentQuotes.length);
-        console.log(consentQuotes.length, randomNum);
-    
-        console.log(consentQuotes[randomNum]);
-    
-        var quote = '"' + consentQuotes[randomNum].quote + '"';
-        var author = " – " + consentQuotes[randomNum].id;
-    
-        $("#consent").html(quote + author);
+        var randomNum;
+        var quote;
+        var author;
+        var array;
+        //        console.log("where in the world is carmen sandiego");
+
+        if (topic === "consent") {
+            array = consentQuotes;
+        }
+        if (topic === "lgbtq") {
+            array = lgbtqQuotes;
+        }
+        if (topic === "sexEdu") {
+            array = sexEduQuotes;
+        }
+        if (topic === "sexExp") {
+            array = sexExpQuotes;
+        }
+        if (topic === "sexAssault") {
+            array = sexAssaultQuotes;
+        }
+
+        randomNum = Math.floor(Math.random() * array.length);
+        
+        
+        quote = '"' + array[randomNum].quote + '"';
+        author = " – " + array[randomNum].id;
+
+        $("#" + topic).html(quote + author);
+
     }
 
 );
 
-function showTopic(topic){
+function showTopic(topic) {
     $(".topic").addClass("hidden");
     $("#" + topic).removeClass("hidden");
     console.log("SHOWING" + topic);
