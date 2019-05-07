@@ -3,7 +3,6 @@
 
 //width, heigh, translate and scale all derived from playing with this block http://bl.ocks.org/radiocontrolled/7698088
 
-
 function resize() {
     console.log("RESIZED");
     //code to calculate new width and height

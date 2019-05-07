@@ -52,7 +52,7 @@ dataset = d3.csv("csv/states_pt1.csv", translateCellsCsv1, function (data) {
                 } else if (d.properties.value === 0) {
                     value = " does not allow parents to pull their children from sex ed related classes";
                 } else if (d.properties.value == .5) {
-                    value = " allows parents to pull their children out of HIV ed relatied classes";
+                    value = " allows parents to pull their children out of HIV ed related classes";
                 } else {
                     value = " does not have corrosponding data";
                 }

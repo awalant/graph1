@@ -1,54 +1,54 @@
 /*https://github.com/Caged/d3-tip/blob/master/examples/example-styles.css*/
 
 .d3-tip {
-  line-height: 1;
-  font-weight: bold;
-  padding: 12px;
-  background: rgba(0, 0, 0, 0.8);
-  color: #fff;
-  border-radius: 2px;
-  pointer-events: none;
+    line-height: 1;
+    font-weight: bold;
+    padding: 12px;
+    background: rgba(0, 0, 0, 0.8);
+    color: #fff;
+    border-radius: 2px;
+    pointer-events: none;
 }
 
 /* Creates a small triangle extender for the tooltip */
 .d3-tip:after {
-  box-sizing: border-box;
-  display: inline;
-  font-size: 10px;
-  width: 100%;
-  line-height: 1;
-  color: rgba(0, 0, 0, 0.8);
-  position: absolute;
-  pointer-events: none;
+    box-sizing: border-box;
+    display: inline;
+    font-size: 10px;
+    width: 100%;
+    line-height: 1;
+    color: rgba(0, 0, 0, 0.8);
+    position: absolute;
+    pointer-events: none;
 }
 
 body {
     margin: 0 auto;
-    
+
 }
 
-.title{
+.title {
     font-size: 5em;
 }
 
 
 .layout {
     display: flex;
-/*    justify-content: center;*/
-/*    border-style: solid;*/
-/*    border-color: hotpink;*/
+    /*    justify-content: center;*/
+    /*    border-style: solid;*/
+    /*    border-color: hotpink;*/
 }
 
 .text {
-/*    display: inline-flex;*/
-/*    background-color: aqua;*/
+    /*    display: inline-flex;*/
+    /*    background-color: aqua;*/
     display: block;
-    width: 60%;
-    padding-left: 5em;
-    
+    /*    width: 60%;*/
+    /*    padding-left: 5em;*/
+
 }
 
-.intro{
+.intro {
     padding-top: 5em;
 }
 
@@ -56,36 +56,36 @@ body {
     visibility: hidden;
 }
 
-.hidden{
+.hidden {
     visibility: hidden;
 }
 
-.caption{
+.caption {
     visibility: visible;
     position: fixed;
-    top:30%;
-    left:70%;
+    top: 30%;
+    left: 70%;
     width: 25%;
-    
-/*    padding-top: 2em;*/
+
+    /*    padding-top: 2em;*/
 }
 
-.colorPos{
+.colorPos {
     background-color: #EE8695;
 }
 
-.colorMid{
-    background-color:#A73B8F;
-    color:white;
+.colorMid {
+    background-color: #A73B8F;
+    color: white;
 }
 
-.colorNeg{
-    background-color:#501A73;
-    color:white;
+.colorNeg {
+    background-color: #501A73;
+    color: white;
 }
 
-.nothing{
-    background-color:#C5DBD7;
+.nothing {
+    background-color: #C5DBD7;
 }
 
 path:hover {
@@ -94,59 +94,67 @@ path:hover {
 
 
 .sections {
-/*    float: left;*/
-/*    border-style: solid;*/
-/*    border-color: darkcyan;*/
+    /*    float: left;*/
+    /*    border-style: solid;*/
+    /*    border-color: darkcyan;*/
     width: 75%;
     display: block;
     flex-direction: column;
-/*    background-color: black;*/
+    /*    background-color: black;*/
     left: 0;
 }
 
-h1{
+h1 {
     display: block;
-    top:0;
+    top: 0;
     font-size: 5vw;
     background-color: aquamarine;
 }
 
 svg {
-/*    background-color: yellow;*/
-    display:inline-block;
+    /*    background-color: yellow;*/
+    display: inline-block;
 }
 
 .explanation {
-/*    opacity: 0;*/
-/*
+    /*    opacity: 0;*/
+    /*
     float:left;
     margin-left: 0;
 */
-    
+
     background-color: darksalmon;
-/*    position: sticky;*/
+    /*    position: sticky;*/
 }
 
 
-.tooltip{
+.ttip {
     position: fixed;
     background: black;
-    z-index:10;
-    color:white;
-    margin-top:-20px;
+    z-index: 10;
+    color: white;
+    margin-top: -40px;
+/*    margin-left: -100px;*/
     visibility: visible;
-/*    width: 20%;*/
+    line-height: 1;
+    font-weight: bold;
+    padding: 12px;
+/*    background: rgba(0, 0, 0, 0.8);*/
+/*    color: #fff;*/
+    border-radius: 2px;
+    pointer-events: none;
+    /*    width: 20%;*/
 }
 
-.tooltip.hidden {
+.ttip.hidden {
     visibility: hidden;
 }
 
 .topic {
-    
-position:absolute;
-    top:0;
-    left:0;
+
+    position: absolute;
+    top: 0;
+    left: 0;
     width: 100%;
     height: 100%;
 }
