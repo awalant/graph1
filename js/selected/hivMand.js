@@ -36,22 +36,13 @@ d3.select("#hivMand")
                 var states = svg4.selectAll("path")
                     .data(json.features)
                     .attr("d", path)
-                    .style("fill", function (d) {
-                        var value = d.properties.value;
-
-                        if (value >= 0) {
-                            return color(value);
-                        } else {
-                            return nothing;
-                        }
-                    })
                     .style("stroke", "white")
                     .style("stroke-width", .75)
                     .on("mousemove", function (d) {
                         var value;
                         if (d.properties.value === 1) {
                             value = " covers HIV education"; //whatever goes in if true
-                        } else if (d.properties.value === 0){
+                        } else if (d.properties.value === 0) {
                             value = " does not cover HIV education";
                         } else {
                             value = " does not have corrosponding data";
@@ -64,7 +55,7 @@ d3.select("#hivMand")
                         tooltip.innerHTML = label;
                         tooltip.style.top = top;
                         tooltip.style.left = left;
-//                        console.log("I AM IN TOOLTIPS");
+                        //                        console.log("I AM IN TOOLTIPS");
                     })
                     .on("mouseover", function (d) {
                         d3.select("#tooltip-1")
@@ -82,10 +73,19 @@ d3.select("#hivMand")
                 //                return d.properties.name;
                 //            });
                 //            .on("mouseout", tip.hide);
-                
-                
+
+
                 states.transition()
-                    .duration(500);
+                    .duration(800)
+                    .style("fill", function (d) {
+                        var value = d.properties.value;
+
+                        if (value >= 0) {
+                            return color(value);
+                        } else {
+                            return nothing;
+                        }
+                    });
             });
 
 

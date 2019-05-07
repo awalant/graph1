@@ -14,13 +14,19 @@ $(document).ready(function () {
         
         //if element[i] in array has its property lgbtq set to yes, then send through function renderQuote
         if (quotesData[i].lgbtq == "yes") {
-//            console.log("yes to lgbtq");
+            lgbtQuotes.push(quotesData[i].quote);
+            
+            console.log(lgbtQuotes.length);
+            
+            var randomNum = Math.floor(Math.random()*lgbtQuotes.length);
+            
             renderQuote(quotesData[i].quote, "lgbtq", i);
         }
         //add conditions for other topics, one for each
         
         if (quotesData[i].sexEdu == "yes") {
 //            console.log("yes to sex");
+            //add to array
             renderQuote(quotesData[i].quote, "sexEdu", i);
         }
         
@@ -56,9 +62,12 @@ $(document).ready(function () {
 });
 
 
+//create array to track the lgbtq relevant quotes
+var lgbtQuotes =[];
+
 //pulling quote from above, as well as the topic
 function renderQuote(quote, topic, i) {
-    console.log(quote);
+//    console.log(quote);
     //variable that collects the topic inside a jQuery selector
     var container = $("#" + topic);
 

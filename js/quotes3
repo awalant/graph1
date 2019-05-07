@@ -1,0 +1,52 @@
+$(document).ready(function () {
+    for (var i = 0; i < quotesData.length; i++) {
+        if (quotesData[i].consent == "yes") {
+            consentQuotes.push({
+                quote: quotesData[i].quote,
+                id: quotesData[i].id
+            });
+            //            consentAuthors.push(quotesData[i].id);
+
+
+        }
+    }
+
+//    console.log(consentQuotes);
+
+});
+
+
+
+
+//create array to track the consent relevant quotes
+var consentQuotes = [];
+//console.log(consentQuotes);
+
+
+
+$(".quoteBtn").click(
+    function (event) {
+        var topic = $(this).data("topic");
+        console.log(topic);
+        
+        showTopic(topic);
+
+//        console.log("where in the world is carmen sandiego");
+        var randomNum = Math.floor(Math.random()*consentQuotes.length);
+        console.log(consentQuotes.length, randomNum);
+    
+        console.log(consentQuotes[randomNum]);
+    
+        var quote = '"' + consentQuotes[randomNum].quote + '"';
+        var author = " – " + consentQuotes[randomNum].id;
+    
+        $("#consent").html(quote + author);
+    }
+
+);
+
+function showTopic(topic){
+    $(".topic").addClass("hidden");
+    $("#" + topic).removeClass("hidden");
+    console.log("SHOWING" + topic);
+}

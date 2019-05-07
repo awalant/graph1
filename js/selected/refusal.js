@@ -36,16 +36,6 @@ d3.select("#refSkills")
                 var states = svg4.selectAll("path")
                     .data(json.features)
                     .attr("d", path)
-                    .style("fill", function (d) {
-                        var value = d.properties.value;
-
-                        if (value >= 0) {
-                            return color(value);
-                        } else {
-
-                            return nothing;
-                        }
-                    })
                     .style("stroke", "white")
                     .style("stroke-width", .75)
                     .on("mousemove", function (d) {
@@ -85,8 +75,17 @@ d3.select("#refSkills")
 
 
                 states.transition()
-                    .duration(1500)
-                    .text(console.log("hi"));
+                    .duration(800)
+                    .style("fill", function (d) {
+                        var value = d.properties.value;
+
+                        if (value >= 0) {
+                            return color(value);
+                        } else {
+
+                            return nothing;
+                        }
+                    });
             });
 
 
