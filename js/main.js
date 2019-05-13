@@ -9,6 +9,8 @@ function resize() {
     width = window.innerWidth ||
         document.documentElement.clientWidth ||
         document.body.clientWidth;
+//    width = document.getElementById("map1").clientWidth;
+//    height = width/3.236;
 
 
     height = window.innerHeight ||
@@ -17,14 +19,17 @@ function resize() {
 
     w = width * .97; //*.97
     h = w / 1.85; //height*1.2
-    w2 = width * .75;
+    w2 = width * .8;
+//    w = width;
+//    h = w;
+//    w2 = w/2;
 
     //    console.log(w, h);
 
     //projection scale translate
     projection = d3.geoAlbersUsa()
         .scale([w / 1.2])
-        .translate([w / 3, h / 2]);
+        .translate([w2 / 2, h / 2]);
 
 
 
@@ -46,6 +51,7 @@ function resize() {
 }
 
 d3.select(window).on("resize", resize);
+//window.onresize = resize();
 
 
 
@@ -65,7 +71,7 @@ function handleStepEnter(response) {
     var scrollVal = scrollStep.attr('data-step');
 
     //from Aarthy
-    d3.selectAll(".caption").classed("hidden", function (data, index) {
+    d3.selectAll(".caption").classed("invisible", function (data, index) {
         return index !== (Number(scrollVal));
     });
 

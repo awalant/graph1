@@ -16,10 +16,10 @@
 
 </head>
 
-<body>
+<body class="container-fluid">
     <div class="step"  data-step="0">
         <div class="title col-md-12">The United State of Sex Education</div>
-        <div class="text col-md-8">
+        <div class="text col-8 offset-2 text-wrap">
             <p>
                 In AP US History, a course offered in all 50 of the states (plus the District of Columbia), the students all cover the same units with similar information at similar times. At the end of the year, all of the students who are taking the course sit for the exam on the exact same day. Then, at the beginning of the next school year, many of those students go off to their respective colleges and find themselves engaged in the current “epidemic” of sexual assaults on college campuses throughout the United States--they become bystanders, witnesses, perpetrators, and victims.
             </p>
@@ -38,22 +38,25 @@
     </div>
     <div class="layout">
 
-        <div class="sections">
-            <div id="map1" class="step" data-step="1">
+        <div class="sections row">
+            <div id="map1" class="step col-8" data-step="1">
             </div>
-            <div id="tooltip-1" class="ttip"></div>
-            <div id="map2" class="step" data-step="2">
+            <div id="tooltip-1" class="ttip text-wrap"></div>
+            <div id="map2" class="step col-8" data-step="2">
             </div>
-            <div id="map3" class="step" data-step="3">
+            <div id="map3" class="step col-8" data-step="3">
             </div>
-            <div id="map4" class="step" data-step="4">
+            <div id="map4" class="step col-8" data-step="4">
+                <div class="buttons">
                 <button type="button" id="refSkills">Refusal skills</button>
                 <button type="button" id="sexOr">Sexual orientation</button>
                 <button type="button" id="contraception">Contraception</button>
                 <button type="button" id="hivMand">HIV mandated</button>
                 <button type="button" id="antiRel">Anti-religious</button>
+                    </div>
+            
             </div>
-            <div id="quotes" class="step" data-step="5">
+            <div id="quotes" class="step col-6 offset-2" data-step="5">
                 <div id="quotes-sidebar">
                     <button type="button" id="consentBtn" class="quoteBtn" data-topic="consent">consent</button>
                     <button type="button" id="lgbtqBtn" class="quoteBtn" data-topic="lgbtq">lgbtq</button>
@@ -82,10 +85,10 @@
 
 
             <div class="explanation">
-                <div class="caption hidden">
+                <div class="caption invisible">
                     <p> </p>
                 </div>
-                <div class="caption hidden">
+                <div class="caption invisible">
                     <h3>
                         States with mandated sexual education
                     </h3>
@@ -99,7 +102,7 @@
                         The states in <span class="colorPos">light pink</span> are the states that call for it, and the states that are in <span class="colorNeg">dark purple</span> currently do not.
                     </p>
                 </div>
-                <div class="caption hidden">
+                <div class="caption invisible">
                     <h3>
                         States with medically accurate information
                     </h3>
@@ -110,7 +113,7 @@
                         Fun fact: this is as many as the original colonies of the United States in 1607-1776, and includes five states that do not mandate sex nor HIV education: Colorado, Florida, Louisiana, Texas, and Virginia
                     </p>
                 </div>
-                <div class="caption hidden">
+                <div class="caption invisible">
                     <h3>
                         States where parents are allowed to remove their kids from the class
                     </h3>
@@ -124,12 +127,12 @@
                         Only <span class="colorPos">seven states </span>do not allow children to be pulled from these classes.
                     </p>
                 </div>
-                <div class="caption hidden">
+                <div class="caption invisible">
                     <p>
                         This is where users select some variables to view the map as it changes
                     </p>
                 </div>
-                <div class="caption hidden">
+                <div class="caption invisible">
                     <p>
                         This is where users will pick a topic to see quotes
                     </p>

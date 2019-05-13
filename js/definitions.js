@@ -33,12 +33,16 @@ var nothing = "#FFF";
 
 //code for responsive window sizing from https://stackoverflow.com/questions/3437786/get-the-size-of-the-screen-current-web-page-and-browser-window?noredirect=1&lq=1
 
-var width = window.innerWidth ||
+var width = 
+//document.getElementById("map1").clientWidth;
+    window.innerWidth ||
     document.documentElement.clientWidth ||
     document.body.clientWidth;
 
 
-var height = window.innerHeight ||
+var height = 
+//width/3.236;
+    window.innerHeight ||
     document.documentElement.clientHeight ||
     document.body.clientHeight;
 
@@ -46,12 +50,15 @@ var height = window.innerHeight ||
 //Width and height
 var w = width * .97;
 var h = w / 1.85;
-var w2 = width * .75;
+//var w = width;
+//var h = w;
+var w2 = w*.8;
 
 //Define map projection
 var projection = d3.geoAlbersUsa()
     .scale([w / 1.2])
-    .translate([w / 3, h / 2]);
+//    .translate([w / 3, h / 2]);
+.translate([w2/2, h/2]);
 
 //colors from https://blog.graphiq.com/finding-the-right-color-palettes-for-data-visualizations-fcd4e707a283 optimized to be okay for color blindness as well as for promoting readability of the map
 var colorScale = [colorNeg, colorMid, colorPos];
