@@ -48,8 +48,8 @@ var height =
 
 
 //Width and height
-var w = width * .97;
-var h = w / 1.85;
+var w = width * .75;
+var h = height/2;
 //var w = width;
 //var h = w;
 var w2 = w*.8;

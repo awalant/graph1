@@ -17,8 +17,8 @@ function resize() {
         document.documentElement.clientHeight ||
         document.body.clientHeight;
 
-    w = width * .97; //*.97
-    h = w / 1.85; //height*1.2
+ w = width * .75;
+ h = height/2; //height*1.2
     w2 = width * .8;
 //    w = width;
 //    h = w;
