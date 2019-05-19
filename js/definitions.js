@@ -25,10 +25,23 @@ var translateCellsCsv2 = function (d) {
     }
 }
 
+var translateCellsCsv3 = function (d) {
+    return {
+        topic: d.topic,
+        yes_m: parseFloat(d.yes_m),
+        no_m: parseFloat(d.no_m),
+        unclear_m: parseFloat(d.unclear_m),
+        na_m: parseFloat(d.na_m),
+        yes_f: parseFloat(d.yes_f),
+        no_f: parseFloat(d.no_f),
+        unclear_f: parseFloat(d.unclear_f),
+        na_f: parseFloat(d.na_f)
+    }
+}
 
-var colorPos = "#EE8695";
-var colorMid = "#A73B8F";
-var colorNeg = "#501A73";
+var colorPos = "#5e3c99";
+var colorMid = "grey";
+var colorNeg = "#e66101";
 var nothing = "#FFF";
 
 //code for responsive window sizing from https://stackoverflow.com/questions/3437786/get-the-size-of-the-screen-current-web-page-and-browser-window?noredirect=1&lq=1
@@ -49,10 +62,11 @@ var height =
 
 //Width and height
 var w = width * .75;
-var h = height/2;
+var h = height/1.75;
 //var w = width;
 //var h = w;
 var w2 = w*.8;
+
 
 //Define map projection
 var projection = d3.geoAlbersUsa()
@@ -61,7 +75,7 @@ var projection = d3.geoAlbersUsa()
 .translate([w2/2, h/2]);
 
 //colors from https://blog.graphiq.com/finding-the-right-color-palettes-for-data-visualizations-fcd4e707a283 optimized to be okay for color blindness as well as for promoting readability of the map
-var colorScale = [colorNeg, colorMid, colorPos];
+var colorScale = [nothing, colorMid, colorPos];
 
 var reverseColorScale = [colorPos, colorMid, colorNeg];
 

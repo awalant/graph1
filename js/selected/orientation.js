@@ -36,7 +36,7 @@ d3.select("#sexOr")
                 var states = svg4.selectAll("path")
                     .data(json.features)
                     .attr("d", path)
-                    .style("stroke", "white")
+                    .style("stroke", "lightgrey")
                     .style("stroke-width", .75)
                     .on("mousemove", function (d) {
                         var value;
@@ -84,7 +84,7 @@ d3.select("#sexOr")
                         if (value >= 0) {
                             return color(value);
                         } else if (value === -1) {
-                            return "black";
+                            return colorNeg;
                         } else {
 
                             return nothing;

@@ -36,7 +36,7 @@ d3.select("#hivMand")
                 var states = svg4.selectAll("path")
                     .data(json.features)
                     .attr("d", path)
-                    .style("stroke", "white")
+                    .style("stroke", "lightgrey")
                     .style("stroke-width", .75)
                     .on("mousemove", function (d) {
                         var value;

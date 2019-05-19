@@ -43,7 +43,7 @@ dataset = d3.csv("csv/states_pt1.csv", translateCellsCsv1, function (data) {
                 }
             })
             //            .style("opacity", 0)
-            .style("stroke", "white")
+            .style("stroke", "lightgrey")
             .style("stroke-width", .75)
             .on("mousemove", function (d) {
                 var value;

@@ -39,11 +39,11 @@
                 if (value >= 0) {
                     return color(value);
                 } else {
-                    return "#C5DBD7";
+                    return nothing;
                 }
             })
 //            .style("opacity", 0)
-            .style("stroke", "white")
+          .style("stroke", "lightgrey")
             .style("stroke-width", .75)
             .on("mouseover", function (d) {
                 console.log(d.properties.name + d.properties.value);

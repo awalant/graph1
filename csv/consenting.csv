@@ -1,0 +1,6 @@
+﻿action,yes_m,no_m, depends_m,na_m,yes_f,no_f, depends_f,na_f
+takes off own clothes,50,45,3,2,44,52,3,1
+gets a condom,43,51,4,2,38,58,4,1
+nods in agreement,58,36,3,3,51,44,3,3
+engages in foreplay such as kissing or touching,30,66,3,0.02,20,75,4,1
+"does not say ""no""",20,75,4,1,16,80,2,1

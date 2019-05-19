@@ -30,6 +30,13 @@ body {
     visibility: hidden;
 }
 
+div.bar{
+    display: inline-block;
+    width: 20px;
+    height: 75px;
+    background-color: coral;
+}
+
 .hidden {
     visibility: hidden;
 }

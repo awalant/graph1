@@ -47,7 +47,7 @@ d3.select("#ageAppr")
                             return "#C5DBD7";
                         }
                     })
-                    .style("stroke", "white")
+                    .style("stroke", "lightgrey")
                     .style("stroke-width", .75)
                     .on("mouseover", function (d) {
                         console.log(d.properties.name + " is or isn't age appropriate");

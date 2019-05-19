@@ -18,7 +18,7 @@ function resize() {
         document.body.clientHeight;
 
  w = width * .75;
- h = height/2; //height*1.2
+ h = height/1.75; //height*1.2
     w2 = width * .8;
 //    w = width;
 //    h = w;
@@ -45,8 +45,8 @@ function resize() {
     d3.selectAll("path").attr("d", path);
 
     //    https://pudding.cool/process/responsive-scrollytelling/ 
-    d3.selectAll(".step")
-        .style("height", height + "px");
+//    d3.selectAll(".step")
+//        .style("height", h + "px");
 
 }
 
@@ -58,7 +58,7 @@ d3.select(window).on("resize", resize);
 //This is how to set up the library Scrollama.
 var scroller = scrollama();
 
-
+//d3.selectAll("path").style("stroke", "lightgrey");
 
 //handleStepEnter is a function that takes the argument "response" which is the object tracked by scrollama, which says the element that's being passed, its number in the array, and what direction the user is scrolling.
 function handleStepEnter(response) {
