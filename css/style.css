@@ -33,12 +33,31 @@ body {
 div.bar{
     display: inline-block;
     width: 20px;
-    height: 75px;
+/*    height: 75px;*/
     background-color: coral;
 }
 
 .hidden {
     visibility: hidden;
+}
+
+
+/*borrowed from https://codepen.io/iamraviteja/pen/bOragL*/
+.bar-placeholder {
+  fill: #f2f2f2;
+}
+
+/*
+text {
+  text-anchor: middle;
+  fill: #333;
+  font-size: 10px;
+}
+*/
+
+/*borrowed from https://codepen.io/iamraviteja/pen/bOragL*/
+g.layer ~ g.layer .bar-placeholder {
+  display: none;
 }
 
 .caption {
