@@ -70,7 +70,7 @@ var w2 = w*.8;
 
 //Define map projection
 var projection = d3.geoAlbersUsa()
-    .scale([w / 1.2])
+    .scale([w / 1.35])
 //    .translate([w / 3, h / 2]);
 .translate([w2/2, h/2]);
 

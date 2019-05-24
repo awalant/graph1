@@ -41,10 +41,13 @@ div.bar{
     visibility: hidden;
 }
 
-
+div{
+    display:inline-block;
+    width: 100%;
+}
 /*borrowed from https://codepen.io/iamraviteja/pen/bOragL*/
 .bar-placeholder {
-  fill: #f2f2f2;
+  display:none;
 }
 
 /*
@@ -58,6 +61,13 @@ text {
 /*borrowed from https://codepen.io/iamraviteja/pen/bOragL*/
 g.layer ~ g.layer .bar-placeholder {
   display: none;
+}
+
+.chart{
+    width: 60%;
+    height: 40%;
+    position: relative;
+/*    background-color: aqua;*/
 }
 
 .caption {
@@ -112,6 +122,8 @@ svg {
 /*    border: solid;*/
     margin-top: 0;
     margin-bottom: 0;
+    display: inline-block;
+    position: relative;
 }
 
 
@@ -144,6 +156,7 @@ svg {
     border-radius: 2px;
     pointer-events: none;
     font-size: 1.3vw;
+    width: fit-content;
 }
 
 .ttip.hidden {
@@ -160,7 +173,7 @@ svg {
 }
 
 #quotes-main {
-    position: relative;
+position:relative;
 }
 
 /*

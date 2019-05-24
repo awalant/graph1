@@ -42,14 +42,14 @@
     <div class="layout">
 
         <div class="sections row">
-            <div id="map1" class="step col-8" data-step="1">
+            <div id="map1" class="step col-8 chart" data-step="1">
             </div>
-            <div id="tooltip-1" class="ttip text-wrap"></div>
-            <div id="map2" class="step col-8" data-step="2">
+            <div id="tooltip-1" class="ttip hidden text-wrap"></div>
+            <div id="map2" class="step col-8 chart" data-step="2">
             </div>
-            <div id="map3" class="step col-8" data-step="3">
+            <div id="map3" class="step col-8 chart" data-step="3">
             </div>
-            <div id="map4" class="step col-8" data-step="4">
+            <div id="map4" class="step col-8 chart" data-step="4">
                 <div class="buttons">
                 <button type="button" id="refSkills">Refusal skills</button>
                 <button type="button" id="sexOr">Sexual orientation</button>
@@ -59,8 +59,8 @@
                     </div>
             
             </div>
-            <div id="quotes" class="step col-6 offset-2" data-step="5">
-                <div id="quotes-sidebar">
+            <div id="quotes" class="step col-6 chart" data-step="5">
+                <div id="quotes-sidebar chart">
                     <button type="button" id="consentBtn" class="quoteBtn" data-topic="consent">consent</button>
                     <button type="button" id="lgbtqBtn" class="quoteBtn" data-topic="lgbtq">lgbtq</button>
                     <button type="button" id="sexEduBtn" class="quoteBtn" data-topic="sexEdu">sex ed</button>
@@ -75,7 +75,7 @@
                     <!--                <a href="#LGBTQ">LGBTQ</a>-->
                 </div>
                 <div id="quotes-main">
-                    <div id="consent" class="topic hidden"></div>
+                    <div id="consent" class="topic"></div>
                     <div id="lgbtq" class="topic hidden"></div>
                     <div id="sexEdu" class="topic hidden"></div>
                     <div id="sexAssault" class="topic hidden"></div>
@@ -85,7 +85,11 @@
 
             </div>
             
-            <div id="consentChart" class="step col-6 offset-2" data-step="6">
+            <div id="sexAssltChartDiv" class="step col-6 chart" data-step="6">
+                <svg id="sexAssltChart"></svg>
+            </div>
+            
+            <div id="consentChart" class="step col-6 chart" data-step="7">
             </div>
 
 
@@ -174,5 +178,6 @@
 <!--    <script src="js/main.js"></script>-->
     
 <script src="js/consent.js"></script>
+<script src="js/consent2.js"></script>
 
 </html>

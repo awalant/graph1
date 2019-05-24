@@ -4,25 +4,39 @@
 //The data is in the form of an array of objects, where the values are grouped by the subject.
 var data = [
     {
-        topic: "incapacitated",
-        yes: 96,
-        no: 1,
+        topic: "naked",
+        yes: 47,
+        no: 49,
+        unclear: 3,
+        noOpinion: 1
+  },
+    {
+        topic: "condom",
+        yes: 40,
+        no: 54,
+        unclear: 4,
+        noOpinion: 1
+  },
+    {
+        topic: "nods",
+        yes: 54,
+        no: 40,
+        unclear: 3,
+        noOpinion: 3
+  },
+    {
+        topic: "foreplay",
+        yes: 22,
+        no: 74,
         unclear: 3,
         noOpinion: .5
   },
-    {
-        topic: "influenced",
-        yes: 21,
-        no: 19,
-        unclear: 59,
-        noOpinion: .5
-  },
-    {
-        topic: "notClear",
-        yes: 47,
-        no: 6,
-        unclear: 46,
-        noOpinion: .5
+       {
+        topic: "silent",
+        yes: 18,
+        no: 77,
+        unclear: 3,
+        noOpinion: 1
   }
 ];
 
@@ -47,8 +61,8 @@ var barwidth = 40;
 
 //select the div with the id consentChart and append an svg to it, then give it the attributes of the width plus the margins and the height plus the margins, then append a group and move the whole thing over by the margins.
 var graph = d3
-    .select("#sexAssltChart")
-    //    .append("svg")
+    .select("#consentChart")
+    .append("svg")
     .attr("width", widthGraph + margin.left + margin.right)
     .attr("height", heightGraph + margin.top + margin.bottom)
     .append("g")
@@ -126,16 +140,13 @@ graph
 
 var layer = graph
     .selectAll(".layer")
-    .data(layers, function(d){
-        return d;
-    })
+    .data(layers)
     .enter()
     .append("g")
     .attr("class", "layer")
     .style("fill", function (d) {
         return z(d.key);
-    })
-    .on("mousemove", function (d) {
+    }).on("mousemove", function (d) {
         console.log(d);
         var label = d.key;
         var tooltip = document.getElementById("tooltip-1");
@@ -173,7 +184,7 @@ layer
         return x(d.data.topic) + x.bandwidth() / 2 - 20;
     })
     .attr("height", function (d) {
-        return heightGraph - 20;
+        return heightGraph;
     })
     .attr("width", 40);
 
@@ -213,10 +224,9 @@ layer
         return x(d.data.topic) + x.bandwidth() / 2 + 25;
     })
     .attr("y", function (d) {
-        return y(d[1]) + ((y(d[0]) - y(d[1])) / 2);
+        return y(d[1]) + ((y(d[0]) - y(d[1]))/2);
     })
     .text(function (d) {
-        return d[1] - d[0];
-        //            + d.data.no + d.data.unclear + d.data.noOpinion;
+        return d[1]-d[0]; 
+//            + d.data.no + d.data.unclear + d.data.noOpinion;
     });
-
