@@ -9,27 +9,31 @@ function resize() {
     width = window.innerWidth ||
         document.documentElement.clientWidth ||
         document.body.clientWidth;
-//    width = document.getElementById("map1").clientWidth;
-//    height = width/3.236;
+    //    width = document.getElementById("map1").clientWidth;
+    //    height = width/3.236;
 
 
     height = window.innerHeight ||
         document.documentElement.clientHeight ||
         document.body.clientHeight;
 
- w = width * .75;
- h = height/1.75; //height*1.2
+    w = width * .75;
+    h = height / 1.75; //height*1.2
     w2 = width * .8;
-//    w = width;
-//    h = w;
-//    w2 = w/2;
+    //    w = width;
+    //    h = w;
+    //    w2 = w/2;
+
+    widthGraph = w2 - margin.left - margin.right - (legendWidth * 4);
+    heightGraph = h - margin.top - margin.bottom;
+    barwidth = 40;
 
     //    console.log(w, h);
 
     //projection scale translate
     projection = d3.geoAlbersUsa()
         .scale([w / 1.2])
-        .translate([w2 / 2, h / 2]);
+        .translate([w2 / 2 - (legendWidth * 2), h / 2]);
 
 
 
@@ -45,8 +49,8 @@ function resize() {
     d3.selectAll("path").attr("d", path);
 
     //    https://pudding.cool/process/responsive-scrollytelling/ 
-//    d3.selectAll(".step")
-//        .style("height", h + "px");
+    //    d3.selectAll(".step")
+    //        .style("height", h + "px");
 
 }
 
@@ -86,8 +90,7 @@ function handleStepEnter(response) {
 scroller
     .setup({
         step: ".step",
-//        debug: true,
+        //        debug: true,
         offset: 0.35
     })
     .onStepEnter(handleStepEnter);
-

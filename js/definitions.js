@@ -59,22 +59,37 @@ var height =
     document.documentElement.clientHeight ||
     document.body.clientHeight;
 
-
+var shapeWidth = 40;
+var shapePadding = 15;
+var legendHeight = shapePadding*6;
+var legendWidth = shapeWidth;
 //Width and height
-var w = width * .75;
+var w = (width * .75) + (legendWidth*4);
 var h = height/1.75;
 //var w = width;
 //var h = w;
 var w2 = w*.8;
 
 
+//This establishes margins for the barchart.
+var margin = {
+    top: 30,
+    right: 10,
+    bottom: 80,
+    left: 80
+};
+
+var widthGraph = w2 - margin.left - margin.right - (legendWidth*4);
+var heightGraph = h - margin.top - margin.bottom;
+var barwidth = 40;
+
+
 //Define map projection
 var projection = d3.geoAlbersUsa()
     .scale([w / 1.35])
 //    .translate([w / 3, h / 2]);
-.translate([w2/2, h/2]);
+.translate([w2/2 - (legendWidth*2), h/2]);
 
-//colors from https://blog.graphiq.com/finding-the-right-color-palettes-for-data-visualizations-fcd4e707a283 optimized to be okay for color blindness as well as for promoting readability of the map
 var colorScale = [nothing, colorMid, colorPos];
 
 var reverseColorScale = [colorPos, colorMid, colorNeg];

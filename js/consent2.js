@@ -45,25 +45,12 @@ var keys = Object.keys(data[0]).filter(k => k !== "topic");
 
 console.log(keys);
 
-//This establishes margins for the barchart.
-var margin = {
-    top: 30,
-    right: 10,
-    bottom: 80,
-    left: 80
-};
-
-
-var widthGraph = w2 - margin.left - margin.right;
-var heightGraph = h - margin.top - margin.bottom;
-var barwidth = 40;
-
 
 //select the div with the id consentChart and append an svg to it, then give it the attributes of the width plus the margins and the height plus the margins, then append a group and move the whole thing over by the margins.
 var graph = d3
     .select("#consentChart")
     .append("svg")
-    .attr("width", widthGraph + margin.left + margin.right)
+    .attr("width", widthGraph + margin.left + margin.right + legendWidth*4)
     .attr("height", heightGraph + margin.top + margin.bottom)
     .append("g")
     .attr("transform", "translate(" + margin.left + "," + margin.top + ")");
@@ -105,7 +92,7 @@ graph
 
 //Variable yAxis is the d3 function axisLeft with the argument y
 var yAxis = d3.axisLeft(y)
-    .ticks(5);
+    .ticks(3);
 
 
 //give z the domain created from the variable keys
@@ -227,6 +214,26 @@ layer
         return y(d[1]) + ((y(d[0]) - y(d[1]))/2);
     })
     .text(function (d) {
-        return d[1]-d[0]; 
+        if ((d[1]-d[0])>3){
+            return d[1]-d[0]
+            }
+       else {
+           return
+       }; 
 //            + d.data.no + d.data.unclear + d.data.noOpinion;
     });
+
+
+graph.append("g")
+    .attr("class", "legendOrdinal")
+    .attr("transform", "translate(" + (widthGraph + legendWidth) + "," + (heightGraph - legendHeight*2) + ")" );
+
+var legendOrdinal = d3.legendColor()
+    .shapeWidth(shapeWidth)
+    .cells(4)
+    .shapePadding(shapePadding)
+    .orient("vertical")
+    .scale(z);
+
+graph.select(".legendOrdinal")
+    .call(legendOrdinal);

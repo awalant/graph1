@@ -5,10 +5,10 @@
     <meta charset="utf-8">
     <title>forni_education</title>
     <script type="text/javascript" src="d3.js"></script>
-     <script type="text/javascript" src="js/d3Legend.js"></script>
+    <script type="text/javascript" src="js/d3Legend.js"></script>
     <script type="text/javascript" src="jquery.min.js"></script>
-  <script type="text/javascript" src="js/bootstrap.bundle.min.js"></script>
-     <script type="text/javascript" src="js/bootstrap.min.js"></script>
+    <script type="text/javascript" src="js/bootstrap.bundle.min.js"></script>
+    <script type="text/javascript" src="js/bootstrap.min.js"></script>
     <!--    slick-->
     <script type="text/javascript" src="scrollama.min.js"></script>
     <script type="text/javascript" src="index.js"></script>
@@ -20,23 +20,26 @@
 </head>
 
 <body class="container-fluid">
-    <div class="step"  data-step="0">
-        <div class="title col-md-12">The United State of Sex Education</div>
+    <div class="step" data-step="0">
+        <header class="title col-md-12">The United State of Sex Education</header>
         <div class="text col-8 offset-2 text-wrap">
-            <p>
-                In AP US History, a course offered in all 50 of the states (plus the District of Columbia), the students all cover the same units with similar information at similar times. At the end of the year, all of the students who are taking the course sit for the exam on the exact same day. Then, at the beginning of the next school year, many of those students go off to their respective colleges and find themselves engaged in the current “epidemic” of sexual assaults on college campuses throughout the United States--they become bystanders, witnesses, perpetrators, and victims.
-            </p>
-            <p>
-                A little under a quarter of college-aged females have reported as experiencing sexual assault during college, and it is important to note that it is currently expected that only 5% of all sexual harassment cases on college campuses are actually reported. Students have an increased risk of experiencing sexual assault within their first few months on campus, as 50% of all reported sexual assaults occur between August and November.
-            </p>
-            <p>
-                In trying to rationalize why this might happen, it seems rational to start to explore the idea of what students might be learning about sexual health and wellness before they go away to college--what might be influencing them that makes these rates so high? Upon further investigation, it quickly becomes evident that unlike the treatment of AP US History, sexual health and wellness is a topic that is covered in varying capacities, if at all. There is no standard set for what students should be learning, no typical curricula to be followed, and increased mythology around topics like rape and oral sex that leads to misinformation. Studies cannot draw any actual conclusions about the impacts of sex education, both where it succeeds and where it fails, because students have an absurdly varied experience.
-            </p>
-            <p class="intro">
-                Let's explore the ways in which the states handle sex education differently, at least in its legal documentation.</p>
-            <p>
-                *It is important to note that just because sex education may be mandated in a state, does not mean that the state is providing a comprehensive sex education for its pupils (but more on that later).
-            </p>
+            <article>
+                <p>
+                    In AP US History, a course offered in all 50 of the states (plus the District of Columbia), the students all cover the same units with similar information at similar times. At the end of the year, all of the students who are taking the course sit for the exam on the exact same day. Then, at the beginning of the next school year, many of those students go off to their respective colleges and find themselves engaged in the current “epidemic” of sexual assaults on college campuses throughout the United States--they become bystanders, witnesses, perpetrators, and victims.
+                </p>
+                <p>
+                    A little under a quarter of college-aged females have reported as experiencing sexual assault during college, and it is important to note that it is currently expected that only 5% of all sexual harassment cases on college campuses are actually reported. Students have an increased risk of experiencing sexual assault within their first few months on campus, as 50% of all reported sexual assaults occur between August and November.
+                </p>
+                <p>
+                    In trying to rationalize why this might happen, it seems rational to start to explore the idea of what students might be learning about sexual health and wellness before they go away to college--what might be influencing them that makes these rates so high? Upon further investigation, it quickly becomes evident that unlike the treatment of AP US History, sexual health and wellness is a topic that is covered in varying capacities, if at all. There is no standard set for what students should be learning, no typical curricula to be followed, and increased mythology around topics like rape and oral sex that leads to misinformation. Studies cannot draw any actual conclusions about the impacts of sex education, both where it succeeds and where it fails, because students have an absurdly varied experience.
+                </p>
+                <p class="intro">
+                    Let's explore the ways in which the states handle sex education differently, at least in its legal documentation.</p>
+                <p>
+                    *It is important to note that just because sex education may be mandated in a state, does not mean that the state is providing a comprehensive sex education for its pupils (but more on that later).
+                </p>
+            </article>
+
         </div>
     </div>
     <div class="layout">
@@ -49,24 +52,24 @@
             </div>
             <div id="map3" class="step col-8 chart" data-step="3">
             </div>
-            <div id="map4" class="step col-8 chart" data-step="4">
+            <div id="map4" class="step col-8" data-step="4">
                 <div class="buttons">
-                <button type="button" id="refSkills">Refusal skills</button>
-                <button type="button" id="sexOr">Sexual orientation</button>
-                <button type="button" id="contraception">Contraception</button>
-                <button type="button" id="hivMand">HIV mandated</button>
-                <button type="button" id="antiRel">Anti-religious</button>
-                    </div>
-            
+                    <button type="button" id="refSkills">Refusal skills</button>
+                    <button type="button" id="sexOr">Sexual orientation</button>
+                    <button type="button" id="contraception">Contraception</button>
+                    <button type="button" id="hivMand">HIV mandated</button>
+                    <button type="button" id="antiRel">Anti-religious</button>
+                </div>
+
             </div>
-            <div id="quotes" class="step col-6 chart" data-step="5">
-                <div id="quotes-sidebar chart">
+            <div id="quotes" class="step col-8" data-step="5">
+                <div id="quotes-sidebar" class="buttons">
                     <button type="button" id="consentBtn" class="quoteBtn" data-topic="consent">consent</button>
                     <button type="button" id="lgbtqBtn" class="quoteBtn" data-topic="lgbtq">lgbtq</button>
                     <button type="button" id="sexEduBtn" class="quoteBtn" data-topic="sexEdu">sex ed</button>
                     <button type="button" id="sexAssaultBtn" class="quoteBtn" data-topic="sexAssault">sexual assault</button>
                     <button type="button" id="sexExpBtn" class="quoteBtn" data-topic="sexExp">sexual experiences</button>
-<!--
+                    <!--
                     <a href="#lgbtq" class="quote-topic-link" data-topic="lgbtq">lgbtq</a>
                     <a href="#sexEdu" class="quote-topic-link" data-topic="sexEdu">sex education</a>
                     <a href="#sexAssault" class="quote-topic-link" data-topic="sexAssault">sexual assault</a>
@@ -74,7 +77,12 @@
 -->
                     <!--                <a href="#LGBTQ">LGBTQ</a>-->
                 </div>
-                <div id="quotes-main">
+                <div id="quotes-main" class="row text-wrap">
+                    <svg id="quoteCanvas">
+                    
+                    
+                    
+                    </svg>
                     <div id="consent" class="topic"></div>
                     <div id="lgbtq" class="topic hidden"></div>
                     <div id="sexEdu" class="topic hidden"></div>
@@ -84,11 +92,15 @@
 
 
             </div>
-            
+
             <div id="sexAssltChartDiv" class="step col-6 chart" data-step="6">
+<!--
+                <div class="buttons"> <button type="button" id="sexAsltChartBtn" class="chartBtn">Definition of Sexual Assault</button>
+                    <button type="button" id="consentChartBtn" class="chartBtn">Definition of Consent</button></div>
+-->
                 <svg id="sexAssltChart"></svg>
             </div>
-            
+
             <div id="consentChart" class="step col-6 chart" data-step="7">
             </div>
 
@@ -157,6 +169,7 @@
 
 <script src="js/definitions.js"></script>
 <!--    <script src="js/main.js"></script>-->
+    <script src="js/main.js"></script>
 <script src="js/sexEdMand.js"></script>
 <!--<script src="js/selectAgeAppr.js"></script>-->
 <!--<script src="js/selectMandSex.js"></script>-->
@@ -170,13 +183,13 @@
 <script src="js/selected/orientation.js"></script>
 <script src="js/selected/contraception.js"></script>
 <script src="js/selected/refusal.js"></script>
-<script src="js/main.js"></script>
+
 <script src="json/quotes.json"></script>
 <!--<script src="js/quotes.js"></script>-->
 <!--<script src="js/quotes2.js"></script>-->
 <script src="js/quotes3.js"></script>
 <!--    <script src="js/main.js"></script>-->
-    
+
 <script src="js/consent.js"></script>
 <script src="js/consent2.js"></script>
 

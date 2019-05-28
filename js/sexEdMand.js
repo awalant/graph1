@@ -45,7 +45,7 @@ var dataset = d3.csv("csv/states_pt1.csv", translateCellsCsv1, function (data) {
                     return nothing;
                 }
             })
-      .style("stroke", "lightgrey")
+            .style("stroke", "lightgrey")
             .style("stroke-width", .75)
             .on("mousemove", function (d) {
                 var value;
@@ -64,18 +64,21 @@ var dataset = d3.csv("csv/states_pt1.csv", translateCellsCsv1, function (data) {
                 tooltip.innerHTML = label;
                 tooltip.style.top = top;
                 tooltip.style.left = left;
-//                console.log("I AM IN TOOLTIPS");
+                //                console.log("I AM IN TOOLTIPS");
             })
-            .on("mouseover", function(d){
+            .on("mouseover", function (d) {
                 d3.select("#tooltip-1")
-                .classed("hidden", false);
-            
-            
-        })
-            .on("mouseout", function (d){
-            d3.select("#tooltip-1")
-                .classed("hidden", true);
-        });
+                    .classed("hidden", false);
+
+
+            })
+            .on("mouseout", function (d) {
+                d3.select("#tooltip-1")
+                    .classed("hidden", true);
+            });
+
+        
+       
     });
 
 
@@ -87,8 +90,9 @@ var dataset = d3.csv("csv/states_pt1.csv", translateCellsCsv1, function (data) {
 //Define path generator
 var path = d3.geoPath(projection);
 
+
 //Create SVG element
- svg1 = d3.select("#map1")
+svg1 = d3.select("#map1")
     .append("svg")
     .attr("width", w2)
     .attr("height", h);
@@ -98,6 +102,40 @@ var path = d3.geoPath(projection);
 //    .attr("text-anchor", "middle")
 //    .text("LOOK A TITLE")
 //    .enter();
+
+
+var legend1Scale = d3.scaleOrdinal()
+    .domain(["no mandatory sex education", "mandatory sex education"])
+    .range([nothing, colorPos]);
+
+svg1.append("g")
+    .attr("class", "legendOrdinal")
+//    .attr("transform", "translate(" + (w2 + legendWidth) + "," + (h - legendHeight*2) + ")" );
+.attr("transform", "translate(" + (w2-(legendWidth*4))+ "," + (h-legendHeight*4) +")");
+
+var legend1 = d3.legendColor()
+    .shapeWidth(shapeWidth)
+    .cells(2)
+    .labelWrap(30)
+    .shapePadding(shapePadding)
+    .orient("vertical")
+    .scale(legend1Scale);
+
+svg1.select(".legendOrdinal")
+    .call(legend1);
+
+//var legend1 = svg1.append("ul")
+//    .attr("class", "list-inline");
+//
+//var things1 = legend1.selectAll("li.key")
+//    .data(legend1Scale);
+//
+//things1.enter()
+//    .append("li")
+//    .attr("class", "key")
+
+
+
 
 
 

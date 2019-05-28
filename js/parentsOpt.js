@@ -90,3 +90,23 @@ var svg3 = d3.select("#map3")
     .append("svg")
     .attr("width", w2)
     .attr("height", h);
+
+var legend3Scale = d3.scaleOrdinal()
+    .domain(["No data", "Parents can remove children", "Parents can remove from HIV courses", "Parents cannot remove children"])
+    .range([nothing, colorNeg, colorMid, colorPos]);
+
+svg3.append("g")
+    .attr("class", "legendOrdinal")
+//    .attr("transform", "translate(" + (w2 + legendWidth) + "," + (h - legendHeight*2) + ")" );
+.attr("transform", "translate(" + (w2-(legendWidth*4))+ "," + (h-legendHeight*4) +")");
+
+var legend3 = d3.legendColor()
+    .shapeWidth(shapeWidth)
+    .cells(4)
+    .labelWrap(30)
+    .shapePadding(shapePadding)
+    .orient("vertical")
+    .scale(legend3Scale);
+
+svg3.select(".legendOrdinal")
+    .call(legend3);
