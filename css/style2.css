@@ -1,0 +1,76 @@
+.caption.hidden {
+    visibility: hidden;
+}
+
+
+/*borrowed from https://codepen.io/iamraviteja/pen/bOragL*/
+.bar-placeholder {
+  display:none;
+}
+
+/*borrowed from https://codepen.io/iamraviteja/pen/bOragL*/
+g.layer ~ g.layer .bar-placeholder {
+  display: none;
+}
+
+.caption {
+/*    visibility: visible;*/
+    position: fixed;
+    top: 30%;
+    left: 80%;
+    margin-right: 2em;
+}
+
+.ttip {
+    position: fixed;
+    background: black;
+    z-index: 10;
+    color: white;
+    margin-top: -40px;
+    visibility: visible;
+    line-height: 1;
+    font-weight: bold;
+    padding: 1em;
+    font-size: 1em;
+    border-radius: 2px;
+    pointer-events: none;
+    font-size: 1.3vw;
+    width: fit-content;
+}
+
+.ttip.hidden {
+    visibility: hidden;
+}
+
+.hidden{
+    visibility: hidden;
+}
+.section{
+    display:flex;
+    border-style: dashed;
+    border-width: 2px;
+}
+
+.buttons{
+    display:flex;
+    flex-direction: column;
+    
+}
+
+svg{
+    height:75vh;
+    width:50vw;
+    background-color:lightblue;
+    padding: 2vw;
+}
+
+.legend{
+    background-color:lightcoral;
+    height:75vh;
+    width: 15vw;
+    padding:2vw;
+}
+
+body{
+    margin:0;
+}

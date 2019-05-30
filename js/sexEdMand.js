@@ -104,25 +104,25 @@ svg1 = d3.select("#map1")
 //    .enter();
 
 
-var legend1Scale = d3.scaleOrdinal()
-    .domain(["no mandatory sex education", "mandatory sex education"])
-    .range([nothing, colorPos]);
-
-svg1.append("g")
-    .attr("class", "legendOrdinal")
-//    .attr("transform", "translate(" + (w2 + legendWidth) + "," + (h - legendHeight*2) + ")" );
-.attr("transform", "translate(" + (w2-(legendWidth*4))+ "," + (h-legendHeight*4) +")");
-
-var legend1 = d3.legendColor()
-    .shapeWidth(shapeWidth)
-    .cells(2)
-    .labelWrap(30)
-    .shapePadding(shapePadding)
-    .orient("vertical")
-    .scale(legend1Scale);
-
-svg1.select(".legendOrdinal")
-    .call(legend1);
+//var legend1Scale = d3.scaleOrdinal()
+//    .domain(["no mandatory sex education", "mandatory sex education"])
+//    .range([nothing, colorPos]);
+//
+//svg1.append("g")
+//    .attr("class", "legendOrdinal")
+////    .attr("transform", "translate(" + (w2 + legendWidth) + "," + (h - legendHeight*2) + ")" );
+//.attr("transform", "translate(" + (w2-(legendWidth*4))+ "," + (h-legendHeight*4) +")");
+//
+//var legend1 = d3.legendColor()
+//    .shapeWidth(shapeWidth)
+//    .cells(2)
+//    .labelWrap(30)
+//    .shapePadding(shapePadding)
+//    .orient("vertical")
+//    .scale(legend1Scale);
+//
+//svg1.select(".legendOrdinal")
+//    .call(legend1);
 
 //var legend1 = svg1.append("ul")
 //    .attr("class", "list-inline");

@@ -9,9 +9,11 @@ body {
     font-size:1em;
 }
 */
+/*
 .title {
     font-size: 5em;
 }
+*/
 
 
 .layout {
@@ -22,34 +24,40 @@ body {
 /*    display: block;*/
 }
 
+/*
 .intro {
     padding-top: 5em;
 }
+*/
 
 .caption.hidden {
     visibility: hidden;
 }
+/*
 
 div.bar{
     display: inline-block;
     width: 20px;
-/*    height: 75px;*/
+    height: 75px;
     background-color: coral;
 }
 
 .hidden {
     visibility: hidden;
 }
+*/
 
 div.buttons{
     
     
 }
 
+/*
 div{
     display:inline-block;
-/*    width: 100%;*/
+    width: 100%;
 }
+*/
 /*borrowed from https://codepen.io/iamraviteja/pen/bOragL*/
 .bar-placeholder {
   display:none;
@@ -68,19 +76,23 @@ g.layer ~ g.layer .bar-placeholder {
   display: none;
 }
 
+/*
 
 .chart{
     width: 60%;
     height: 40%;
     position: relative;
-/*    background-color: aqua;*/
+    background-color: aqua;
 }
+*/
 
+/*
 #quotes-sidebar{
     display: flex;
     flex-direction: row;
     
 }
+*/
 
 .caption {
     visibility: visible;
@@ -91,6 +103,7 @@ g.layer ~ g.layer .bar-placeholder {
 /*    width: 25%;*/
 }
 
+/*
 .colorPos {
     background-color: #EE8695;
 }
@@ -112,6 +125,7 @@ g.layer ~ g.layer .bar-placeholder {
 path:hover {
     fill-opacity: .8;
 }
+*/
 
 
 .sections {
@@ -120,39 +134,55 @@ path:hover {
 /*    flex-direction: column;*/
 /*    left: 0;*/
 }
+/*
 
 h1 {
     display: block;
     top: 0;
     font-size: 2em;
-/*    background-color: aquamarine;*/
+    background-color: aquamarine;
 }
+*/
 
+/*
 svg {
-/*    display: inline-block;*/
-/*    background-color: aqua;*/
+    display: inline-block;
+    background-color: aqua;
+    display:inline-block;
+*/
 /*    border: solid;*/
+/*
     margin-top: 0;
     margin-bottom: 0;
     display: inline-block;
     position: relative;
+*/
+/*}*/
+/*
+.legend{
+    background-color: pink;
+    
+    
 }
+*/
 
+/*
 #quoteCanvas{
     height:fit-content;
     width:fit-content;
     margin-left: 2em;
     
 }
+*/
 
 .cell{
-    background-color: azure;
+/*    background-color: azure;*/
 }
 
 
 .step {
 /*    background-color: purple;*/
-    padding: 0;
+/*    padding: 0;*/
     
 /*
     margin-top: 0;
@@ -160,9 +190,11 @@ svg {
 */
 }
 
+/*
 .explanation {
-/*    background-color: darksalmon;*/
+    background-color: darksalmon;
 }
+*/
 
 
 .ttip {
@@ -186,6 +218,7 @@ svg {
     visibility: hidden;
 }
 
+/*
 .topic {
 
     position: absolute;
@@ -198,6 +231,7 @@ svg {
 #quotes-main {
 position:relative;
 }
+*/
 
 /*
 @media screen and (max-width: 15em){
@@ -207,14 +241,19 @@ position:relative;
 }
 */
 
+/*
 @media screen and (max-width: 35em){
     .ttip{
         font-size: 3vw;
     }
 }
+*/
 
+/*
 @media screen and (max-width: 55em){
     .ttip{
         font-size: 2vw;
     }
-}
+}*/
+
+

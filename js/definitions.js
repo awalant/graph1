@@ -53,6 +53,10 @@ var width =
     document.body.clientWidth;
 
 
+var currentWidth = parseInt(d3.select("#map1").style("width"), 10);
+
+
+
 var height = 
 //width/3.236;
     window.innerHeight ||
@@ -88,7 +92,8 @@ var barwidth = 40;
 var projection = d3.geoAlbersUsa()
     .scale([w / 1.35])
 //    .translate([w / 3, h / 2]);
-.translate([w2/2 - (legendWidth*2), h/2]);
+//.translate([w2/2 - (legendWidth*2), h/2]);
+ .translate([w2 / 2.8, h / 1.6]);
 
 var colorScale = [nothing, colorMid, colorPos];
 
