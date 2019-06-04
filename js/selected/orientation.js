@@ -91,7 +91,39 @@ d3.select("#sexOr")
                         }
                     })
             });
+            //        https://stackoverflow.com/questions/28874957/how-to-update-overwrite-map-and-legend-content-using-d3
+            d3.select("#legend4").selectAll("p").remove();
+            d3.select("#legend4").selectAll("li").remove();
+            legend4.append("p")
+                .attr("class", "legendTitle")
+                .text("Sexual orientation");
 
+            var keysMap4e = ["Sexual orientation covered with a negative slant", "Sexual orientation not covered", "Sexual orientation covered with a positive slant"];
+
+            var colorMap4e = d3
+                .scaleOrdinal()
+                .domain(keysMap4e)
+                .range([colorNeg, nothing, colorPos]);
+
+            var keys4e = legend4.selectAll("li-key").data(colorMap4e);
+
+            //            legend4.append("ul").attr("class", "list-inline");
+            //
+            //
+            keys4e
+                .data(colorMap4e.range())
+                .enter()
+                .append("li")
+                .attr("class", "key")
+                .style("border-top-color", String)
+                .data(colorMap4e.domain())
+                .text(function (d) {
+                    return d;
+                })
+                .data(colorMap4e.range())
+                .style("color", function (d) {
+                    return d
+                });
 
         });
     });

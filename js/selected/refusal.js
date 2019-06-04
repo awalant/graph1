@@ -36,13 +36,13 @@ d3.select("#refSkills")
                 var states = svg4.selectAll("path")
                     .data(json.features)
                     .attr("d", path)
-                   .style("stroke", "lightgrey")
+                    .style("stroke", "lightgrey")
                     .style("stroke-width", .75)
                     .on("mousemove", function (d) {
                         var value;
                         if (d.properties.value === 1) {
                             value = " teaches refusal skills"; //whatever goes in if true
-                        } else if (d.properties.value === 0){
+                        } else if (d.properties.value === 0) {
                             value = " does not teach refusal skills";
                         } else {
                             value = " does not have corrosponding data";
@@ -55,7 +55,7 @@ d3.select("#refSkills")
                         tooltip.innerHTML = label;
                         tooltip.style.top = top;
                         tooltip.style.left = left;
-//                        console.log("I AM IN TOOLTIPS");
+                        //                        console.log("I AM IN TOOLTIPS");
                     })
                     .on("mouseover", function (d) {
                         d3.select("#tooltip-1")
@@ -87,7 +87,40 @@ d3.select("#refSkills")
                         }
                     });
             });
+            //        https://stackoverflow.com/questions/28874957/how-to-update-overwrite-map-and-legend-content-using-d3
+            d3.select("#legend4").selectAll("p").remove();
+            d3.select("#legend4").selectAll("li").remove();
 
+            legend4.append("p")
+                .attr("class", "legendTitle")
+                .text("Learning to say 'no'");
+
+            var keysMap4d = ["No refusal skills taught", "Refusal skills taught"];
+
+            var colorMap4d = d3
+                .scaleOrdinal()
+                .domain(keysMap4d)
+                .range([nothing, colorPos]);
+
+            var keys4d = legend4.selectAll("li-key").data(colorMap4d);
+
+            //            legend4.append("ul").attr("class", "list-inline");
+            //
+            //
+            keys4d
+                .data(colorMap4d.range())
+                .enter()
+                .append("li")
+                .attr("class", "key")
+                .style("border-top-color", String)
+                .data(colorMap4d.domain())
+                .text(function (d) {
+                    return d;
+                })
+                .data(colorMap4d.range())
+                .style("color", function (d) {
+                    return d
+                });
 
         });
     });

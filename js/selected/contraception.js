@@ -42,7 +42,7 @@ d3.select("#contraception")
                         var value;
                         if (d.properties.value === 1) {
                             value = " mandates that schools cover contraception"; //whatever goes in if true
-                        } else if (d.properties.value === 0){
+                        } else if (d.properties.value === 0) {
                             value = " does not mandate that schools cover contraception";
                         } else {
                             value = " does not have corrosponding data";
@@ -55,7 +55,7 @@ d3.select("#contraception")
                         tooltip.innerHTML = label;
                         tooltip.style.top = top;
                         tooltip.style.left = left;
-//                        console.log("I AM IN TOOLTIPS");
+                        //                        console.log("I AM IN TOOLTIPS");
                     })
                     .on("mouseover", function (d) {
                         d3.select("#tooltip-1")
@@ -67,7 +67,7 @@ d3.select("#contraception")
                         d3.select("#tooltip-1")
                             .classed("hidden", true);
                     });
-               
+
 
 
                 states.transition()
@@ -84,6 +84,71 @@ d3.select("#contraception")
                     });
             });
 
+            //            https://stackoverflow.com/questions/28874957/how-to-update-overwrite-map-and-legend-content-using-d3
+            //            d3.select("#legend4").selectAll("ul").remove();
+            d3.select("#legend4").selectAll("p").remove();
+            d3.select("#legend4").selectAll("li").remove();
+
+            legend4.append("p")
+                .attr("class", "legendTitle")
+                .text("Coverage of contraceptions");
+
+
+            var keysMap4a = ["No mandatory coverage of contraceptive options", "Mandatory coverage of contraceptive options"];
+
+            var colorMap4a = d3
+                .scaleOrdinal()
+                .domain(keysMap4a)
+                .range([nothing, colorPos]);
+
+            var keys4a = legend4.selectAll("li-key").data(colorMap4a);
+
+            //            legend4.append("ul").attr("class", "list-inline");
+            //
+            //
+            keys4a
+                .data(colorMap4a.range())
+                .enter()
+                .append("li")
+                .attr("class", "key")
+                .style("border-top-color", String)
+                .data(colorMap4a.domain())
+                .text(function (d) {
+                    return d;
+                })
+                .data(colorMap4a.range())
+                .style("color", function (d) {
+                    return d
+                });
 
         });
+
+
     });
+
+
+//
+//        keysMap4 = [
+//        "No mandatory coverage of contraceptive options", "Mandatory coverage of contraceptive options"
+//    ];
+//
+//
+//        keys4
+//            .data(colorMap4.range())
+//            .enter()
+//            .append("li")
+//            .attr("class", "key")
+//            .style("border-top-color", String)
+//            //      function(d) {
+//            // return d;
+//            // })
+//            .data(colorMap4.domain())
+//            .text(function (d) {
+//                return d;
+//            })
+//            .data(colorMap4.range())
+//            .style("color", function (d) {
+//                return d
+//            });
+
+//    });

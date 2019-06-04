@@ -87,7 +87,40 @@ d3.select("#hivMand")
                         }
                     });
             });
+            //        https://stackoverflow.com/questions/28874957/how-to-update-overwrite-map-and-legend-content-using-d3
+            d3.select("#legend4").selectAll("p").remove();
+            d3.select("#legend4").selectAll("li").remove();
 
+            legend4.append("p")
+                .attr("class", "legendTitle")
+                .text("HIV education");
+
+            var keysMap4c = ["No HIV material mandated", "HIV material mandated"];
+
+            var colorMap4c = d3
+                .scaleOrdinal()
+                .domain(keysMap4c)
+                .range([nothing, colorPos]);
+
+            var keys4c = legend4.selectAll("li-key").data(colorMap4c);
+
+            //            legend4.append("ul").attr("class", "list-inline");
+            //
+            //
+            keys4c
+                .data(colorMap4c.range())
+                .enter()
+                .append("li")
+                .attr("class", "key")
+                .style("border-top-color", String)
+                .data(colorMap4c.domain())
+                .text(function (d) {
+                    return d;
+                })
+                .data(colorMap4c.range())
+                .style("color", function (d) {
+                    return d
+                });
 
         });
     });

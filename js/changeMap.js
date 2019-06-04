@@ -1,3 +1,5 @@
+var svg4 = d3.select("#map4");
+
 dataset = d3.csv("csv/states_pt1.csv", translateCellsCsv1, function (data) {
 
     console.log(data);
@@ -13,7 +15,7 @@ dataset = d3.csv("csv/states_pt1.csv", translateCellsCsv1, function (data) {
             //this parses the data from the column sex_ed_mandated into a number, then stores it in the variable dataNumber to later be assigned a value to determine the color
 
 
-            var dataNumber = parseFloat(data[i].hiv_ed_mandated);
+            var dataNumber = parseFloat(data[i].anti_religion);
 
             //This goes through the features of the json object 
             for (var j = 0; j < json.features.length; j++) {
@@ -37,7 +39,6 @@ dataset = d3.csv("csv/states_pt1.csv", translateCellsCsv1, function (data) {
             .attr("d", path)
             .style("fill", function (d) {
                 var value = d.properties.value;
-
                 if (value >= 0) {
                     return color(value);
                 } else {
@@ -46,13 +47,12 @@ dataset = d3.csv("csv/states_pt1.csv", translateCellsCsv1, function (data) {
             })
             .style("stroke", "lightgrey")
             .style("stroke-width", .75)
-
             .on("mousemove", function (d) {
                 var value;
                 if (d.properties.value === 1) {
-                    value = " covers HIV education"; //whatever goes in if true
+                    value = " has rules in place to block religious influence on sex education lessons"; //whatever goes in if true
                 } else if (d.properties.value === 0) {
-                    value = " does not cover HIV education";
+                    value = " does not have rules in place to block religious influence on sex education lessons";
                 } else {
                     value = " does not have corrosponding data";
                 }
@@ -77,22 +77,54 @@ dataset = d3.csv("csv/states_pt1.csv", translateCellsCsv1, function (data) {
                     .classed("hidden", true);
             });
 
+
+
     });
-
-
 });
 
 
-//});
+
+
+//var keysMap4 = ["No mandated HIV education", "Has mandated HIV education"];
+//
+//var colorMap4 = d3
+//    .scaleOrdinal()
+//    .domain(keysMap4)
+//    .range([nothing, colorPos]);
+//
+//
+//
+////legend4
+//var legend4 = d3.select("#legend4");
+//
+//var keys4 = legend4.selectAll("li-key").data(colorMap4);
+//
+//legend4.append("ul").attr("class", "list-inline");
+//
+//keys4
+//    .data(colorMap4.range())
+//    .enter()
+//    .append("li")
+//    .attr("class", "key")
+//    .style("border-top-color", String)
+//    //      function(d) {
+//    // return d;
+//    // })
+//    .data(colorMap4.domain())
+//    .text(function (d) {
+//        return d;
+//    })
+//    .data(colorMap4.range())
+//    .style("color", function (d) {
+//        return d
+//    });
+
 
 //Define path generator
 var path = d3.geoPath(projection);
 
 //Create SVG element
-var svg4 = d3.select("#map4")
-    .append("svg")
-    .attr("width", w2)
-    .attr("height", h);
+
 //    .append("text")
 //    .attr("x", (w / 2))
 //    .attr("y", 0 - (h / 10))

@@ -37,7 +37,7 @@ dataset = d3.csv("csv/states_pt1.csv", translateCellsCsv1, function (data) {
                 var value = d.properties.value;
 
                 if (value >= 0) {
-                    return colorRev(value);
+                    return colorRev2(value);
                 } else {
                     return nothing;
                 }
@@ -54,7 +54,7 @@ dataset = d3.csv("csv/states_pt1.csv", translateCellsCsv1, function (data) {
                 } else if (d.properties.value == .5) {
                     value = " allows parents to pull their children out of HIV ed related classes";
                 } else {
-                    value = " does not have corrosponding data";
+                    value = " allows parents to pull their children out of sex ed related classes";
                 }
                 //           
                 var label = d.properties.name + value;

@@ -99,6 +99,8 @@ var colorScale = [nothing, colorMid, colorPos];
 
 var reverseColorScale = [colorPos, colorMid, colorNeg];
 
+var reverseColorScale2 = [colorPos, colorMid, nothing];
+
 //        Uses a quantize scale to take the value of the data and make it one of the two colors listed. By making this function its own variable, I can call it later within the function where I bind the data.
 
 var color = d3.scaleQuantize()
@@ -106,5 +108,8 @@ var color = d3.scaleQuantize()
 
 var colorRev = d3.scaleQuantize()
     .range(reverseColorScale);
+
+var colorRev2 = d3.scaleQuantize()
+    .range(reverseColorScale2);
 
 

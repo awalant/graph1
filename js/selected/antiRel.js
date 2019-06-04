@@ -42,7 +42,7 @@ d3.select("#antiRel")
                         var value;
                         if (d.properties.value === 1) {
                             value = " has rules in place to block religious influence on sex education lessons"; //whatever goes in if true
-                        } else if (d.properties.value === 0){
+                        } else if (d.properties.value === 0) {
                             value = " does not have rules in place to block religious influence on sex education lessons";
                         } else {
                             value = " does not have corrosponding data";
@@ -55,7 +55,7 @@ d3.select("#antiRel")
                         tooltip.innerHTML = label;
                         tooltip.style.top = top;
                         tooltip.style.left = left;
-//                        console.log("I AM IN TOOLTIPS");
+                        //                        console.log("I AM IN TOOLTIPS");
                     })
                     .on("mouseover", function (d) {
                         d3.select("#tooltip-1")
@@ -72,8 +72,8 @@ d3.select("#antiRel")
                 //                return d.properties.name;
                 //            });
                 //            .on("mouseout", tip.hide);
-                
-                
+
+
                 states.transition()
                     .duration(800)
                     .style("fill", function (d) {
@@ -86,7 +86,40 @@ d3.select("#antiRel")
                         }
                     });
             });
+            //            https://stackoverflow.com/questions/28874957/how-to-update-overwrite-map-and-legend-content-using-d3
+            d3.select("#legend4").selectAll("p").remove();
+            d3.select("#legend4").selectAll("li").remove();
 
+            legend4.append("p")
+                .attr("class", "legendTitle")
+                .text("Religious rules regarding sex education");
+
+            var keysMap4b = ["No rules about religion in sex ed", "Does not allow religious bias in sex ed"];
+
+            var colorMap4b = d3
+                .scaleOrdinal()
+                .domain(keysMap4b)
+                .range([nothing, colorPos]);
+
+            var keys4b = legend4.selectAll("li-key").data(colorMap4b);
+
+            //            legend4.append("ul").attr("class", "list-inline");
+            //
+            //
+            keys4b
+                .data(colorMap4b.range())
+                .enter()
+                .append("li")
+                .attr("class", "key")
+                .style("border-top-color", String)
+                .data(colorMap4b.domain())
+                .text(function (d) {
+                    return d;
+                })
+                .data(colorMap4b.range())
+                .style("color", function (d) {
+                    return d
+                });
 
         });
     });
