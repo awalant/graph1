@@ -1,11 +1,10 @@
 //following code heavily adapted from https://codepen.io/iamraviteja/pen/bOragL
 
 
-
-//this data comes from a national survey done by The Washington Post and the Kaiser Foundation
+ //this data comes from a national survey done by The Washington Post and the Kaiser Foundation
 //The data is in the form of an array of objects, where the values are grouped by the subject.
 
-var data = [
+var dataMap6 = [
     {
         topic: "incapacitated",
         yes: 96,
@@ -30,19 +29,19 @@ var data = [
 ];
 
 //I believe that this filters through the data (using k) and takes anything that isn't a topic and stores it in an array. This collects the different types of results that can be displayed.
-var keys = Object.keys(data[0]).filter(k => k !== "topic");
-
-console.log(keys);
+var keysMap6 = Object.keys(dataMap6[0]).filter(k => k !== "topic");
 
 
-//select the div with the id consentChart and append an svg to it, then give it the attributes of the width plus the margins and the height plus the margins, then append a group and move the whole thing over by the margins.
+////select the div with the id consentChart and append an svg to it, then give it the attributes of the width plus the margins and the height plus the margins, then append a group and move the whole thing over by the margins.
 var graph = d3
-    .select("#sexAssltChart")
-    //    .append("svg")
-    .attr("width", widthGraph + margin.left + margin.right + legendWidth*4)
-    .attr("height", heightGraph + margin.top + margin.bottom)
-    .append("g")
-    .attr("transform", "translate(" + margin.left + "," + margin.top + ")");
+    .select("#sexAssltChart");
+//    //    .append("svg")
+////    .attr("width", widthGraph + margin.left + margin.right + legendWidth*4)
+//    .attr("width", w)
+////    .attr("height", heightGraph + margin.top + margin.bottom)
+//    .attr("height", h)
+//    .append("g")
+//    .attr("transform", "translate(" + margin.left + "," + margin.top + ")");
 
 //SCALES
 
@@ -50,7 +49,7 @@ var graph = d3
 var x = d3
     .scaleBand()
     .domain(
-        data.map(function (d) {
+        dataMap6.map(function (d) {
             return d.topic;
         })
     )
@@ -85,19 +84,19 @@ var yAxis = d3.axisLeft(y)
 
 
 //give z the domain created from the variable keys
-z.domain(keys);
+z.domain(keysMap6);
 
 
 //Variable stack is the result of some d3 method chaining, using stack() to stack the information, keys to gather the different categories, and says not to keep it in any particular order and with no offsetting.
 var stack = d3
     .stack()
-    .keys(keys)
+    .keys(keysMap6)
     .order(d3.stackOrderNone)
     .offset(d3.stackOffsetNone);
 
 
 //Variable layers takes stack and inserts the argument data, creating an array where the values are determined by the values of the topic underneath it.
-var layers = stack(data);
+var layers = stack(dataMap6);
 
 console.log(layers);
 
@@ -163,7 +162,7 @@ layer
         return x(d.data.topic) + x.bandwidth() / 2 - 20;
     })
     .attr("height", function (d) {
-        return heightGraph - 20;
+        return h - 20;
     })
     .attr("width", 40);
 
@@ -218,19 +217,19 @@ layer
 //        return d.keys;
 //    }]);
 
-graph.append("g")
-    .attr("class", "legendOrdinal")
-    .attr("transform", "translate(" + (widthGraph + legendWidth) + "," + (heightGraph - legendHeight*2) + ")" );
-
-var legendOrdinal = d3.legendColor()
-    .shapeWidth(shapeWidth)
-    .cells(4)
-    .shapePadding(shapePadding)
-    .orient("vertical")
-    .scale(z);
-
-graph.select(".legendOrdinal")
-    .call(legendOrdinal);
+//graph.append("g")
+//    .attr("class", "legendOrdinal")
+//    .attr("transform", "translate(" + (w + legendWidth) + "," + (h - legendHeight*2) + ")" );
+//
+//var legendOrdinal = d3.legendColor()
+//    .shapeWidth(shapeWidth)
+//    .cells(4)
+//    .shapePadding(shapePadding)
+//    .orient("vertical")
+//    .scale(z);
+//
+//graph.select(".legendOrdinal")
+//    .call(legendOrdinal);
 
 
 

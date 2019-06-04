@@ -48,12 +48,12 @@ console.log(keys);
 
 //select the div with the id consentChart and append an svg to it, then give it the attributes of the width plus the margins and the height plus the margins, then append a group and move the whole thing over by the margins.
 var graph = d3
-    .select("#consentChart")
-    .append("svg")
-    .attr("width", widthGraph + margin.left + margin.right + legendWidth*4)
-    .attr("height", heightGraph + margin.top + margin.bottom)
-    .append("g")
-    .attr("transform", "translate(" + margin.left + "," + margin.top + ")");
+    .select("#consentChart");
+//    .append("svg")
+//    .attr("width", w)
+//    .attr("height", heightGraph - margin.bottom)
+//    .append("g")
+//    .attr("transform", "translate(" + margin.left + "," + margin.top + ")");
 
 //SCALES
 
@@ -171,7 +171,7 @@ layer
         return x(d.data.topic) + x.bandwidth() / 2 - 20;
     })
     .attr("height", function (d) {
-        return heightGraph;
+        return h;
     })
     .attr("width", 40);
 
@@ -224,16 +224,16 @@ layer
     });
 
 
-graph.append("g")
-    .attr("class", "legendOrdinal")
-    .attr("transform", "translate(" + (widthGraph + legendWidth) + "," + (heightGraph - legendHeight*2) + ")" );
-
-var legendOrdinal = d3.legendColor()
-    .shapeWidth(shapeWidth)
-    .cells(4)
-    .shapePadding(shapePadding)
-    .orient("vertical")
-    .scale(z);
-
-graph.select(".legendOrdinal")
-    .call(legendOrdinal);
+//graph.append("g")
+//    .attr("class", "legendOrdinal")
+//    .attr("transform", "translate(" + (widthGraph + legendWidth) + "," + (heightGraph - legendHeight*2) + ")" );
+//
+//var legendOrdinal = d3.legendColor()
+//    .shapeWidth(shapeWidth)
+//    .cells(4)
+//    .shapePadding(shapePadding)
+//    .orient("vertical")
+//    .scale(z);
+//
+//graph.select(".legendOrdinal")
+//    .call(legendOrdinal);

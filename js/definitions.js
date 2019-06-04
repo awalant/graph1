@@ -53,7 +53,7 @@ var width =
     document.body.clientWidth;
 
 
-var currentWidth = parseInt(d3.select("#map1").style("width"), 10);
+var currentWidthMap = parseInt(d3.select("#map1").style("width"), 10);
 
 
 
@@ -63,16 +63,23 @@ var height =
     document.documentElement.clientHeight ||
     document.body.clientHeight;
 
-var shapeWidth = 40;
-var shapePadding = 15;
+var currentHeightMap = parseInt(d3.select("#map1").style("height"), 10);
+
+var shapeWidth = width * .1;
+var shapePadding = shapeWidth / 4;
 var legendHeight = shapePadding*6;
-var legendWidth = shapeWidth;
+var legendWidth = shapePadding;
 //Width and height
-var w = (width * .75) + (legendWidth*4);
-var h = height/1.75;
+var w = currentWidthMap;
+//var w= currentWidth;
+//console.log(w)
+//+ (legendWidth*4);
+//var w = 75vw;
+//var h = 50vh;
+var h = currentHeightMap;
 //var w = width;
 //var h = w;
-var w2 = w*.8;
+var w2 = w;
 
 
 //This establishes margins for the barchart.
@@ -83,17 +90,18 @@ var margin = {
     left: 80
 };
 
-var widthGraph = w2 - margin.left - margin.right - (legendWidth*4);
-var heightGraph = h - margin.top - margin.bottom;
-var barwidth = 40;
+var widthGraph = currentWidthMap - margin.left - margin.right;
+var heightGraph = currentHeightMap - margin.bottom - margin.top;
+//var barwidth = shapeWidth;
 
 
 //Define map projection
 var projection = d3.geoAlbersUsa()
-    .scale([w / 1.35])
+    .scale([currentWidthMap])
 //    .translate([w / 3, h / 2]);
 //.translate([w2/2 - (legendWidth*2), h/2]);
- .translate([w2 / 2.8, h / 1.6]);
+// .translate([w/3.5, h/1.5 - margin.bottom]);
+.translate([widthGraph/2, heightGraph/2]);
 
 var colorScale = [nothing, colorMid, colorPos];
 

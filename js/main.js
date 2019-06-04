@@ -3,10 +3,33 @@
 
 //width, heigh, translate and scale all derived from playing with this block http://bl.ocks.org/radiocontrolled/7698088
 function drawChart() {
-    //  var currentWidth = parseInt(d3.select("#legend1").style("width"), 10);
+      currentWidthMap = parseInt(d3.select("#map1").style("width"), 10);
+    
+    
+    currentHeightMap = parseInt(d3.select("#map1").style("height"), 10);
+    
+    widthGraph = currentWidthMap - margin.left - margin.right;
+    heightGraph = currentHeightMap - margin.bottom - margin.top;
+    
+    projection = d3.geoAlbersUsa()
+    .scale([currentWidthMap])
+    .translate([widthGraph/2, heightGraph/2]);
+    
+    var path = d3.geoPath(projection);
+    
+    
+    d3.selectAll("path")
+        .enter()
+        .append("path")
+        .attr("d", path);
 
-    //  svg1.attr("width", currentWidth);
+
+
+//     d3.selectAll("svg")
+//         .attr("width", currentWidthMap)
+//        .attr("height", currentHeightMap);
     console.log("in draw chart");
+    
 }
 
 drawChart();

@@ -4,6 +4,7 @@ var legend3 = d3.select("#legend3");
 //var legend4 = d3.select("#legend4");
 var legend5 = d3.select("#legend5");
 var legend6 = d3.select("#legend6");
+var legend7 = d3.select("#legend7");
 
 //legend1 variables
 var keysMap1 = ["No mandated sex ed", "Has mandated sex ed"];
@@ -174,6 +175,119 @@ keys4
     .style("color", function (d) {
         return d
     });
+
+
+
+
+//sexual assault chart, legend 6
+
+var keysMap6= ["yes", "no", "unclear", "no opinion"];
+
+
+var colorMap6 = d3
+    .scaleOrdinal()
+    .domain(keysMap6)
+    .range([colorNeg, colorPos, colorMid, "lightgrey"]);
+
+
+
+//legend6
+var legend6 = d3.select("#legend6");
+
+var keys6 = legend6.selectAll("li-key").data(colorMap6);
+
+//legend4.append("ul").attr("class", "list-inline");
+
+legend6.append("p")
+    .attr("class", "legendTitle")
+    .text("How college students define sexual assault");
+
+keys6
+    .data(colorMap6.range())
+    .enter()
+    .append("li")
+    .attr("class", "key")
+    .style("border-top-color", String)
+    //      function(d) {
+    // return d;
+    // })
+    .data(colorMap6.domain())
+    .text(function (d) {
+        return d;
+    })
+    .data(colorMap6.range())
+    .style("color", function (d) {
+        return d
+    });
+
+//consent chart, legend 7
+
+
+
+
+
+//legend7
+var legend7 = d3.select("#legend7");
+
+var keys7 = legend7.selectAll("li-key").data(colorMap6);
+
+
+//legend4.append("ul").attr("class", "list-inline");
+
+legend7.append("p")
+    .attr("class", "legendTitle")
+    .text("How college students define consent");
+
+keys7
+    .data(colorMap6.range())
+    .enter()
+    .append("li")
+    .attr("class", "key")
+    .style("border-top-color", String)
+    //      function(d) {
+    // return d;
+    // })
+    .data(colorMap6.domain())
+    .text(function (d) {
+        return d;
+    })
+    .data(colorMap6.range())
+    .style("color", function (d) {
+        return d
+    });
+
+
+
+
+//var ordinal = z
+//    .domain([function(d){
+//        return d.keys;
+//    }]);
+//
+//graph.append("g")
+//    .attr("class", "legendOrdinal")
+//    .attr("transform", "translate(" + (w + legendWidth) + "," + (h - legendHeight*2) + ")" );
+//
+//var legendOrdinal = d3.legendColor()
+//    .shapeWidth(shapeWidth)
+//    .cells(4)
+//    .shapePadding(shapePadding)
+//    .orient("vertical")
+//    .scale(z);
+//
+//graph.select(".legendOrdinal")
+//    .call(legendOrdinal);
+
+
+
+
+
+
+
+
+
+
+
 
 //when user selects antirel
 //d3.select("#antiRel")
