@@ -1,3 +1,34 @@
+html{
+    font-size: 1rem;
+}
+header{
+/*    height:70vh;*/
+/*    width: 100vw;*/
+    margin:0;
+    background-color: #f7b1ab;
+    color:#482728;
+    font-family: 'Bitter', serif;
+    font-size: 4em;
+    text-align: center;
+    padding:1em .5em 1em .5em;
+    
+}
+
+body{
+    background-color: #fbe4de;
+    color:#2f4858;
+    font-family: 'Lato', sans-serif;
+    padding:1em;
+}
+
+article{
+    padding:.5em;
+    text-indent: 2em;
+    line-height: 1.5em;
+/*    max-width: 50em;*/
+    font-size:1.05em;
+}
+
 .caption.hidden {
     visibility: hidden;
 }
@@ -34,8 +65,12 @@ g.layer ~ g.layer .bar-placeholder {
     font-size: 1em;
     border-radius: 2px;
     pointer-events: none;
-    font-size: 1.3vw;
+    font-size: .9em;
     width: fit-content;
+}
+
+b {
+    background-color: #c6cdd1;
 }
 
 .ttip.hidden {
@@ -48,8 +83,8 @@ g.layer ~ g.layer .bar-placeholder {
 
 .section {
     display: flex;
-    border-style: dashed;
-    border-width: 2px;
+/*    border-style: dashed;*/
+/*    border-width: 2px;*/
 }
 
 
@@ -57,7 +92,7 @@ g.layer ~ g.layer .bar-placeholder {
 svg {
     height: 75vh;
     width: 50vw;
-    background-color: lightblue;
+/*    background-color: lightblue;*/
     padding: 2vw;
 }
 
@@ -90,16 +125,40 @@ svg {
     
 }
 
+button{
+    background:#f4f5ff;
+    padding:1.25em;
+    border: .25em solid #d8dcff;
+    color: #2f4858;
+    text-transform: uppercase;
+    letter-spacing: .12em;
+    font-size: .5em;
+/*    margin-bottom: 1em;*/
+    
+}
+
+
+
 .buttons {
     display: flex;
     flex-direction: column;
     top:0;
+    background: transparent;
+    
+    
+    
+    
 /*    position: relative;*/
 
 }
 
-body {
-    margin: 0;
+button:hover{
+    background: #d8dcff;
+/*    color: #f4f5ff;*/
+}
+
+button:active{
+    border: .3em solid #482728;
 }
 
 li.key {
@@ -124,16 +183,28 @@ li{
 }
 */
 
-.topic{
-    background-color:burlywood;
-    position: absolute;
-/*    display: flex;*/
-    max-width: 50vw;
-    margin:auto;
-    max-height: 50vh;
+.topic.hidden{
+visibility: hidden;
    
     
 }
+
+.topic{
+    background-color: #f7b1ab;
+    position: absolute;
+/*    display: flex;*/
+    max-width: 45vw;
+    margin:auto;
+/*    margin-left: em;*/
+/*    margin-right: -2em;*/
+    max-height: 60vh;
+    color:#482728;
+    padding:2em;
+    font-size: 1.25em;
+    
+    
+}
+
 
 #quotes-main{
     height:50vh;
@@ -150,6 +221,6 @@ li{
 }
 
 #legend5{
-    height:50vh;
+    height:60vh;
 }
 

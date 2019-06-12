@@ -7,7 +7,7 @@ var quotesData =[
     "sexExp": "",
     "sexEdu": "",
     "lgbtq": "",
-    "improvements": ""
+    "active": "TRUE"
   },
   {
     "id": "current high school student",
@@ -17,7 +17,7 @@ var quotesData =[
     "sexExp": "",
     "sexEdu": "",
     "lgbtq": "",
-    "improvements": ""
+    "active": ""
   },
   {
     "id": "current high school student",
@@ -27,7 +27,7 @@ var quotesData =[
     "sexExp": "",
     "sexEdu": "",
     "lgbtq": "",
-    "improvements": ""
+    "active": ""
   },
   {
     "id": "current high school student",
@@ -37,7 +37,7 @@ var quotesData =[
     "sexExp": "",
     "sexEdu": "",
     "lgbtq": "",
-    "improvements": ""
+    "active": ""
   },
   {
     "id": "current high school student",
@@ -47,7 +47,7 @@ var quotesData =[
     "sexExp": "yes",
     "sexEdu": "",
     "lgbtq": "",
-    "improvements": ""
+    "active": ""
   },
   {
     "id": "current high school student",
@@ -57,7 +57,7 @@ var quotesData =[
     "sexExp": "yes",
     "sexEdu": "yes",
     "lgbtq": "",
-    "improvements": ""
+    "active": ""
   },
   {
     "id": "current high school student",
@@ -67,47 +67,47 @@ var quotesData =[
     "sexExp": "",
     "sexEdu": "yes",
     "lgbtq": "",
-    "improvements": ""
+    "active": ""
   },
   {
-    "id": "current middle school teacher",
+    "id": "graduated high school in the late oughts",
     "quote": "Some rumor went around about my friend, and that's how I found out what fingering was.",
     "consent": "",
     "sexAssault": "",
     "sexExp": "",
     "sexEdu": "yes",
     "lgbtq": "",
-    "improvements": ""
+    "active": ""
   },
   {
-    "id": "current middle school teacher",
+    "id": "graduated high school in the late oughts",
     "quote": "If you don't even know what to ask, your questions can't be answered.",
     "consent": "",
     "sexAssault": "",
     "sexExp": "",
     "sexEdu": "yes",
     "lgbtq": "",
-    "improvements": ""
+    "active": ""
   },
   {
-    "id": "current middle school teacher",
+    "id": "graduated high school in the late oughts",
     "quote": "When you don't even know what half of the actions are, or how things work, it makes it very scary when you try them! It wasn't sexy to me, it was intimidating. I felt like I fucked up everytime. And I think that's where you get a lot of that grey area of, \"was it consensual or not?\" because you don't exactly expect that thing to happen. Then you feel taken advantage of because a line was crossed, and you didn't know how to stop it because it was already happening.",
     "consent": "yes",
     "sexAssault": "",
     "sexExp": "yes",
     "sexEdu": "yes",
     "lgbtq": "",
-    "improvements": ""
+    "active": ""
   },
   {
-    "id": "current middle school teacher",
+    "id": "graduated high school in the late oughts",
     "quote": "When I was in school, we had \"health education\" in 8th grade and once in high school. Oral sex wasn't covered, and so I didn't even know that guys go down on girls.",
     "consent": "",
     "sexAssault": "",
     "sexExp": "",
     "sexEdu": "yes",
     "lgbtq": "",
-    "improvements": ""
+    "active": ""
   },
   {
     "id": "current middle school teacher",
@@ -117,37 +117,37 @@ var quotesData =[
     "sexExp": "",
     "sexEdu": "yes",
     "lgbtq": "",
-    "improvements": ""
+    "active": ""
   },
   {
-    "id": "former peer sex educator in college",
+    "id": "former college peer sex educator",
     "quote": "One of the most common responses we got would happen during our \"down there\" workshop. Sexually active adults would look at a diagram of the vulva and say, \"it has hair?!\" In most textbooks the vulva has no clitoris and no hair, so they have no idea what it naturally looks like.",
     "consent": "",
     "sexAssault": "",
     "sexExp": "",
     "sexEdu": "yes",
     "lgbtq": "",
-    "improvements": ""
+    "active": ""
   },
   {
-    "id": "former peer sex educator in college",
+    "id": "former college peer sex educator",
     "quote": "Often, students couldn't properly identify their experiences as being sexual assault because they weren't taught about it at all",
     "consent": "yes",
     "sexAssault": "yes",
     "sexExp": "yes",
     "sexEdu": "yes",
     "lgbtq": "",
-    "improvements": ""
+    "active": ""
   },
   {
-    "id": "former peer sex educator in college",
+    "id": "former college peer sex educator",
     "quote": "I've heard of so many different types of demonstrations for why to abstain: dirty socks, tape that's been reused, ultimately something that gets used and therefore gets dirty over time. When that's been ingrained in your brain for so long, you can't just unlearn that, especially with something so intimate.",
     "consent": "",
     "sexAssault": "",
     "sexExp": "",
     "sexEdu": "yes",
     "lgbtq": "",
-    "improvements": ""
+    "active": ""
   },
   {
     "id": "current college student",
@@ -157,17 +157,17 @@ var quotesData =[
     "sexExp": "",
     "sexEdu": "",
     "lgbtq": "",
-    "improvements": ""
+    "active": ""
   },
   {
     "id": "current college student",
-    "quote": "Due to not getting accurate information [in high school or prior], I was left on my own to figure out most things myself since my sexEdu was essentially watching the meaning of life video, which was just seeing a baby being born. We never went over STD prevention nor talked about the AIDs crisis which marginally affected those in the Queer community [of which I am a member]",
+    "quote": "Due to not getting accurate information [in high school or prior], I was left on my own to figure out most things myself since my sex education was essentially watching the meaning of life video, which was just seeing a baby being born. We never went over STD prevention nor talked about the AIDs crisis which marginally affected those in the Queer community [of which I am a member]",
     "consent": "",
     "sexAssault": "",
     "sexExp": "",
     "sexEdu": "yes",
     "lgbtq": "yes",
-    "improvements": ""
+    "active": ""
   },
   {
     "id": "current college student",
@@ -177,7 +177,7 @@ var quotesData =[
     "sexExp": "",
     "sexEdu": "yes",
     "lgbtq": "yes",
-    "improvements": ""
+    "active": ""
   },
   {
     "id": "current college student",
@@ -187,7 +187,7 @@ var quotesData =[
     "sexExp": "",
     "sexEdu": "yes",
     "lgbtq": "yes",
-    "improvements": ""
+    "active": ""
   },
   {
     "id": "recent college graduate",
@@ -197,7 +197,7 @@ var quotesData =[
     "sexExp": "",
     "sexEdu": "yes",
     "lgbtq": "",
-    "improvements": ""
+    "active": ""
   },
   {
     "id": "recent college graduate",
@@ -207,7 +207,7 @@ var quotesData =[
     "sexExp": "",
     "sexEdu": "yes",
     "lgbtq": "",
-    "improvements": ""
+    "active": ""
   },
   {
     "id": "current high school teacher",
@@ -217,7 +217,7 @@ var quotesData =[
     "sexExp": "",
     "sexEdu": "yes",
     "lgbtq": "",
-    "improvements": ""
+    "active": ""
   },
   {
     "id": "current high school teacher",
@@ -227,7 +227,7 @@ var quotesData =[
     "sexExp": "",
     "sexEdu": "yes",
     "lgbtq": "",
-    "improvements": ""
+    "active": ""
   },
   {
     "id": "current high school teacher",
@@ -237,7 +237,7 @@ var quotesData =[
     "sexExp": "",
     "sexEdu": "yes",
     "lgbtq": "",
-    "improvements": ""
+    "active": ""
   },
   {
     "id": "current high school teacher",
@@ -247,7 +247,7 @@ var quotesData =[
     "sexExp": "",
     "sexEdu": "yes",
     "lgbtq": "",
-    "improvements": ""
+    "active": ""
   },
   {
     "id": "current high school teacher",
@@ -257,46 +257,156 @@ var quotesData =[
     "sexExp": "",
     "sexEdu": "yes",
     "lgbtq": "",
-    "improvements": ""
+    "active": ""
   },
   {
-    "id": "current working professional",
+    "id": "graduated high school in the early twenty tens",
     "quote": "I don't remember sex ed very well to be honest. I know we did it in seventh grade, and there was definitely talk of condoms and birth-control but definitely no bananas as seen on TV. But what I do remember is that everything was centered around penetrative sex. With the penis near literally the center of the whole lesson. There is, of course, nothing wrong with that area of sexual education--it's incredibly important...But by [only focusing on penetrative sex] it doesn't include so many aspects of the conversation.",
     "consent": "",
     "sexAssault": "",
     "sexExp": "",
     "sexEdu": "yes",
     "lgbtq": "yes",
-    "improvements": ""
+    "active": ""
   },
   {
-    "id": "current working professional",
+    "id": "graduated high school in the early twenty tens",
     "quote": "The best education I had, whether in school or in life, came from conversations rooted in nuance and an exploration to understanding. I think sex ed needs to be much more of a conversation. It could be about bodies, understanding our bodies, understanding pleasure, and understanding that all of these arenas are super nuanced and connected. How do you do that while also presenting facts? If I had to take a stab at it (I am, of course, not a teacher) I would say present the “facts” but then immediately follow up with all the different ways that these facts can be true to different people. Because, in all likelihood, there is going to be a kid in a teacher's class... at some point who is for example, asexual and isn’t experiencing sexual feelings in the same way as their peers and doesn’t know how to communicate that.",
     "consent": "",
     "sexAssault": "",
     "sexExp": "",
     "sexEdu": "yes",
     "lgbtq": "yes",
-    "improvements": ""
+    "active": ""
   },
   {
-    "id": "current working professional",
+    "id": "graduated high school in the early twenty tens",
     "quote": "I think most importantly, by making the conversation be that \"sex\" is the umbrella term rather than an act could be the biggest game changer. By framing it this way, it allows for the possibility for students to see and understand all the facets that come with their sexuality and their desire and how that lives in context with their relationship to their bodies. A teacher could hopefully then have an easier time talking about all the different ways bodies can feel pleasure whether alone or with a partner (or partners) and all the ways they can be the most healthy in doing so. It then opens the context to students that sex is not just one act that happens with a body that is the “opposite” to theirs because bodies and gender and sexual acts and pleasure and sensuality are way more interesting and complex than the world tries to say they are!",
     "consent": "",
     "sexAssault": "",
     "sexExp": "",
     "sexEdu": "yes",
     "lgbtq": "yes",
-    "improvements": ""
+    "active": ""
   },
   {
-    "id": "",
-    "quote": "",
+    "id": "graduated high school in the early twenty tens",
+    "quote": "I asked my mom if they had to have sex each time they wanted to have me and my siblings, and she asked me if I thought they only had sex one time for each of us, or if in general they had sex thousands of times. I guessed only one for each of us, and she was like, “No, sweetie, when you’re with somebody you love and you both want to, sex is an expression of love, and you have sex not only to have a baby but because it feels good.” So, I was taught from a young age that sex is about respect, and pleasure.",
     "consent": "",
     "sexAssault": "",
     "sexExp": "",
+    "sexEdu": "yes",
+    "lgbtq": "",
+    "active": ""
+  },
+  {
+    "id": "graduated high school in the early twenty tens",
+    "quote": "I remember when I was a junior in high school and I was strongly considering having sex with my boyfriend. I felt like it was a conversation I wanted my mom to be a part of—I waited until she was driving so she couldn’t really look at me, and I said “I want to go on the pill, and I have several reasons”…She said, “Okay, go on the pill, but I want you to promise me two things: 1) You will use condoms because the pill doesn’t protect against STDs 2) I want you to make sure you have an orgasm before you have sex. A guy can put his penis in a fence and get off, and as soon as you let him put it inside you, he’ll be less likely to want to please you. So I want you to know what you’re looking for.” It seemed reasonable.",
+    "consent": "",
+    "sexAssault": "",
+    "sexExp": "yes",
+    "sexEdu": "yes",
+    "lgbtq": "",
+    "active": ""
+  },
+  {
+    "id": "graduated high school in the early twenty tens",
+    "quote": "Being able to talk about sex with my family in an open way has given me the distinct advantage of having really productive discussions in my relationships. I’ve felt more comfortable having conversations about sex with my boyfriends than any of my friends do—I don’t have shame about it. I very strongly believe, if you can’t talk about it, you shouldn’t be doing it.",
+    "consent": "",
+    "sexAssault": "",
+    "sexExp": "yes",
     "sexEdu": "",
     "lgbtq": "",
-    "improvements": ""
+    "active": ""
+  },
+  {
+    "id": "graduated high school in the early twenty tens",
+    "quote": "My mom always made a point to express to me that sex should be as good for the woman as it is for the man, but she didn’t help me understand the ways in which I could contribute to [our] pleasure. I almost expected that it was the job of the man to make the sex good, and I didn’t recognize that I, too, could contribute to how good it is. It wasn’t until I talked to a guy friend of mine in college about his sex life that I realized I could be an active participant. I was always engaged in [my sexual encounters], but I didn’t acknowledge that I had control beyond my consent.",
+    "consent": "yes",
+    "sexAssault": "",
+    "sexExp": "yes",
+    "sexEdu": "yes",
+    "lgbtq": "",
+    "active": ""
+  },
+  {
+    "id": "practicing psychoterapist",
+    "quote": "What we learned in high school is that ‘“no” means no,’ and there’s so much wrong with that. It’s true, that’s a piece of it, but also coercion means “no,” someone’s drunk means “no,” someone’s drugged means “no,” someone says “yes” and then says “no” means “no”… none of that was ever covered, and I think that does a big disservice because kids don’t learn what consent means, and when they try to assert those boundaries they get pushed over. Even in session with my clients, marital rape is a discussion that comes up—just because you’re married doesn’t mean you owe your partner anything, and that wasn’t even on our radar in school.",
+    "consent": "yes",
+    "sexAssault": "yes",
+    "sexExp": "",
+    "sexEdu": "yes",
+    "lgbtq": "",
+    "active": ""
+  },
+  {
+    "id": "graduated high school in the late oughts",
+    "quote": "My self education on the topics we missed in school started in college. I took an LGTBQ course where they talked about healthy sex a lot more, and I think I started to surround myself with peers who were much more informed than I was, and very helpful in educating me. And, I mean, I learned a lot from Tumblr—people try to invalidate it a lot, but there were many educated, eloquent people who would list out for you, “Here’s when you know a person is consenting to sex: they agree happily.” and so on.",
+    "consent": "yes",
+    "sexAssault": "",
+    "sexExp": "",
+    "sexEdu": "yes",
+    "lgbtq": "yes",
+    "active": ""
+  },
+  {
+    "id": "graduated high school in the late oughts",
+    "quote": "When I was in high school I appreciated the formal sex education I received, and when I was in college I appreciated it even more. Although we didn’t talk about sex at home, the education in school made the topic feel less taboo. [The classes over the years] made it known to me that [sex] is a part of the human experience and it is okay to talk about these things. In college I met a lot of people who hadn’t had sex ed at all, and abstinence was for the most part what people were taught, so it made me so grateful for the education I did receive because I am much further ahead in my sexual development than my peers who didn’t have it.",
+    "consent": "",
+    "sexAssault": "",
+    "sexExp": "",
+    "sexEdu": "yes",
+    "lgbtq": "",
+    "active": ""
+  },
+  {
+    "id": "graduated high school in the late oughts",
+    "quote": "I would have liked for queer sex to have been covered at the same time as heterosexual sex, because it would have normalized it. Many of my queer friends and I have noticed that there’s a “double puberty” that we go through, or a delayed sexual development because we’re closeted for so long. Then we finally get to college and act like we’re a thirteen year old figuring out what sex is for the first time. If it was just taught as “human sexuality,” I think it would a) normalize all types of sexuality and b) would have helped me to feel less like an outsider.",
+    "consent": "",
+    "sexAssault": "",
+    "sexExp": "",
+    "sexEdu": "yes",
+    "lgbtq": "yes",
+    "active": ""
+  },
+  {
+    "id": "current high school teacher",
+    "quote": "There is NO sex education course taught at the high school level at my school and I am unaware of what the sex ed classes are (if any) at the elementary/middle school level. In my school they teach health, and within that touch upon STDs, but they definitely don’t have a full curriculum. I cannot say that they actually have a true understanding of 1. What they are 2. How they spread 3. How to protect themselves against it. We had a mini epidemic in my district where the students were very sick… [Author’s note: this teacher works in a state with mandated sex education]",
+    "consent": "",
+    "sexAssault": "",
+    "sexExp": "",
+    "sexEdu": "yes",
+    "lgbtq": "",
+    "active": ""
+  },
+  {
+    "id": "current high school teacher",
+    "quote": "I believe that those that want to prevent pregnancy and do not fall into the category of  accepting teen pregnancy as the norm are often left to figure it out on their own, which can be dangerous. Even though teen pregnancy is accepted, we have had quite a few girls who just end up pregnant and seem confused.",
+    "consent": "",
+    "sexAssault": "",
+    "sexExp": "",
+    "sexEdu": "yes",
+    "lgbtq": "",
+    "active": ""
+  },
+  {
+    "id": "current high school teacher",
+    "quote": "I once had a girl come to me and tell me she thought she was pregnant, but she said she was lesbian so she “couldn’t be.” We literally had to break it down that since she had slept with her girlfriend’s ex-boyfriend that YES, in fact, just because you label yourself a lesbian does NOT protect you from sperm!",
+    "consent": "",
+    "sexAssault": "",
+    "sexExp": "",
+    "sexEdu": "yes",
+    "lgbtq": "yes",
+    "active": ""
+  },
+  {
+    "id": "current high school teacher",
+    "quote": "I believe the issue is that my students aren’t given any information at all! They learn from each other and from TV, etc., possibly from church or their families. I do not believe they realize they are lacking information. I will say that my students are VERY open about sex. It comes up a lot. Virginity is not shamed, in fact some kids pride themselves on it. Those that are active talk about it … It is just expected. However, I think we are in a weird spot where there is some sex positive talk happening but also a double standard [in how the guys are treated for their sexual behavior vs. the girls].",
+    "consent": "",
+    "sexAssault": "",
+    "sexExp": "",
+    "sexEdu": "yes",
+    "lgbtq": "",
+    "active": ""
   }
 ];

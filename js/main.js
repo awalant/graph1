@@ -125,7 +125,7 @@ function handleStepEnter(response) {
 scroller
     .setup({
         step: ".step",
-        debug: true,
+//        debug: true,
         offset: 0.35
     })
     .onStepEnter(handleStepEnter);
