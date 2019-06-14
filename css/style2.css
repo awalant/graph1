@@ -1,32 +1,33 @@
-html{
+html {
     font-size: 1rem;
 }
-header{
-/*    height:70vh;*/
-/*    width: 100vw;*/
-    margin:0;
+
+header {
+    /*    height:70vh;*/
+    /*    width: 100vw;*/
+    margin: 0;
     background-color: #f7b1ab;
-    color:#482728;
+    color: #482728;
     font-family: 'Bitter', serif;
     font-size: 4em;
     text-align: center;
-    padding:1em .5em 1em .5em;
-    
+    padding: 1em .5em 1em .5em;
+
 }
 
-body{
+body {
     background-color: #fbe4de;
-    color:#2f4858;
+    color: #2f4858;
     font-family: 'Lato', sans-serif;
-    padding:1em;
+    padding: 1em;
 }
 
-article{
-    padding:.5em;
+article {
+    padding: .5em;
     text-indent: 2em;
     line-height: 1.5em;
-/*    max-width: 50em;*/
-    font-size:1.05em;
+    /*    max-width: 50em;*/
+    font-size: 1.05em;
     max-width: 45em;
     margin: auto;
 }
@@ -40,12 +41,13 @@ article{
     text-indent: 2em;
 }
 
-h3{
+h3 {
     text-indent: 0;
 
 }
-#noIndent{
-    text-indent:0;
+
+#noIndent {
+    text-indent: 0;
 }
 
 
@@ -55,9 +57,9 @@ b {
 
 .section {
     display: flex;
-/*    flex-direction: column;*/
-/*    border-style: dashed;*/
-/*    border-width: 2px;*/
+    /*    flex-direction: column;*/
+    /*    border-style: dashed;*/
+    /*    border-width: 2px;*/
 }
 
 
@@ -110,7 +112,7 @@ g.layer ~ g.layer .bar-placeholder {
 svg {
     height: 75vh;
     width: 50vw;
-/*    background-color: lightblue;*/
+    /*    background-color: lightblue;*/
     padding: 2vw;
 }
 
@@ -119,58 +121,66 @@ svg {
 
 
 .legend.container {
-/*    background-color: ;*/
+    /*    background-color: ;*/
     height: 75vh;
     width: 15vw;
     padding: 2vw;
-/*    top:35vw;*/
+    /*    top:35vw;*/
     display: flex;
     flex-wrap: wrap;
-/*    flex-direction: column;*/
-    align-items: center;
+    /*    flex-direction: column;*/
+    align-items: flex-start;
     justify-content: center;
-/*    background-color: aqua;*/
-/*    align-items: stretch;*/
-/*    align-content: center;*/
-/*    justify-content: center;*/
+    /*    background-color: aqua;*/
+    /*    align-items: stretch;*/
+    /*    align-content: center;*/
+    /*    justify-content: center;*/
 }
 
-#quotes-main{
-    height:75vh;
-    width:50vw;
+#quotes-main {
+    height: 60vh;
+    width: 50vw;
     padding: 2vw;
     display: flex;
     justify-content: center;
     align-items: center;
-    
+
 }
 
-.legend.ary{
+.legend.ary {
     background-color: #f7b1ab;
     display: flex;
     flex-direction: column;
-        align-content: center;
-    padding:2vh;
+    align-content: center;
+    padding: 2vh;
     margin-top: 5vh;
+    width: 15vw;
     color: #482728;
     text-align: center;
-/*        justify-content: center;*/
-    
+    /*        justify-content: center;*/
+
 }
 
-button{
-    background:#f4f5ff;
-    padding:1.25em;
+button {
+    background: #f4f5ff;
+    padding: 1.25em;
     border: .25em solid #d8dcff;
     color: #2f4858;
     text-transform: uppercase;
     letter-spacing: .12em;
     font-size: .5em;
-/*    margin-bottom: 1em;*/
-    
+    /*    margin-bottom: 1em;*/
+
 }
 
-.details{
+
+/*https://stackoverflow.com/questions/20340138/remove-blue-border-from-css-custom-styled-button-in-chrome*/
+button:focus {
+    outline: 0;
+    background: #d8dcff;
+}
+
+.details {
     text-transform: uppercase;
     letter-spacing: .12em;
     font-size: .5em;
@@ -183,22 +193,22 @@ button{
 .buttons {
     display: flex;
     flex-direction: column;
-    top:0;
+    top: 0;
     background: transparent;
-    
-    
-    
-    
-/*    position: relative;*/
+
+
+
+
+    /*    position: relative;*/
 
 }
 
-button:hover{
+button:hover {
     background: #d8dcff;
-/*    color: #f4f5ff;*/
+    /*    color: #f4f5ff;*/
 }
 
-button:active{
+button:active {
     border: .3em solid #482728;
 }
 
@@ -208,13 +218,13 @@ li.key {
     font-size: .75em;
     width: 40%;
     margin-top: 20%;
-/*
+    /*
     padding-left: 10;
     padding-right: 10;
 */
     list-style-type: none;
     align-self: center;
-/*    background-color: darkgrey*/
+    /*    background-color: darkgrey*/
 }
 
 /*
@@ -224,34 +234,34 @@ li{
 }
 */
 
-.topic.hidden{
-visibility: hidden;
-   
-    
+.topic.hidden {
+    visibility: hidden;
+
+
 }
 
-.topic{
+.topic {
     background-color: #f7b1ab;
     position: absolute;
-/*    display: flex;*/
+    /*    display: flex;*/
     max-width: 45vw;
-    margin:auto;
-/*    margin-left: em;*/
-/*    margin-right: -2em;*/
+    margin: auto;
+    /*    margin-left: em;*/
+    /*    margin-right: -2em;*/
     max-height: 60vh;
-    color:#482728;
-    padding:2em;
+    color: #482728;
+    padding: 2em;
     font-size: 1.25em;
-    
-    
+
+
 }
 
-.credits{
+.credits {
     max-width: 30em;
     margin: auto;
     margin-top: 8em;
     padding: 2em;
-    background-color: #2f4858; 
+    background-color: #2f4858;
     color: #fdf0e4;
     line-height: 2em;
 }
@@ -259,8 +269,8 @@ visibility: hidden;
 
 
 
-#mapBtns{
-    top:0
+#mapBtns {
+    top: 0
 }
 
 /*
@@ -269,7 +279,7 @@ visibility: hidden;
 }
 */
 
-#legend5{
-    height:60vh;
+#legend5 {
+    height: 60vh;
+    align-items: center;
 }
-
