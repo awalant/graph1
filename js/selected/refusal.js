@@ -88,12 +88,12 @@ d3.select("#refSkills")
                     });
             });
             //        https://stackoverflow.com/questions/28874957/how-to-update-overwrite-map-and-legend-content-using-d3
-            d3.select("#legend4").selectAll("p").remove();
+            d3.select("#legend4").selectAll("div").remove();
             d3.select("#legend4").selectAll("li").remove();
 
-            legend4.append("p")
-                .attr("class", "legendTitle")
-                .text("Learning to say 'no'");
+            //            legend4.append("p")
+            //                .attr("class", "legendTitle")
+            //                .text("Learning to say 'no'");
 
             var keysMap4d = ["No refusal skills taught", "Refusal skills taught"];
 
@@ -110,16 +110,22 @@ d3.select("#refSkills")
             keys4d
                 .data(colorMap4d.range())
                 .enter()
+                .append("div")
+                .attr("class", "key")
+                .style("background-color", String)
+                .data(colorMap4d.domain())
                 .append("li")
                 .attr("class", "key")
-                .style("border-top-color", String)
-                .data(colorMap4d.domain())
                 .text(function (d) {
                     return d;
                 })
                 .data(colorMap4d.range())
                 .style("color", function (d) {
-                    return d
+                    if (d === nothing) {
+                        return "#2f4858";
+                    } else {
+                        return "white";
+                    }
                 });
 
         });

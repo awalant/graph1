@@ -88,12 +88,12 @@ d3.select("#hivMand")
                     });
             });
             //        https://stackoverflow.com/questions/28874957/how-to-update-overwrite-map-and-legend-content-using-d3
-            d3.select("#legend4").selectAll("p").remove();
+            d3.select("#legend4").selectAll("div").remove();
             d3.select("#legend4").selectAll("li").remove();
 
-            legend4.append("p")
-                .attr("class", "legendTitle")
-                .text("HIV education");
+            //            legend4.append("p")
+            //                .attr("class", "legendTitle")
+            //                .text("HIV education");
 
             var keysMap4c = ["No HIV material mandated", "HIV material mandated"];
 
@@ -110,16 +110,22 @@ d3.select("#hivMand")
             keys4c
                 .data(colorMap4c.range())
                 .enter()
+                .append("div")
+                .attr("class", "key")
+                .style("background-color", String)
+                .data(colorMap4c.domain())
                 .append("li")
                 .attr("class", "key")
-                .style("border-top-color", String)
-                .data(colorMap4c.domain())
                 .text(function (d) {
                     return d;
                 })
                 .data(colorMap4c.range())
                 .style("color", function (d) {
-                    return d
+                    if (d === nothing) {
+                        return "#2f4858";
+                    } else {
+                        return "white";
+                    }
                 });
 
         });

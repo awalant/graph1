@@ -86,12 +86,12 @@ d3.select("#contraception")
 
             //            https://stackoverflow.com/questions/28874957/how-to-update-overwrite-map-and-legend-content-using-d3
             //            d3.select("#legend4").selectAll("ul").remove();
-            d3.select("#legend4").selectAll("p").remove();
+            d3.select("#legend4").selectAll("div").remove();
             d3.select("#legend4").selectAll("li").remove();
 
-            legend4.append("p")
-                .attr("class", "legendTitle")
-                .text("Coverage of contraceptions");
+            //            legend4.append("p")
+            //                .attr("class", "legendTitle")
+            //                .text("Coverage of contraceptions");
 
 
             var keysMap4a = ["No mandatory coverage of contraceptive options", "Mandatory coverage of contraceptive options"];
@@ -109,16 +109,22 @@ d3.select("#contraception")
             keys4a
                 .data(colorMap4a.range())
                 .enter()
+                .append("div")
+                .attr("class", "key")
+                .style("background-color", String)
+                .data(colorMap4a.domain())
                 .append("li")
                 .attr("class", "key")
-                .style("border-top-color", String)
-                .data(colorMap4a.domain())
                 .text(function (d) {
                     return d;
                 })
                 .data(colorMap4a.range())
                 .style("color", function (d) {
-                    return d
+                    if (d === nothing) {
+                        return "#2f4858";
+                    } else {
+                        return "white";
+                    }
                 });
 
         });

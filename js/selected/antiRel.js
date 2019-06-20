@@ -87,12 +87,12 @@ d3.select("#antiRel")
                     });
             });
             //            https://stackoverflow.com/questions/28874957/how-to-update-overwrite-map-and-legend-content-using-d3
-            d3.select("#legend4").selectAll("p").remove();
             d3.select("#legend4").selectAll("li").remove();
+            d3.select("#legend4").selectAll("div").remove();
 
-            legend4.append("p")
-                .attr("class", "legendTitle")
-                .text("Religious rules regarding sex education");
+            //            legend4.append("p")
+            //                .attr("class", "legendTitle")
+            //                .text("Religious rules regarding sex education");
 
             var keysMap4b = ["No rules about religion in sex ed", "Does not allow religious bias in sex ed"];
 
@@ -109,16 +109,22 @@ d3.select("#antiRel")
             keys4b
                 .data(colorMap4b.range())
                 .enter()
+                .append("div")
+                .attr("class", "key")
+                .style("background-color", String)
+                .data(colorMap4b.domain())
                 .append("li")
                 .attr("class", "key")
-                .style("border-top-color", String)
-                .data(colorMap4b.domain())
                 .text(function (d) {
                     return d;
                 })
                 .data(colorMap4b.range())
                 .style("color", function (d) {
-                    return d
+                    if (d === nothing) {
+                        return "#2f4858";
+                    } else {
+                        return "white";
+                    }
                 });
 
         });

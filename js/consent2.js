@@ -75,7 +75,7 @@ var y = d3
     .domain([0, 100]);
 
 //Variable z is the d3 function scaleOrdinal, which can take arrays of strings and output the values accordingly. In this case, it's taking these four colors.
-var z = d3.scaleOrdinal().range([colorNeg, colorPos, colorMid, "lightgrey"]);
+var z = d3.scaleOrdinal().range([colorNeg, colorPos, colorMid, nothing]);
 
 //AXES
 

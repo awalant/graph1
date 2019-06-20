@@ -92,11 +92,11 @@ d3.select("#sexOr")
                     })
             });
             //        https://stackoverflow.com/questions/28874957/how-to-update-overwrite-map-and-legend-content-using-d3
-            d3.select("#legend4").selectAll("p").remove();
+            d3.select("#legend4").selectAll("div").remove();
             d3.select("#legend4").selectAll("li").remove();
-            legend4.append("p")
-                .attr("class", "legendTitle")
-                .text("Sexual orientation");
+            //            legend4.append("p")
+            //                .attr("class", "legendTitle")
+            //                .text("Sexual orientation");
 
             var keysMap4e = ["Sexual orientation covered with a negative slant", "Sexual orientation not covered", "Sexual orientation covered with a positive slant"];
 
@@ -113,16 +113,22 @@ d3.select("#sexOr")
             keys4e
                 .data(colorMap4e.range())
                 .enter()
+                .append("div")
+                .attr("class", "key")
+                .style("background-color", String)
+                .data(colorMap4e.domain())
                 .append("li")
                 .attr("class", "key")
-                .style("border-top-color", String)
-                .data(colorMap4e.domain())
                 .text(function (d) {
                     return d;
                 })
                 .data(colorMap4e.range())
                 .style("color", function (d) {
-                    return d
+                    if (d === nothing) {
+                        return "#2f4858";
+                    } else {
+                        return "white";
+                    }
                 });
 
         });

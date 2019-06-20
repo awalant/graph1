@@ -52,28 +52,34 @@ var colorMap3 = d3
 
 //legend1.append("ul").attr("class", "list-inline");
 
-legend1.append("p")
-    .attr("class", "legendTitle")
-    .text("Sex education");
+//legend1.append("p")
+//    .attr("class", "legendTitle")
+//    .text("Key");
 
 var keys1 = legend1.selectAll("li-key").data(colorMap1);
 
 keys1
     .data(colorMap1.range())
     .enter()
-    .append("li")
+    .append("div")
     .attr("class", "key")
-    .style("border-top-color", String)
+    .style("background-color", String)
     //      function(d) {
     // return d;
     // })
     .data(colorMap1.domain())
+    .append("li")
+    .attr("class", "key")
     .text(function (d) {
         return d;
     })
     .data(colorMap1.range())
     .style("color", function (d) {
-        return d
+        if (d===nothing){
+        return "#2f4858";
+        } else{
+            return "white";
+        }
     });
 
 
@@ -81,9 +87,9 @@ keys1
 
 //legend2.append("ul").attr("class", "list-inline");
 
-legend2.append("p")
-    .attr("class", "legendTitle")
-    .text("Medically accurate information");
+//legend2.append("p")
+//    .attr("class", "legendTitle")
+//    .text("Key");
 
 var keys2 = legend2.selectAll("li-key").data(colorMap2);
 
@@ -106,7 +112,7 @@ keys2
     .style("color", function (d) {
         if (d===nothing){
         return "#2f4858";
-        } else if (d===colorPos){
+        } else{
             return "white";
         }
     });
@@ -116,28 +122,34 @@ keys2
 
 //legend3.append("ul").attr("class", "list-inline");
 
-legend3.append("p")
-    .attr("class", "legendTitle")
-    .text("Removal of children from sex-ed related classes");
+//legend3.append("p")
+//    .attr("class", "legendTitle")
+//    .text("Key");
 
 var keys3 = legend3.selectAll("li-key").data(colorMap3);
 
 keys3
     .data(colorMap3.range())
     .enter()
-    .append("li")
+    .append("div")
     .attr("class", "key")
-    .style("border-top-color", String)
+    .style("background-color", String)
     //      function(d) {
     // return d;
     // })
     .data(colorMap3.domain())
+    .append("li")
+    .attr("class", "key")
     .text(function (d) {
         return d;
     })
     .data(colorMap3.range())
     .style("color", function (d) {
-        return d
+        if (d===nothing){
+        return "#2f4858";
+        } else{
+            return "white";
+        }
     });
 
 
@@ -160,26 +172,32 @@ var keys4 = legend4.selectAll("li-key").data(colorMap4);
 
 //legend4.append("ul").attr("class", "list-inline");
 
-legend4.append("p")
-    .attr("class", "legendTitle")
-    .text("Religious rules regarding sex education");
+//legend4.append("p")
+//    .attr("class", "legendTitle")
+//    .text("Key");
 
 keys4
     .data(colorMap4.range())
     .enter()
-    .append("li")
+    .append("div")
     .attr("class", "key")
-    .style("border-top-color", String)
+    .style("background-color", String)
     //      function(d) {
     // return d;
     // })
     .data(colorMap4.domain())
+    .append("li")
+    .attr("class",  "key")
     .text(function (d) {
         return d;
     })
     .data(colorMap4.range())
     .style("color", function (d) {
-        return d
+        if (d===nothing){
+        return "#2f4858";
+        } else{
+            return "white";
+        }
     });
 
 
@@ -193,7 +211,7 @@ var keysMap6= ["yes", "no", "unclear", "no opinion"];
 var colorMap6 = d3
     .scaleOrdinal()
     .domain(keysMap6)
-    .range([colorNeg, colorPos, colorMid, "lightgrey"]);
+    .range([colorNeg, colorPos, colorMid, nothing]);
 
 
 
@@ -204,26 +222,32 @@ var keys6 = legend6.selectAll("li-key").data(colorMap6);
 
 //legend4.append("ul").attr("class", "list-inline");
 
-legend6.append("p")
-    .attr("class", "legendTitle")
-    .text("How college students define sexual assault");
+//legend6.append("p")
+//    .attr("class", "legendTitle")
+//    .text("Key");
 
 keys6
     .data(colorMap6.range())
     .enter()
-    .append("li")
+    .append("div")
     .attr("class", "key")
-    .style("border-top-color", String)
+    .style("background-color", String)
     //      function(d) {
     // return d;
     // })
     .data(colorMap6.domain())
+    .append("li")
+    .attr("class", "key")
     .text(function (d) {
         return d;
     })
     .data(colorMap6.range())
     .style("color", function (d) {
-        return d
+        if (d===nothing){
+        return "#2f4858";
+        } else{
+            return "white";
+        }
     });
 
 //consent chart, legend 7
@@ -240,26 +264,32 @@ var keys7 = legend7.selectAll("li-key").data(colorMap6);
 
 //legend4.append("ul").attr("class", "list-inline");
 
-legend7.append("p")
-    .attr("class", "legendTitle")
-    .text("How college students define consent");
+//legend7.append("p")
+//    .attr("class", "legendTitle")
+//    .text("Key");
 
 keys7
     .data(colorMap6.range())
     .enter()
-    .append("li")
+    .append("div")
     .attr("class", "key")
-    .style("border-top-color", String)
+    .style("background-color", String)
     //      function(d) {
     // return d;
     // })
     .data(colorMap6.domain())
+    .append("li")
+    .attr("class", "key")
     .text(function (d) {
         return d;
     })
     .data(colorMap6.range())
     .style("color", function (d) {
-        return d
+        if (d===nothing){
+        return "#2f4858";
+        } else{
+            return "white";
+        }
     });
 
 
