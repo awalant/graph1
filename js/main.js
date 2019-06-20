@@ -1,35 +1,95 @@
 "use strict"
 
+var title = document.getElementById("title");
+
+var menu = document.getElementById("menu");
+
+//var header
+//document.getElementById("title");
+
+//https://www.w3schools.com/howto/howto_js_shrink_header_scroll.asp
+//https://www.w3schools.com/howto/howto_js_remove_class.asp
+window.onscroll = function () {
+    if (document.body.scrollTop > 25 || document.documentElement.scrollTop > 25) {
+        
+        $("#title")
+            .css("font-size", "1em")
+            .css("position", "relative")
+            .css("color", "#fbe4de")
+            .css("top", "0");
+
+        
+        $("#menu")
+            .removeClass("hidden");
+        
+        
+        $("header")
+             .css("background-color", "#482728")
+            .css("height", "1em")
+            .css("box-shadow", "0px -2px 34px -1px rgba(72,39,40,0.69)");
+
+        
+        
+    } else {
+
+        $("#title")
+            .css("font-size", "4em")
+            .css("position", "absolute")
+            .css("color", "#482728")
+        .css("top", "1em");
+        
+        $("#menu")
+            .addClass("hidden");
+        
+
+        
+         $("header")
+            .removeAttr("style", "box-shadow")
+             .css("height", "10em");
+        
+    }
+    
+//    https://jsfiddle.net/cse_tushar/Dxtyu/141/
+    
+//    $("a").each(function(){
+//        $(this).removeClass("active");
+//    })
+//    $(this).addClass("active");
+};
+
+
 
 //width, heigh, translate and scale all derived from playing with this block http://bl.ocks.org/radiocontrolled/7698088
+
 function drawChart() {
-      currentWidthMap = parseInt(d3.select("#map1").style("width"), 10);
-    
-    
+    currentWidthMap = parseInt(d3.select("#map1").style("width"), 10);
+
+
     currentHeightMap = parseInt(d3.select("#map1").style("height"), 10);
-    
+
     widthGraph = currentWidthMap - margin.left - margin.right;
     heightGraph = currentHeightMap - margin.bottom - margin.top;
-    
+
     projection = d3.geoAlbersUsa()
-    .scale([currentWidthMap])
-    .translate([widthGraph/2, heightGraph/2]);
-    
-    var path = d3.geoPath(projection);
-    
-    
+        .scale([currentWidthMap])
+        .translate([widthGraph / 2, heightGraph / 2]);
+
+
+
     d3.selectAll("path")
         .enter()
         .append("path")
         .attr("d", path);
-
-
-
-//     d3.selectAll("svg")
-//         .attr("width", currentWidthMap)
-//        .attr("height", currentHeightMap);
-    console.log("in draw chart");
     
+    
+path = d3.geoPath(projection);
+
+
+    //     d3.selectAll("svg")
+    //         .attr("width", currentWidthMap)
+    //        .attr("height", currentHeightMap);
+    console.log("in draw chart");
+
 }
 
 drawChart();
@@ -125,7 +185,7 @@ function handleStepEnter(response) {
 scroller
     .setup({
         step: ".step",
-//        debug: true,
+        //        debug: true,
         offset: 0.35
     })
     .onStepEnter(handleStepEnter);

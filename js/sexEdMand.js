@@ -92,10 +92,7 @@ var path = d3.geoPath(projection);
 
 
 //Create SVG element
-svg1 = d3.select("#map1")
-    .append("svg")
-    .attr("width", w2)
-    .attr("height", h);
+svg1 = d3.select("#map1");
 //    .append("text")
 //    .attr("x", (w / 2))
 //    .attr("y", 0 - (h / 10))

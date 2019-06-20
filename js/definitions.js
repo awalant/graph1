@@ -63,7 +63,8 @@ var height =
     document.documentElement.clientHeight ||
     document.body.clientHeight;
 
-var currentHeightMap = parseInt(d3.select("#map1").style("height"), 10);
+var currentHeightMap
+= parseInt(d3.select("#map1").style("height"), 10);
 
 var shapeWidth = width * .1;
 var shapePadding = shapeWidth / 4;
@@ -80,6 +81,7 @@ var h = currentHeightMap;
 //var w = width;
 //var h = w;
 var w2 = w;
+var path;
 
 
 //This establishes margins for the barchart.
