@@ -34,19 +34,19 @@ var colorMap3 = d3
 
 
 
-function drawLegend() {
-    var currentWidth = parseInt(d3.select("#legend1").style("width"), 10);
-
-
-    d3.selectAll(".legend")
-        .attr("width", currentWidth);
-    //  legend1.attr("width", currentWidth);
-
-}
-
-drawLegend();
-
-window.addEventListener("resize", drawLegend);
+//function drawLegend() {
+//    var currentWidth = parseInt(d3.select("#legend1").style("width"), 10);
+//
+//
+//    d3.selectAll(".legend")
+//        .attr("width", currentWidth);
+//    //  legend1.attr("width", currentWidth);
+//
+//}
+//
+//drawLegend();
+//
+//window.addEventListener("resize", drawLegend);
 
 //legend1
 
@@ -90,19 +90,25 @@ var keys2 = legend2.selectAll("li-key").data(colorMap2);
 keys2
     .data(colorMap2.range())
     .enter()
-    .append("li")
+    .append("div")
     .attr("class", "key")
-    .style("border-top-color", String)
+    .style("background-color", String)
     //      function(d) {
     // return d;
     // })
     .data(colorMap2.domain())
+    .append("li")
+    .attr("class", "key")
     .text(function (d) {
         return d;
     })
     .data(colorMap2.range())
     .style("color", function (d) {
-        return d
+        if (d===nothing){
+        return "#2f4858";
+        } else if (d===colorPos){
+            return "white";
+        }
     });
 
 

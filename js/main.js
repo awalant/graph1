@@ -13,39 +13,51 @@ window.onscroll = function () {
     if (document.body.scrollTop > 25 || document.documentElement.scrollTop > 25) {
         
         $("#title")
-            .css("font-size", "1em")
-            .css("position", "relative")
-            .css("color", "#fbe4de")
-            .css("top", "0");
+            .addClass("gone");
+//            .css("font-size", ".8em")
+//            .css("position", "relative")
+//            .css("color", "#fbe4de")
+//            .css("top", "0");
+//            .css("background-color","#482728")
+//            .css("transition", "1s");
 
+            $("header")
+             .css("background-color", "#482728")
+            .css("color", "#fbe4de")
+            .css("height", "1em")
+            .css("box-shadow", "0px -2px 34px -1px rgba(72,39,40,0.69)")
+            .css("transition", "1s");
+//            .css("font-size", "1em");
+
+        
         
         $("#menu")
-            .removeClass("hidden");
+            .removeClass("gone")
+            .css("display", "flex");
         
         
-        $("header")
-             .css("background-color", "#482728")
-            .css("height", "1em")
-            .css("box-shadow", "0px -2px 34px -1px rgba(72,39,40,0.69)");
-
         
         
     } else {
+        
+         $("#menu")
+            .addClass("gone")
+            .removeAttr("style", "display");
 
         $("#title")
-            .css("font-size", "4em")
-            .css("position", "absolute")
-            .css("color", "#482728")
-        .css("top", "1em");
-        
-        $("#menu")
-            .addClass("hidden");
+            .removeClass("gone");
+//            .css("font-size", "4em")
+//            .css("position", "absolute")
+//            .css("color", "#482728")
+//        .css("top", "1em");
+//        .css("background-color", ;
         
 
         
          $("header")
             .removeAttr("style", "box-shadow")
-             .css("height", "10em");
+         .css("transition", "1s");
+//             .css("height", "10em");
         
     }
     
