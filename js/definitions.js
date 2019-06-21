@@ -39,6 +39,8 @@ var translateCellsCsv3 = function (d) {
     }
 }
 
+//var mapData;
+
 var colorPos = "#5e3c99";
 var colorMid = "grey";
 var colorNeg = "#e66101";
@@ -53,7 +55,8 @@ var width =
     document.body.clientWidth;
 
 
-var currentWidthMap= parseInt(d3.select("#map1").style("width"), 10);
+var currentWidthMap;
+//= parseInt(d3.select("#map1").style("width"), 10);
 
 
 
@@ -63,7 +66,8 @@ var height =
     document.documentElement.clientHeight ||
     document.body.clientHeight;
 
-var currentHeightMap= parseInt(d3.select("#map1").style("height"), 10);
+var currentHeightMap;
+//= parseInt(d3.select("#map1").style("height"), 10);
 
 var shapeWidth = width * .1;
 var shapePadding = shapeWidth / 4;
@@ -80,25 +84,27 @@ var legendWidth = shapePadding;
 //var w = width;
 //var h = w;
 //var w2 = w;
-var path;
+
 
 
 //This establishes margins for the barchart.
 var margin = {
-    top: 30,
-    right: 10,
-    bottom: 80,
-    left: 80
+    top: 30, //30
+    right: 10, //10
+    bottom: 80, //80
+    left: 100 //100
 };
 
-var widthGraph = currentWidthMap - margin.left - margin.right;
-var heightGraph = currentHeightMap - margin.bottom - margin.top;
+var widthGraph; 
+//= currentWidthMap - margin.left - margin.right;
+var heightGraph; 
+//= currentHeightMap - margin.bottom - margin.top;
 //var barwidth = shapeWidth;
 
 
 //Define map projection
-var projection;
-//= d3.geoAlbersUsa()
+var projection= d3.geoAlbersUsa();
+var path = d3.geoPath().projection(projection);
 //    .scale([currentWidthMap])
 //    .translate([w / 3, h / 2]);
 //.translate([w2/2 - (legendWidth*2), h/2]);

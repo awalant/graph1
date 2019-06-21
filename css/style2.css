@@ -164,7 +164,7 @@ g.layer ~ g.layer .bar-placeholder {
 svg {
     height: 50vh;
     width: 45vw;
-    background-color: lightblue;
+/*    background-color: lightblue;*/
     padding: 2vw;
     /*    left:;*/
 }
@@ -322,6 +322,7 @@ button:active {
 
 div.key {
     margin-bottom: 1em;
+    min-width: 5em;
     /*
     width: 1em;
     height: 1em;

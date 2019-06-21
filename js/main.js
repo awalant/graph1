@@ -74,27 +74,29 @@ window.onscroll = function () {
 //width, heigh, translate and scale all derived from playing with this block http://bl.ocks.org/radiocontrolled/7698088
 
 function drawChart() {
-//    currentWidthMap = parseInt(d3.select("#map1").style("width"), 10);
+    currentWidthMap = parseInt(d3.select("#map1").style("width"), 10);
 
 
-//    currentHeightMap = parseInt(d3.select("#map1").style("height"), 10);
+    currentHeightMap = parseInt(d3.select("#map1").style("height"), 10);
 
     widthGraph = currentWidthMap - margin.left - margin.right;
     heightGraph = currentHeightMap - margin.bottom - margin.top;
 
-    projection = d3.geoAlbersUsa()
-        .scale([currentWidthMap])
-        .translate([widthGraph / 2, heightGraph / 2]);
+//    projection = d3.geoAlbersUsa();
+//        .scale(1);
+//        .fitSize([widthGraph, heightGraph], dataset);
+//        .scale([currentWidthMap])
+//        .translate([widthGraph / 2, heightGraph / 2]);
 
-
+    projection.fitSize([currentWidthMap, currentHeightMap], mapData);
 
     d3.selectAll("path")
-        .enter()
-        .append("path")
+//        .enter()
+//        .append("path")
         .attr("d", path);
     
     
-path = d3.geoPath(projection);
+//path = d3.geoPath(projection);
 
 
     //     d3.selectAll("svg")
