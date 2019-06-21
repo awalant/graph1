@@ -74,10 +74,10 @@ window.onscroll = function () {
 //width, heigh, translate and scale all derived from playing with this block http://bl.ocks.org/radiocontrolled/7698088
 
 function drawChart() {
-    currentWidthMap = parseInt(d3.select("#map1").style("width"), 10);
+//    currentWidthMap = parseInt(d3.select("#map1").style("width"), 10);
 
 
-    currentHeightMap = parseInt(d3.select("#map1").style("height"), 10);
+//    currentHeightMap = parseInt(d3.select("#map1").style("height"), 10);
 
     widthGraph = currentWidthMap - margin.left - margin.right;
     heightGraph = currentHeightMap - margin.bottom - margin.top;

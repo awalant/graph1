@@ -53,7 +53,7 @@ var width =
     document.body.clientWidth;
 
 
-var currentWidthMap = parseInt(d3.select("#map1").style("width"), 10);
+var currentWidthMap= parseInt(d3.select("#map1").style("width"), 10);
 
 
 
@@ -63,24 +63,23 @@ var height =
     document.documentElement.clientHeight ||
     document.body.clientHeight;
 
-var currentHeightMap
-= parseInt(d3.select("#map1").style("height"), 10);
+var currentHeightMap= parseInt(d3.select("#map1").style("height"), 10);
 
 var shapeWidth = width * .1;
 var shapePadding = shapeWidth / 4;
 var legendHeight = shapePadding*6;
 var legendWidth = shapePadding;
 //Width and height
-var w = currentWidthMap;
+//var w = currentWidthMap;
 //var w= currentWidth;
 //console.log(w)
 //+ (legendWidth*4);
 //var w = 75vw;
 //var h = 50vh;
-var h = currentHeightMap;
+//var h = currentHeightMap;
 //var w = width;
 //var h = w;
-var w2 = w;
+//var w2 = w;
 var path;
 
 
@@ -98,12 +97,13 @@ var heightGraph = currentHeightMap - margin.bottom - margin.top;
 
 
 //Define map projection
-var projection = d3.geoAlbersUsa()
-    .scale([currentWidthMap])
+var projection;
+//= d3.geoAlbersUsa()
+//    .scale([currentWidthMap])
 //    .translate([w / 3, h / 2]);
 //.translate([w2/2 - (legendWidth*2), h/2]);
 // .translate([w/3.5, h/1.5 - margin.bottom]);
-.translate([widthGraph/2, heightGraph/2]);
+//.translate([widthGraph/2, heightGraph/2]);
 
 var colorScale = [nothing, colorMid, colorPos];
 
