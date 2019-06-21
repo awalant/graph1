@@ -162,7 +162,7 @@ layer
         return x(d.data.topic) + x.bandwidth() / 2 - 20;
     })
     .attr("height", function (d) {
-        return h - 20;
+        return currentHeightMap - 20;
     })
     .attr("width", 40);
 
