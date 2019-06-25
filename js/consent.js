@@ -47,13 +47,13 @@ var y = d3
             return d.topic;
         })
     )
-    .range([0, heightGraph]);
+    .rangeRound([0, heightGraph]);
 
 //Variable y is the d3 function scaleLinear, which takes the input of the range (the height of the graph and 0), and outputs the domain (between 0 and 100)
 
 var x = d3
     .scaleLinear()
-    .range([widthGraph, 0])
+    .rangeRound([widthGraph, 0])
     .domain([0, 100]);
 
 //Variable z is the d3 function scaleOrdinal, which can take arrays of strings and output the values accordingly. In this case, it's taking these four colors.

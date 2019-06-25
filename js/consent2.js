@@ -2,7 +2,7 @@
 
 //this data comes from a national survey done by The Washington Post and the Kaiser Foundation
 //The data is in the form of an array of objects, where the values are grouped by the subject.
-var data = [
+var dataMap7 = [
     {
         topic: "naked",
         yes: 47,
@@ -41,9 +41,8 @@ var data = [
 ];
 
 //I believe that this filters through the data (using k) and takes anything that isn't a topic and stores it in an array. This collects the different types of results that can be displayed.
-var keys = Object.keys(data[0]).filter(k => k !== "topic");
+var keysMap7 = Object.keys(dataMap7[0]).filter(k => k !== "topic");
 
-console.log(keys);
 
 
 //select the div with the id consentChart and append an svg to it, then give it the attributes of the width plus the margins and the height plus the margins, then append a group and move the whole thing over by the margins.
@@ -58,20 +57,20 @@ var graph = d3
 //SCALES
 
 //Variable x is the d3 function scaleBand, which considers the padding between the bars to help determine the desired width of the bar chart. Its domain is the topics from the dataset, and the range is the width as specified above.
-var x = d3
+var y = d3
     .scaleBand()
     .domain(
-        data.map(function (d) {
+        dataMap7.map(function (d) {
             return d.topic;
         })
     )
-    .range([0, widthGraph]);
+    .rangeRound([0, heightGraph]);
 
 //Variable y is the d3 function scaleLinear, which takes the input of the range (the height of the graph and 0), and outputs the domain (between 0 and 100)
 
-var y = d3
+var x = d3
     .scaleLinear()
-    .range([heightGraph, 0])
+    .rangeRound([widthGraph, 0])
     .domain([0, 100]);
 
 //Variable z is the d3 function scaleOrdinal, which can take arrays of strings and output the values accordingly. In this case, it's taking these four colors.
@@ -80,48 +79,49 @@ var z = d3.scaleOrdinal().range([colorNeg, colorPos, colorMid, nothing]);
 //AXES
 
 //Variable xAxis is the d3 function axisBottom with the argument x
-var xAxis = d3.axisBottom(x);
+var yAxis = d3.axisRight(y);
 
 //Now, append a group to the variable graph and give it the class x-axis, and move it to 0 + heightGraph, then call xAxis
 graph
     .append("g")
-    .attr("class", "x-axis")
-    .attr("transform", "translate(0," + heightGraph + ")")
-    .call(xAxis);
+    .attr("class", "y-axis")
+    .attr("transform", "translate(" + widthGraph + ", 0)")
+    .call(yAxis);
 
 
 //Variable yAxis is the d3 function axisLeft with the argument y
-var yAxis = d3.axisLeft(y)
+var xAxis = d3.axisBottom(x)
     .ticks(3);
 
 
 //give z the domain created from the variable keys
-z.domain(keys);
+z.domain(keysMap7);
 
 
 //Variable stack is the result of some d3 method chaining, using stack() to stack the information, keys to gather the different categories, and says not to keep it in any particular order and with no offsetting.
 var stack = d3
     .stack()
-    .keys(keys)
+    .keys(keysMap7)
     .order(d3.stackOrderNone)
     .offset(d3.stackOffsetNone);
 
 
 //Variable layers takes stack and inserts the argument data, creating an array where the values are determined by the values of the topic underneath it.
-var layers = stack(data);
+var layers = stack(dataMap7);
 
-console.log(layers);
+//console.log(layers);
 
 
 //the domain of y is set to 0 and 1.15 times the length of the layers array, for each instance of d (data)
-y.domain([0, d3.max(layers[layers.length - 1], d => d[1])]);
+x.domain([0, d3.max(layers[layers.length - 1], d => d[1])]);
 
 
 //append another group to the graph and give it the class of y-axis, and call yAxis
 graph
     .append("g")
-    .attr("class", "y-axis")
-    .call(yAxis);
+    .attr("class", "x-axis")
+    .attr("transform", "translate(0," + heightGraph + ")")
+    .call(xAxis);
 
 //layer takes the graph, selects all of the class layer (even though it doesn't exist yet) and inserts the data from layers onto it. It then appends a group, gives it the class of layer, and fills it using the ordinal scale for z for each of the different answers.
 
@@ -155,7 +155,7 @@ var layer = graph
             .classed("hidden", true);
     });
 
-console.log('layer', layer);
+//console.log('layer', layer);
 
 
 //then take layer, select all rectangles, and for each instance of the data append a rectangle with the class bar-placeholder (styled in css) to the graph. give it the x value of each instance of data, and give the bands a width of x.bandwidth()/2, -20 px. give each of them the height of the graph, and the width of 40px.
@@ -167,13 +167,13 @@ layer
     .enter()
     .append("rect")
     .attr("class", "bar-placeholder")
-    .attr("x", function (d) {
-        return x(d.data.topic) + x.bandwidth() / 2 - 20;
+    .attr("y", function (d) {
+        return y(d.data.topic) + y.bandwidth() / 2 - 20;
     })
-    .attr("height", function (d) {
-        return currentHeightMap;
+    .attr("width", function (d) {
+        return currentWidthMap;
     })
-    .attr("width", 40);
+    .attr("height", 40);
 
 //Then take layer, and select all of the bar-placeholder class. For each instance of the data, append a rectangle with the class bar, and give it the same attributes as the placeholder bars, but set the y value to the index of 1 for each piece of data, and the height to the index of 0 minus the index of 1, with a width of 40px.
 
@@ -186,16 +186,16 @@ layer
     .enter()
     .append("rect")
     .attr("class", "bar")
-    .attr("x", function (d) {
-        return x(d.data.topic) + x.bandwidth() / 2 - 20;
-    })
     .attr("y", function (d) {
-        return y(d[1]);
+        return y(d.data.topic) + y.bandwidth() / 2 - 20;
     })
-    .attr("height", function (d) {
-        return y(d[0]) - y(d[1]);
+    .attr("x", function (d) {
+        return x(d[1]);
     })
-    .attr("width", 40);
+    .attr("width", function (d) {
+        return x(d[0]) - x(d[1]);
+    })
+    .attr("height", 30);
 
 
 //Then, select all the text and for each piece of the data, append text to it with the class bar-label. Give it the x value of d.data.topic plus the bandwidth/2, and y value of the index of 1 of each piece of data - 5px. Set the text to say the value of the ???
@@ -207,11 +207,11 @@ layer
     .enter()
     .append("text")
     .attr("class", "bar-label")
-    .attr("x", function (d) {
-        return x(d.data.topic) + x.bandwidth() / 2 + 25;
-    })
     .attr("y", function (d) {
-        return y(d[1]) + ((y(d[0]) - y(d[1]))/2);
+        return y(d.data.topic) + y.bandwidth() / 2 + 25;
+    })
+    .attr("x", function (d) {
+        return x(d[1]) + ((x(d[0]) - x(d[1]))/2);
     })
     .text(function (d) {
         if ((d[1]-d[0])>3){
