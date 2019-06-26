@@ -2,18 +2,18 @@ var svg1;
 
 dataset = d3.csv("csv/states_pt1.csv", translateCellsCsv1, function (data) {
 
-//    console.log(data);
+    //    console.log(data);
 
 
     //Loads in the json of the states as provided by Scott Murray, taken from Mike Bostock.
     //Load in GeoJSON data
- d3.json("/json/us-states.json", function (json) {
-     projection.fitSize([currentWidthMap, currentHeightMap], mapData);
-     
-     
-//        usMap = geojson.feature(json, json.objects);
-//        console.log(usMap);
-        
+    d3.json("/json/us-states.json", function (json) {
+        projection.fitSize([currentWidthMap, currentHeightMap], mapData);
+
+
+        //        usMap = geojson.feature(json, json.objects);
+        //        console.log(usMap);
+
         //this tells the function to go through each part of the array
         for (var i = 0; i < data.length; i++) {
             //this assigns each cell from the column 'name' to dataName so that it can be cross-checked with the name of the states in the json
@@ -43,27 +43,40 @@ dataset = d3.csv("csv/states_pt1.csv", translateCellsCsv1, function (data) {
             .enter()
             .append("path")
             .attr("d", path)
+            .attr("fill-opacity", function (d) {
+                if (d.properties.name === "Illinois" || d.properties.name === "Tennessee" || d.properties.name === "Mississippi" || d.properties.name === "Utah") {
+                    return ".6";
+                } else {
+                    return "1";
+                }
+            })
             .style("fill", function (d) {
                 var value = d.properties.value;
                 if (value >= 0) {
                     return color(value);
                 } else {
                     return nothing;
-                }
+                };
             })
-            .style("stroke", "lightgrey")
+            .style("stroke", "lightgrey"
+
+            )
             .style("stroke-width", .75)
             .on("mousemove", function (d) {
-                var value;
-                if (d.properties.value === 1) {
-                    value = " has mandatory sex ed"; //whatever goes in if true
-                } else if (d.properties.value === 0) {
-                    value = " does not have mandatory sex ed";
-                } else {
-                    value = " does not have corrosponding data";
-                }
-                //           
-                var label = d.properties.name + value;
+                var label;
+
+                if (d.properties.name === "Illinois") {
+                    label = d.properties.name + " does not have mandatory sex ed, but health class is mandated and covers abstinence with medical accuracy";
+
+                } else if (d.properties.name === "Tennessee") {
+                    label = d.properties.name + " has mandated sex education only in areas where the teen pregnancy rate is greater than or equal to 19.5%";
+                } else if (d.properties.name === "Mississippi") {
+                    label = d.properties.name + " only allows contraception and STIs to be covered if the district receives permission from the State Department of Education";
+                } else if (d.properties.name === "Utah") {
+                    label = d.properties.name + " does not allow teachers to answer questions from students that may conflict with the law";
+                }else {
+                    label = d.properties.name;
+                };
                 var tooltip = document.getElementById("tooltip-1");
                 var top = d3.event.clientY + "px";
                 var left = d3.event.clientX + "px";
@@ -83,8 +96,8 @@ dataset = d3.csv("csv/states_pt1.csv", translateCellsCsv1, function (data) {
                     .classed("hidden", true);
             });
 
-        
-       
+
+
     });
 
 
