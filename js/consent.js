@@ -6,21 +6,21 @@
 
 var dataMap6 = [
     {
-        topic: "incapacitated",
+        topic: "One person is incapacitated",
         yes: 96,
         no: 1,
         unclear: 3,
         noOpinion: .5
   },
     {
-        topic: "influenced",
+        topic: "Both are under influence",
         yes: 21,
         no: 19,
         unclear: 59,
         noOpinion: .5
   },
     {
-        topic: "notClear",
+        topic: "Both people have not clearly agreed",
         yes: 47,
         no: 6,
         unclear: 46,
@@ -53,7 +53,7 @@ var y = d3
 
 var x = d3
     .scaleLinear()
-    .rangeRound([widthGraph, 0])
+    .rangeRound([widthGraph, 5])
     .domain([0, 100]);
 
 //Variable z is the d3 function scaleOrdinal, which can take arrays of strings and output the values accordingly. In this case, it's taking these four colors.

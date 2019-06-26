@@ -129,7 +129,6 @@ g.layer ~ g.layer .bar-placeholder {
     display: none;
 }
 
-
 /*tool tips*/
 .ttip {
     position: fixed;

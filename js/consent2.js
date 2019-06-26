@@ -4,35 +4,35 @@
 //The data is in the form of an array of objects, where the values are grouped by the subject.
 var dataMap7 = [
     {
-        topic: "naked",
+        topic: "Takes off own clothes",
         yes: 47,
         no: 49,
         unclear: 3,
         noOpinion: 1
   },
     {
-        topic: "condom",
+        topic: "Gets a condom",
         yes: 40,
         no: 54,
         unclear: 4,
         noOpinion: 1
   },
     {
-        topic: "nods",
+        topic: "Nods in agreement",
         yes: 54,
         no: 40,
         unclear: 3,
         noOpinion: 3
   },
     {
-        topic: "foreplay",
+        topic: "Engages in foreplay",
         yes: 22,
         no: 74,
         unclear: 3,
         noOpinion: .5
   },
        {
-        topic: "silent",
+        topic: "Does not say no",
         yes: 18,
         no: 77,
         unclear: 3,
@@ -70,7 +70,7 @@ var y = d3
 
 var x = d3
     .scaleLinear()
-    .rangeRound([widthGraph, 0])
+    .rangeRound([widthGraph, 5])
     .domain([0, 100]);
 
 //Variable z is the d3 function scaleOrdinal, which can take arrays of strings and output the values accordingly. In this case, it's taking these four colors.
