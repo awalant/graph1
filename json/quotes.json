@@ -330,7 +330,7 @@ var quotesData =[
     "active": ""
   },
   {
-    "id": "practicing psychoterapist",
+    "id": "practicing psychotherapist",
     "quote": "What we learned in high school is that ‘“no” means no,’ and there’s so much wrong with that. It’s true, that’s a piece of it, but also coercion means “no,” someone’s drunk means “no,” someone’s drugged means “no,” someone says “yes” and then says “no” means “no”… none of that was ever covered, and I think that does a big disservice because kids don’t learn what consent means, and when they try to assert those boundaries they get pushed over. Even in session with my clients, marital rape is a discussion that comes up—just because you’re married doesn’t mean you owe your partner anything, and that wasn’t even on our radar in school.",
     "consent": "yes",
     "sexAssault": "yes",
@@ -371,7 +371,7 @@ var quotesData =[
   },
   {
     "id": "current high school teacher",
-    "quote": "There is NO sex education course taught at the high school level at my school and I am unaware of what the sex ed classes are (if any) at the elementary/middle school level. In my school they teach health, and within that touch upon STDs, but they definitely don’t have a full curriculum. I cannot say that they actually have a true understanding of 1. What they are 2. How they spread 3. How to protect themselves against it. We had a mini epidemic in my district where the students were very sick… [Author’s note: this teacher works in a state with mandated sex education]",
+    "quote": "[Author’s note: this teacher works in a state with mandated sex education] There is NO sex education course taught at the high school level at my school and I am unaware of what the sex ed classes are (if any) at the elementary/middle school level. In my school they teach health, and within that touch upon STDs, but they definitely don’t have a full curriculum. I cannot say that they actually have a true understanding of 1. What they are 2. How they spread 3. How to protect themselves against it. We had a mini epidemic in my district where the students were very sick…",
     "consent": "",
     "sexAssault": "",
     "sexExp": "",

@@ -4,6 +4,8 @@ var title = document.getElementById("title");
 
 var menu = document.getElementById("menu");
 
+//$("#introBtn").on("click")
+
 
 //https://www.w3schools.com/howto/howto_js_shrink_header_scroll.asp
 //https://www.w3schools.com/howto/howto_js_remove_class.asp
@@ -111,7 +113,7 @@ function handleStepEnter(response) {
 scroller
     .setup({
         step: ".step",
-        //        debug: true,
+//                debug: true,
         offset: 0.35
     })
     .onStepEnter(handleStepEnter);

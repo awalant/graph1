@@ -27,9 +27,9 @@ header {
 }
 
 #title {
-    
+
     margin: auto;
-/*
+    /*
     position: absolute;
     left: auto;
     top: 1em;
@@ -44,6 +44,41 @@ header {
 
 }
 
+.yes:hover {
+    background:#E66100;
+    padding:.05em;
+    color:white;
+/*    font-weight: bold;*/
+}
+
+span {
+    border-bottom: 2px solid white;
+/*    border-radius:3px;*/
+    margin: auto;
+    
+}
+
+span:hover{
+    cursor: default;
+    border: none;
+}
+
+.no:hover{
+    background:#5E3C99;
+    padding:.05em;
+    color:white;
+/*    font-weight: bold;*/
+    
+}
+
+.unclear:hover{
+    background:#808080;
+    padding:.05em;
+    color:white;
+/*    font-weight: bold;*/
+}
+
+
 body {
     background-color: #fbe4de;
     color: #2f4858;
@@ -54,19 +89,27 @@ body {
 article {
     padding: .5em;
     text-indent: 2em;
-    line-height: 1.5em;
+    line-height: 1.75em;
     /*    max-width: 50em;*/
     font-size: 1.05em;
     max-width: 45em;
     margin: auto;
-    /*    margin-top: 5em;*/
 
+/*    margin-top: 5em;*/
+
+}
+
+p{
+    margin-bottom: 3em;
 }
 
 #intro {
     margin-top: 10em;
 }
 
+.source {
+    color: #f7b1ab;
+}
 
 .caption {
     /*    visibility: visible;*/
@@ -74,6 +117,7 @@ article {
     top: 30%;
     left: 5%;
     max-width: 30%;
+    line-height: 1.5em;
     /*  padding-right: -2em;*/
     text-indent: 2em;
     /*    padding-right: 1em;*/
@@ -86,11 +130,6 @@ h1 {
 h3 {
     text-indent: 0;
 
-}
-
-
-b {
-    background-color: #c6cdd1;
 }
 
 /* for a span to make sure the text doesn't indent*/
@@ -115,8 +154,8 @@ b {
     visibility: hidden;
 }
 
-.bar-label{
-font-size: .75em
+.bar-label {
+    font-size: .75em
 }
 
 /*borrowed from https://codepen.io/iamraviteja/pen/bOragL*/
@@ -136,10 +175,10 @@ g.layer ~ g.layer .bar-placeholder {
     z-index: 10;
     color: white;
     margin-top: -40px;
-/*    margin-right: 40px;*/
+    /*    margin-right: 40px;*/
     visibility: visible;
     line-height: 1.15em;
-/*    font-weight: bold;*/
+    /*    font-weight: bold;*/
     max-width: 12em;
     padding: 1em;
     border-radius: 4px;
@@ -167,7 +206,7 @@ g.layer ~ g.layer .bar-placeholder {
 svg {
     height: 50vh;
     width: 45vw;
-/*    background-color: lightblue;*/
+    /*    background-color: lightblue;*/
     padding: 2vw;
     /*    left:;*/
 }
@@ -186,7 +225,7 @@ ul {
     align-items: center;
     margin-left: auto;
     margin-right: auto;
-/*        justify-content: center;*/
+    /*        justify-content: center;*/
     /*    justify-content: space-evenly;*/
     /*    align-content: space-around;*/
 
@@ -201,7 +240,7 @@ ul {
 
 #menu li {
     margin: 1em;
-/*    border-color: aliceblue;*/
+    /*    border-color: aliceblue;*/
     border-style: solid;
     border-radius: 3px;
     border-width: 1px;
@@ -253,7 +292,8 @@ a.active{
 #quotes-main {
     height: 60vh;
     width: 50vw;
-    padding: 2vw;
+    padding-left: 2vw;
+    padding-right: 2vw;
     display: flex;
     justify-content: center;
     align-items: center;
@@ -278,9 +318,12 @@ a.active{
 button {
     border-radius: 40px;
     margin: 1em;
-    padding:1em;
-    box-shadow: 0px 0px 15px 3px rgba(47,72,88,0.20);
+    padding: 2em;
+    box-shadow: 0px 0px 15px 3px rgba(47, 72, 88, 0.20);
     background-color: #f4f5ff;
+     text-transform: uppercase;
+    letter-spacing: .12em;
+    font-size: .5em;
 
     /*    margin-bottom: 1em;*/
 
@@ -289,12 +332,12 @@ button {
 
 /*https://stackoverflow.com/questions/20340138/remove-blue-border-from-css-custom-styled-button-in-chrome*/
 button:focus {
-    box-shadow: 0px 0px 15px 3px rgba(47,72,88,0);
+    box-shadow: 0px 0px 15px 3px rgba(47, 72, 88, 0);
     background-color: #d8dcff;
     border-style: solid;
     border-color: white;
-    outline:0;
-    
+    outline: 0;
+
 }
 
 .details {
@@ -319,6 +362,7 @@ button:hover {
     background: #d8dcff;
     /*    color: #f4f5ff;*/
 }
+
 /*
 
 button:active {
@@ -326,7 +370,7 @@ button:active {
 }
 */
 
-.quoteBtn{
+.quoteBtn {
     background: #f4f5ff;
     padding: 1.25em;
     border: .25em solid #d8dcff;
@@ -335,13 +379,14 @@ button:active {
     letter-spacing: .12em;
     font-size: .5em;
     border-radius: 3px;
-    margin:0;
-    box-shadow: 0px 0px 15px 3px rgba(47,72,88,0);
+    margin: 0;
+    box-shadow: 0px 0px 15px 3px rgba(47, 72, 88, 0);
+    line-height: 2em;
 
 }
 
-.quoteBtn:focus{
-/*    outline: 0;*/
+.quoteBtn:focus {
+    /*    outline: 0;*/
     background: #d8dcff;
 }
 
@@ -401,6 +446,14 @@ li.key {
     background-color: #2f4858;
     color: #fdf0e4;
     line-height: 2em;
+}
+
+span.btn{
+    border: none;
+    color: white;
+    font-weight: bold;
+/*    margin-top: em;*/
+/*    line-height: 1.5em;*/
 }
 
 

@@ -1,5 +1,5 @@
-//The variable svg3 is for selecting the specific canvas by the id #map3
-var svg3 = d3.select("#map3");
+//The variable svg3 is for selecting the specific canvas by the id #map2
+var svg2 = d3.select("#map2");
 
 //The dataset is from a csv file of the states, created by hand to combine census data, stats from the Guttmacher institute https://www.guttmacher.org/state-policy/explore/sex-and-hiv-education , and population data
 //An argument of the d3 method csv is translateCellsCsv1, which is established in definitions.js -- it takes the data from the csv and translates it to numbers and strings based on my preference according to how I want the data to be utilized. 
@@ -36,7 +36,7 @@ dataset = d3.csv("csv/states_pt1.csv", translateCellsCsv1, function (data) {
         }
 
         //Select all of the svgs that are paths from the geoJSON file, then apply the data from json.features and make those paths fill according to the value. Since the CSV value is somewhere between 0 and 1, then if the value of the property of the json is greater than or equal to 0, send the value through the color function. Otherwise, set it to nothing. For all, apply a stroke of .75. 
-        svg3.selectAll("path")
+        svg2.selectAll("path")
             .data(mapData.features)
             .enter()
             .append("path")
