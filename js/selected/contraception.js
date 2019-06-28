@@ -79,7 +79,7 @@ d3.select("#contraception")
                     .duration(800)
                     .attr("fill-opacity", function (d) {
                         if (d.properties.name === "Mississippi") {
-                            return ".6";
+                            return ".3";
                         } else {
                             return "1";
                         }

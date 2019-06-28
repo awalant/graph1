@@ -82,7 +82,7 @@ d3.select("#sexOr")
                     .duration(800)
                     .attr("fill-opacity", function (d) {
                         if (d.properties.name === "Arizona" || d.properties.name === "Oklahoma") {
-                            return ".6";
+                            return ".3";
                         } else {
                             return "1";
                         }

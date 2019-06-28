@@ -73,6 +73,7 @@ d3.select("#refSkills")
      //A transition method is applied to the paths so that as the maps change from one to another, it happens seamlessly. It will occur over 800 ms. Then apply the data from json.features and make those paths fill according to the value. Since the CSV value is somewhere between 0 and 1, then if the value of the property of the json is greater than or equal to 0, send the value through the color function. Otherwise, set it to nothing.
                 states.transition()
                     .duration(800)
+                    .attr("fill-opacity", 1)
                     .style("fill", function (d) {
                         var value = d.properties.value;
 

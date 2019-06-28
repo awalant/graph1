@@ -86,9 +86,12 @@ $(".quoteBtn").click(
         
         
         quote = '"' + array[randomNum].quote + '"';
-        author = " – " + array[randomNum].id;
+        author = " —" + array[randomNum].id;
+        
+//        http://www.scriptingmaster.com/javascript/formatting-text-JavaScript.asp
+        authorStyled = author.bold();
 
-        $("#" + topic).html(quote + author);
+        $("#" + topic).html(quote + authorStyled);
 
     }
 

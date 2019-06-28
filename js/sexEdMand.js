@@ -45,7 +45,7 @@ var dataset = d3.csv("csv/states_pt1.csv", translateCellsCsv1, function (data) {
             .attr("d", path)
             .attr("fill-opacity", function (d) {
                 if (d.properties.name === "Illinois" || d.properties.name === "Tennessee" || d.properties.name === "Mississippi" || d.properties.name === "Utah") {
-                    return ".6";
+                    return ".3";
                 } else {
                     return "1";
                 }
