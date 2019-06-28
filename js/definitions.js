@@ -90,7 +90,7 @@ var legendWidth = shapePadding;
 //This establishes margins for the barchart.
 var margin = {
     top: 30, //30
-    right: 10, //10
+    right: 75, //10
     bottom: 80, //80
     left: 100 //100
 };
