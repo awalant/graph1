@@ -1,10 +1,15 @@
-/*HTML tags*/
+/*****/
+/*Built-in HTML tags*/
+/*****/
 
+/*controlling global settings*/
 html {
     font-size: 1rem;
     scroll-behavior: smooth;
+    cursor:default;
 }
 
+/*making the fixed nav that changes based on scrolling via a JS file*/
 header {
     margin: 0;
     left: 0;
@@ -21,6 +26,7 @@ header {
     display: flex;
 }
 
+/*sets the basic colors and fonts used*/
 body {
     background-color: #fbe4de;
     color: #2f4858;
@@ -28,6 +34,7 @@ body {
     padding: 1em;
 }
 
+/*determines sizing and spacing of all the text portions*/
 article {
     padding: .5em;
     text-indent: 2em;
@@ -37,14 +44,17 @@ article {
     margin: auto;
 }
 
+/*title header size*/
 h1 {
     font-size: 4em;
 }
 
+/*mid-size header indentation*/
 h3 {
     text-indent: 0;
 }
 
+/*paragraph bottom margins to create some spacing without using line-height*/
 p{
     margin-bottom: 3em;
 }
@@ -56,12 +66,11 @@ svg {
     padding: 2vw;
 }
 
+/*****/
 /*Classes*/
+/*****/
 
-.source {
-    color: #f7b1ab;
-}
-
+/*a class inside of .explanation that is used for setting the text sizing and placement of the captions to the left of the different sections*/
 .caption {
     position: fixed;
     top: 30%;
@@ -71,7 +80,7 @@ svg {
     text-indent: 2em;
 }
 
-/*the different charts*/
+/*positioning of the different charts*/
 .section {
     display: flex;
     position: relative;
@@ -83,6 +92,7 @@ svg {
     visibility: hidden;
 }
 
+/*needed to differentiate between visibility and display, so hidden is one and gone is the other*/
 .hidden {
     visibility: hidden;
 }
@@ -91,6 +101,7 @@ svg {
     display: none;
 }
 
+/*this is used for text that gives instructions to users*/
 .details {
     text-transform: uppercase;
     letter-spacing: .12em;
@@ -99,6 +110,7 @@ svg {
     line-height: 1.5em;
 }
 
+/*styling the last portion of the page*/
 .credits {
     max-width: 30em;
     margin: auto;
@@ -109,57 +121,39 @@ svg {
     line-height: 2em;
 }
 
+/*color of links located in the final credits*/
+.source {
+    color: #f7b1ab;
+}
 
+/*****/
 /*IDs*/
+/*****/
+
+/*for centering the header title*/
 #title {
     margin: auto;
 }
 
+/*for setting the spacing of the top section*/
 #intro {
     margin-top: 10em;
 }
 
+/*the 5th legend is shorter than the rest since it is not graphical and did not need to take the same amount of space*/
 #legend5 {
     height: 60vh;
     align-items: center;
 }
 
-/* for a span to make sure the text doesn't indent*/
+/* for a span to make sure the spanned text doesn't indent*/
 #noIndent {
     text-indent: 0;
 }
 
+/*****/
 /*Groups*/
-
-/*expert answers at bar charts*/
-span {
-    border-bottom: 2px solid white;
-    margin: auto;
-    
-}
-
-span:hover{
-    cursor: default;
-    border: none;
-}
-
-.yes:hover {
-    background:#E66100;
-    padding:.05em;
-    color:white;
-}
-
-.no:hover{
-    background:#5E3C99;
-    padding:.05em;
-    color:white;
-}
-
-.unclear:hover{
-    background:#808080;
-    padding:.05em;
-    color:white;
-}
+/*****/
 
 /*for the bar chart styling */
 .bar-label {
@@ -176,7 +170,7 @@ g.layer ~ g.layer .bar-placeholder {
     display: none;
 }
 
-/*tool tips*/
+/*tool tips, extra assistance from Greg Nemes*/
 .ttip {
     position: fixed;
     background: #2f4858;
@@ -201,6 +195,7 @@ g.layer ~ g.layer .bar-placeholder {
 }
 
 /*menu controls*/
+/*unordered list*/
 ul {
     list-style: none;
     text-align: left;
@@ -216,6 +211,7 @@ ul {
     margin-right: auto;
 }
 
+/*menu list items*/
 #menu li {
     margin: 1em;
     border-style: solid;
@@ -226,28 +222,25 @@ ul {
     text-align: center;
 }
 
+/*menu link items*/
 #menu a {
     color: white;
     text-decoration: none;
 
 }
 
-#menu a:focus {
-    background-color: white;
-}
-
-
-
 /*list links*/
 li a {
     display: block;
 }
 
+/*list links to sources*/
 li a.source {
     display:inline-block;
 }
 
 /*legends*/
+/*the container for the legend column*/
 .legend.container {
     height: 75vh;
     width: 10vw;
@@ -257,6 +250,7 @@ li a.source {
     justify-content: center;
 }
 
+/*the container for the legend itself */
 .legend.ary {
     padding: 1vh;
     margin-top: 5vh;
@@ -265,17 +259,20 @@ li a.source {
     font-size: .75em;
 }
 
+/*the colored boxes that make the keys in the legend*/
 div.key {
     margin-bottom: 1em;
     min-width: 5em;
 }
 
+/*the list items that make the labels in the legend*/
 li.key {
     font-size: .75em;
     padding: 1em;
     list-style-type: none;
 }
 
+/*specifically legend4, to try and condense space*/
 #legend4{
     margin:0;
     
@@ -283,6 +280,7 @@ li.key {
 
 
 /*quotes*/
+/*sizing, positioning of the quotes area*/
 #quotes-main {
     height: 60vh;
     width: 50vw;
@@ -293,10 +291,7 @@ li.key {
     align-items: center;
 }
 
-.topic.hidden {
-    visibility: hidden;
-}
-
+/*the quotes themselves*/
 .topic {
     background-color: #f7b1ab;
     position: absolute;
@@ -309,6 +304,9 @@ li.key {
     font-size: 1.15 em;
 }
 
+.topic.hidden {
+    visibility: hidden;
+}
 
 /*buttons*/
 button {
@@ -337,19 +335,22 @@ button:focus {
 
 }
 
-.buttons {
-    display: flex;
-    flex-direction: column;
-    top: 0;
-    background: transparent;
-
-}
-
+/*the buttons when hovered on*/
 button:hover {
     background: #d8dcff;
     color:#2f4858;
 }
 
+/*the map buttons*/
+.buttons {
+    display: flex;
+    flex-direction: column;
+    top: 0;
+    background: transparent;
+    margin-bottom:0;
+}
+
+/*the quote buttons*/
 .quoteBtn {
     background: #f4f5ff;
     padding: 1.25em;
@@ -364,22 +365,28 @@ button:hover {
     line-height: 2em;
 }
 
+/*the quote buttons when clicked on*/
 .quoteBtn:focus {
     background: #9B8989;
 }
 
+/*the quote buttons when hovered over*/
 .quoteBtn:hover {
     background: #d8dcff;
     color: #2f4858;
 }
 
-
+/* additional text in the quote buttons*/
 span.btn{
     border: none;
     color: white;
 }
 
-#mapBtns {
-    top: 0;
-        margin-bottom:0;
+/*http://darktef.github.io/posts/2017-03-offset-html-anchors-for-fixed-header-with-css*/
+/*takes the target of the link and offsets it so that the automatic scroll goes to the correct spot*/
+:target {
+    display:block;
+    position: relative;
+    top:-10vh;
+    visibility: hidden;
 }

@@ -3,8 +3,26 @@
 var title = document.getElementById("title");
 
 var menu = document.getElementById("menu");
+//
+//var introduction = $("#intro");
+//var laws = $("#laws");
+//
+//$("#introBtn").click(function(){
+//   introduction.scrollTop();
+//});
 
-//$("#introBtn").on("click")
+
+
+
+//https://html-online.com/articles/animated-scroll-anchorid-function-jquery/
+//$("a.scrollTo").click(function(event){
+//    event.preventDefault();
+//    $("html, body").animate({
+//        scrollTop: $($(this).attr("href"))
+//        .offset()
+//        .top
+//    }, 500);
+//});
 
 
 //https://www.w3schools.com/howto/howto_js_shrink_header_scroll.asp
