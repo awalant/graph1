@@ -189,42 +189,21 @@ graph
         layer
         .selectAll("text")
         .data(function (d) {
-//            console.log(d);
             return d;
         })
         .enter()
         .append("text")
         .attr("class", "bar-label")
         .attr("y", function (d) {
-//            console.log(y(d.data.topic));
             return y(d.data.topic) + y.bandwidth() / 2 + 35;
         })
         .attr("x", function (d) {
             return x(d[1]) + ((x(d[0]) - x(d[1])) / 2);
         })
         .text(function (d) {
-            if ((d[1] - d[0]) > 3) {
+            if ((d[1] - d[0]) > 2) {
                 return d[1] - d[0]
             } else {
                 return
             }
         });
-
-        //var ordinal = z
-        //    .domain([function(d){
-        //        return d.keys;
-        //    }]);
-
-        //graph.append("g")
-        //    .attr("class", "legendOrdinal")
-        //    .attr("transform", "translate(" + (w + legendWidth) + "," + (h - legendHeight*2) + ")" );
-        //
-        //var legendOrdinal = d3.legendColor()
-        //    .shapeWidth(shapeWidth)
-        //    .cells(4)
-        //    .shapePadding(shapePadding)
-        //    .orient("vertical")
-        //    .scale(z);
-        //
-        //graph.select(".legendOrdinal")
-        //    .call(legendOrdinal);

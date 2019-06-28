@@ -134,7 +134,6 @@ var layer = graph
     .style("fill", function (d) {
         return z(d.key);
     }).on("mousemove", function (d) {
-        console.log(d);
         var label = d.key;
         var tooltip = document.getElementById("tooltip-1");
         var top = d3.event.clientY + "px";
@@ -142,7 +141,6 @@ var layer = graph
         tooltip.innerHTML = label;
         tooltip.style.top = top;
         tooltip.style.left = left;
-        //                        console.log("I AM IN TOOLTIPS");
     })
     .on("mouseover", function (d) {
         d3.select("#tooltip-1")
@@ -155,7 +153,6 @@ var layer = graph
             .classed("hidden", true);
     });
 
-//console.log('layer', layer);
 
 
 //then take layer, select all rectangles, and for each instance of the data append a rectangle with the class bar-placeholder (styled in css) to the graph. give it the x value of each instance of data, and give the bands a width of x.bandwidth()/2, -20 px. give each of them the height of the graph, and the width of 40px.
@@ -214,7 +211,7 @@ layer
         return x(d[1]) + ((x(d[0]) - x(d[1]))/2);
     })
     .text(function (d) {
-        if ((d[1]-d[0])>3){
+        if ((d[1]-d[0])>2){
             return d[1]-d[0]
             }
        else {

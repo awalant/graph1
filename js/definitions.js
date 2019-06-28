@@ -1,4 +1,20 @@
-//      Make a function for translating the data and store it as the variable translateCells to be called when binding the csv.
+/* 
+ * Sources: 
+ * 
+ * The basis of the code for the entire project was built off of examples by Scott Murray from his tutorial book, Interactive Data Visualization for the Web. A link to his github is here: https://github.com/alignedleft/d3-book
+ * 
+ * Code for the quotes was custom built with assistance from Greg Nemes, http://www.workshop.co
+ * 
+ * Additionally, The code for the barcharts is based off of a codepen by Ravi Teja, https://codepen.io/iamraviteja/pen/bOragL 
+ * 
+ * Tidbits of code are suggestions from my thesis advisor, Aarthy Kannan Adityan, and various participants of the d3 slack group https://d3js.slack.com/
+ * 
+ * Other sources of code, and specific instances of the above are cited as best as I could, but I may not have attributed each line as it deserves, so I want to be sure that they are credited here!
+ * 
+ */
+
+
+//Make a function for translating the data and store it as the variable translateCells to be called when binding the csv.
 var translateCellsCsv1 = function (d) {
     return {
         id: parseFloat(d.id),
@@ -39,8 +55,7 @@ var translateCellsCsv3 = function (d) {
     }
 }
 
-//var mapData;
-
+//Establishing color variables
 var colorPos = "#5e3c99";
 var colorMid = "grey";
 var colorNeg = "#e66101";
@@ -48,68 +63,45 @@ var nothing = "#FFF";
 
 //code for responsive window sizing from https://stackoverflow.com/questions/3437786/get-the-size-of-the-screen-current-web-page-and-browser-window?noredirect=1&lq=1
 
+//Establish variables for and height, taking into consideration different ways of getting that information
 var width = 
-//document.getElementById("map1").clientWidth;
+
     window.innerWidth ||
     document.documentElement.clientWidth ||
     document.body.clientWidth;
 
-
-var currentWidthMap;
-//= parseInt(d3.select("#map1").style("width"), 10);
-
-
-
 var height = 
-//width/3.236;
+
     window.innerHeight ||
     document.documentElement.clientHeight ||
     document.body.clientHeight;
 
-var currentHeightMap;
-//= parseInt(d3.select("#map1").style("height"), 10);
 
+
+//Determining different calculations to be utilized in the bar chart
 var shapeWidth = width * .1;
 var shapePadding = shapeWidth / 4;
-var legendHeight = shapePadding*6;
-var legendWidth = shapePadding;
-//Width and height
-//var w = currentWidthMap;
-//var w= currentWidth;
-//console.log(w)
-//+ (legendWidth*4);
-//var w = 75vw;
-//var h = 50vh;
-//var h = currentHeightMap;
-//var w = width;
-//var h = w;
-//var w2 = w;
 
 
 
 //This establishes margins for the barchart.
 var margin = {
-    top: 30, //30
-    right: 75, //10
-    bottom: 80, //80
-    left: 100 //100
+    top: 30,
+    right: 75,
+    bottom: 80,
+    left: 100
 };
 
+//Establishing variables to be defined later
 var widthGraph; 
-//= currentWidthMap - margin.left - margin.right;
 var heightGraph; 
-//= currentHeightMap - margin.bottom - margin.top;
-//var barwidth = shapeWidth;
+var currentWidthMap;
+var currentHeightMap;
 
 
 //Define map projection
 var projection= d3.geoAlbersUsa();
 var path = d3.geoPath().projection(projection);
-//    .scale([currentWidthMap])
-//    .translate([w / 3, h / 2]);
-//.translate([w2/2 - (legendWidth*2), h/2]);
-// .translate([w/3.5, h/1.5 - margin.bottom]);
-//.translate([widthGraph/2, heightGraph/2]);
 
 var colorScale = [nothing, colorMid, colorPos];
 
@@ -117,7 +109,7 @@ var reverseColorScale = [colorPos, colorMid, colorNeg];
 
 var reverseColorScale2 = [colorPos, colorMid, nothing];
 
-//        Uses a quantize scale to take the value of the data and make it one of the two colors listed. By making this function its own variable, I can call it later within the function where I bind the data.
+// Uses a quantize scale to take the value of the data and make it one of the two colors listed. By making this function its own variable, I can call it later within the function where I bind the data.
 
 var color = d3.scaleQuantize()
     .range(colorScale);
