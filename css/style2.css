@@ -254,6 +254,10 @@ li a {
     display: block;
 }
 
+li a.source {
+    display:inline-block;
+}
+
 /*
 a.active{
     background-color: aqua;
@@ -324,6 +328,7 @@ button {
      text-transform: uppercase;
     letter-spacing: .12em;
     font-size: .5em;
+    cursor: pointer;
 
     /*    margin-bottom: 1em;*/
 
@@ -333,10 +338,12 @@ button {
 /*https://stackoverflow.com/questions/20340138/remove-blue-border-from-css-custom-styled-button-in-chrome*/
 button:focus {
     box-shadow: 0px 0px 15px 3px rgba(47, 72, 88, 0);
-    background-color: #d8dcff;
+/*    background-color: #B3B8E5;*/
+  background-color: #9B8989;
     border-style: solid;
     border-color: white;
     outline: 0;
+    color:white;
 
 }
 
@@ -360,6 +367,7 @@ button:focus {
 
 button:hover {
     background: #d8dcff;
+    color:#2f4858;
     /*    color: #f4f5ff;*/
 }
 
@@ -387,7 +395,12 @@ button:active {
 
 .quoteBtn:focus {
     /*    outline: 0;*/
+    background: #9B8989;
+}
+
+.quoteBtn:hover {
     background: #d8dcff;
+    color: #2f4858;
 }
 
 
@@ -425,15 +438,13 @@ li.key {
 .topic {
     background-color: #f7b1ab;
     position: absolute;
-    /*    display: flex;*/
-    max-width: 45vw;
+    left: 13vw;
+    max-width: 35vw;
     margin: auto;
-    /*    margin-left: em;*/
-    /*    margin-right: -2em;*/
     max-height: 60vh;
     color: #482728;
     padding: 2em;
-    font-size: 1.25em;
+    font-size: 1.15 em;
 
 
 }
@@ -451,7 +462,7 @@ li.key {
 span.btn{
     border: none;
     color: white;
-    font-weight: bold;
+/*    font-weight: bold;*/
 /*    margin-top: em;*/
 /*    line-height: 1.5em;*/
 }
