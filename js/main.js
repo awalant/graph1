@@ -3,78 +3,51 @@
 var title = document.getElementById("title");
 
 var menu = document.getElementById("menu");
-//
-//var introduction = $("#intro");
-//var laws = $("#laws");
-//
-//$("#introBtn").click(function(){
-//   introduction.scrollTop();
-//});
-
-
-
-
-//https://html-online.com/articles/animated-scroll-anchorid-function-jquery/
-//$("a.scrollTo").click(function(event){
-//    event.preventDefault();
-//    $("html, body").animate({
-//        scrollTop: $($(this).attr("href"))
-//        .offset()
-//        .top
-//    }, 500);
-//});
-
 
 //https://www.w3schools.com/howto/howto_js_shrink_header_scroll.asp
 //https://www.w3schools.com/howto/howto_js_remove_class.asp
 window.onscroll = function () {
     if (document.body.scrollTop > 25 || document.documentElement.scrollTop > 25) {
-        
+
         $("#title")
             .addClass("gone");
 
-            $("header")
-             .css("background-color", "#482728")
+        $("header")
+            .css("background-color", "#482728")
             .css("color", "#fbe4de")
             .css("height", "1em")
             .css("box-shadow", "0px -2px 34px -1px rgba(72,39,40,0.69)")
             .css("transition", "1s");
 
 
-        
-        
+
+
         $("#menu")
             .removeClass("gone")
             .css("display", "flex");
-        
-        
-        
-        
+
+
+
+
     } else {
-        
-         $("#menu")
+
+        $("#menu")
             .addClass("gone")
             .removeAttr("style", "display");
 
         $("#title")
             .removeClass("gone");
 
-        
 
-        
-         $("header")
+
+
+        $("header")
             .removeAttr("style", "box-shadow")
-         .css("transition", "1s");
+            .css("transition", "1s");
 
-        
+
     }
-    
-//    https://jsfiddle.net/cse_tushar/Dxtyu/141/
-    
-//    $("a").each(function(){
-//        $(this).removeClass("active");
-//    })
-//    $(this).addClass("active");
+
 };
 
 
@@ -93,9 +66,7 @@ function drawChart() {
     projection.fitSize([currentWidthMap, currentHeightMap], mapData);
 
     d3.selectAll("path")
-
         .attr("d", path);
-
 }
 
 drawChart();
@@ -131,7 +102,7 @@ function handleStepEnter(response) {
 scroller
     .setup({
         step: ".step",
-//                debug: true,
-        offset: 0.35
+                        debug: true,
+        offset: 0.5
     })
     .onStepEnter(handleStepEnter);

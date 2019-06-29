@@ -73,7 +73,7 @@ svg {
 /*a class inside of .explanation that is used for setting the text sizing and placement of the captions to the left of the different sections*/
 .caption {
     position: fixed;
-    top: 30%;
+    top: 35%;
     left: 5%;
     max-width: 30%;
     line-height: 1.5em;
@@ -124,6 +124,18 @@ svg {
 /*color of links located in the final credits*/
 .source {
     color: #f7b1ab;
+}
+
+/*changing the spacing in the last section*/
+p.improving {
+    margin-bottom: 1.5em;
+}
+
+/*for the lists in the second to last section*/
+.caption li{
+    text-indent: 0;
+    margin-bottom:.5em;
+    font-size:.75em;
 }
 
 /*****/
@@ -353,7 +365,7 @@ button:hover {
 /*the quote buttons*/
 .quoteBtn {
     background: #f4f5ff;
-    padding: 1.25em;
+    padding: 1em;
     border: .25em solid #d8dcff;
     color: #2f4858;
     text-transform: uppercase;
@@ -374,6 +386,37 @@ button:hover {
 .quoteBtn:hover {
     background: #d8dcff;
     color: #2f4858;
+}
+
+
+/*the buttons in the last paragraph that lead to external links*/
+.extLink{
+    width: auto;
+    text-decoration: none;
+    line-height: 1.75em;
+    border-width: 1px;
+    border-radius: 3px;
+    padding: 1.5em;
+    text-align: center;
+    margin: 0 auto;
+    margin-bottom: 5em;
+    display:flex;
+    justify-content: center;
+}
+
+/*the links inside the aforementioned buttons*/
+.extLink a{
+    text-decoration-line: none;
+    color: #ee6c4d;
+}
+
+.extLink:hover{
+/*    text-decoration-line: none;*/
+   box-shadow: 0 0 0 0;
+    border-width: 2px;
+    border-color:white;
+   background-color: #d8dcff;
+    
 }
 
 /* additional text in the quote buttons*/

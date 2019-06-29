@@ -6,21 +6,21 @@
 
 var dataMap6 = [
     {
-        topic: "One person is incapacitated",
+        topic: "One is incapacitated",
         yes: 96,
         no: 1,
         unclear: 3,
         noOpinion: .5
   },
     {
-        topic: "Both are under influence",
+        topic: "Both are inebriated",
         yes: 21,
         no: 19,
         unclear: 59,
         noOpinion: .5
   },
     {
-        topic: "Both people have not clearly agreed",
+        topic: "Both are imperceptible",
         yes: 47,
         no: 6,
         unclear: 46,
@@ -28,19 +28,21 @@ var dataMap6 = [
   }
 ];
 
+
+
 //I believe that this filters through the data (using k) and takes anything that isn't a topic and stores it in an array. This collects the different types of results that can be displayed.
 var keysMap6 = Object.keys(dataMap6[0]).filter(k => k !== "topic");
 
 
 ////select the div with the id consentChart and append an svg to it, then give it the attributes of the width plus the margins and the height plus the margins, then append a group and move the whole thing over by the margins.
-var graph = d3
+graph6 = d3
     .select("#sexAssltChart");
 
 
 //SCALES
 
 //Variable x is the d3 function scaleBand, which considers the padding between the bars to help determine the desired width of the bar chart. Its domain is the topics from the dataset, and the range is the width as specified above.
-var y = d3
+y6 = d3
     .scaleBand()
     .domain(
         dataMap6.map(function (d) {
@@ -51,7 +53,7 @@ var y = d3
 
 //Variable y is the d3 function scaleLinear, which takes the input of the range (the height of the graph and 0), and outputs the domain (between 0 and 100)
 
-var x = d3
+x6 = d3
     .scaleLinear()
     .rangeRound([widthGraph, 5])
     .domain([0, 100]);
@@ -62,19 +64,18 @@ var z = d3.scaleOrdinal().range([colorNeg, colorPos, colorMid, nothing]);
 //AXES
 
 //Variable xAxis is the d3 function axisBottom with the argument x
-var yAxis = d3.axisRight(y);
+var yAxis = d3.axisRight(y6);
 
 //Now, append a group to the variable graph and give it the class x-axis, and move it to 0 + heightGraph, then call xAxis
-graph
+graph6
     .append("g")
     .attr("class", "y-axis")
     .attr("transform", "translate(" + widthGraph + ", 0)")
     .call(yAxis);
-//***Where do I change what the labels say on the Y axis?
 
 
 //Variable yAxis is the d3 function axisLeft with the argument y
-var xAxis = d3.axisBottom(x)
+var xAxis = d3.axisBottom(x6)
     .ticks(3);
 
 
@@ -97,113 +98,113 @@ var layers = stack(dataMap6);
 
 
 //the domain of y is set to 0 and 1.15 times the length of the layers array, for each instance of d (data)
-x.domain([0, d3.max(layers[layers.length - 1], d => d[1])]);
+x6.domain([0, d3.max(layers[layers.length - 1], d => d[1])]);
 
 
 //append another group to the graph and give it the class of y-axis, and call yAxis
-graph
+graph6
     .append("g")
     .attr("class", "x-axis")
     .attr("transform", "translate(0," + heightGraph + ")")
-        .call(xAxis);
+    .call(xAxis);
 
-        //layer takes the graph, selects all of the class layer (even though it doesn't exist yet) and inserts the data from layers onto it. It then appends a group, gives it the class of layer, and fills it using the ordinal scale for z for each of the different answers.
+//layer takes the graph, selects all of the class layer (even though it doesn't exist yet) and inserts the data from layers onto it. It then appends a group, gives it the class of layer, and fills it using the ordinal scale for z for each of the different answers.
 
-        var layer = graph
-            .selectAll(".layer")
-            .data(layers, function (d) {
-                return d;
-            })
-            .enter()
-            .append("g")
-            .attr("class", "layer")
-            .style("fill", function (d) {
-                return z(d.key);
-            })
-            .on("mousemove", function (d) {
-                var label = 
-//                    (d[1] - d[0])+ "% of particiants said " + 
-                    d.key;
-                var tooltip = document.getElementById("tooltip-1");
-                var top = d3.event.clientY + "px";
-                var left = d3.event.clientX + "px";
-                tooltip.innerHTML = label;
-                tooltip.style.top = top;
-                tooltip.style.left = left;
-            })
-            .on("mouseover", function (d) {
-                d3.select("#tooltip-1")
-                    .classed("hidden", false);
-
-
-            })
-            .on("mouseout", function (d) {
-                d3.select("#tooltip-1")
-                    .classed("hidden", true);
-            });
+var layer6 = graph6
+    .selectAll(".layer")
+    .data(layers, function (d) {
+        return d;
+    })
+    .enter()
+    .append("g")
+    .attr("class", "layer")
+    .style("fill", function (d) {
+        return z(d.key);
+    })
+    .on("mousemove", function (d) {
+        var label =
+            //                    (d[1] - d[0])+ "% of particiants said " + 
+            d.key;
+        var tooltip = document.getElementById("tooltip-1");
+        var top = d3.event.clientY + "px";
+        var left = d3.event.clientX + "px";
+        tooltip.innerHTML = label;
+        tooltip.style.top = top;
+        tooltip.style.left = left;
+    })
+    .on("mouseover", function (d) {
+        d3.select("#tooltip-1")
+            .classed("hidden", false);
 
 
+    })
+    .on("mouseout", function (d) {
+        d3.select("#tooltip-1")
+            .classed("hidden", true);
+    });
 
 
-        //then take layer, select all rectangles, and for each instance of the data append a rectangle with the class bar-placeholder (styled in css) to the graph. give it the x value of each instance of data, and give the bands a width of x.bandwidth()/2, -20 px. give each of them the height of the graph, and the width of 40px.
-        layer
-        .selectAll("rect")
-        .data(function (d) {
-            return d;
-        })
-        .enter()
-        .append("rect")
-        .attr("class", "bar-placeholder")
-        .attr("y", function (d) {
-            return y(d.data.topic) + y.bandwidth() / 2 - 20;
-        })
-        .attr("width", function (d) {
-            return currentWidthMap - 20;
-        })
-        .attr("height", 40);
-
-        //Then take layer, and select all of the bar-placeholder class. For each instance of the data, append a rectangle with the class bar, and give it the same attributes as the placeholder bars, but set the y value to the index of 1 for each piece of data, and the height to the index of 0 minus the index of 1, with a width of 40px.
-
-        layer
-        .selectAll("bar-placeholder")
-        .data(function (d) {
-            console.log('d', d);
-            return d;
-        })
-        .enter()
-        .append("rect")
-        .attr("class", "bar")
-        .attr("y", function (d) {
-            return y(d.data.topic) + y.bandwidth() / 2 - 20;
-        })
-        .attr("x", function (d) {
-            return x(d[1]);
-        })
-        .attr("width", function (d) {
-            return x(d[0]) - x(d[1]);
-        })
-        .attr("height", 40);
 
 
-        //Then, select all the text and for each piece of the data, append text to it with the class bar-label. Give it the x value of d.data.topic plus the bandwidth/2, and y value of the index of 1 of each piece of data - 5px. Set the text to say the value of the ???
-        layer
-        .selectAll("text")
-        .data(function (d) {
-            return d;
-        })
-        .enter()
-        .append("text")
-        .attr("class", "bar-label")
-        .attr("y", function (d) {
-            return y(d.data.topic) + y.bandwidth() / 2 + 35;
-        })
-        .attr("x", function (d) {
-            return x(d[1]) + ((x(d[0]) - x(d[1])) / 2);
-        })
-        .text(function (d) {
-            if ((d[1] - d[0]) > 2) {
-                return d[1] - d[0]
-            } else {
-                return
-            }
-        });
+//then take layer, select all rectangles, and for each instance of the data append a rectangle with the class bar-placeholder (styled in css) to the graph. give it the x value of each instance of data, and give the bands a width of x.bandwidth()/2, -20 px. give each of them the height of the graph, and the width of 40px.
+layer6
+    .selectAll("rect")
+    .data(function (d) {
+        return d;
+    })
+    .enter()
+    .append("rect")
+    .attr("class", "bar-placeholder")
+    .attr("y", function (d) {
+        return y6(d.data.topic) + y6.bandwidth() / 2 - 20;
+    })
+    .attr("width", function (d) {
+        return currentWidthMap - 20;
+    })
+    .attr("height", 40);
+
+//Then take layer, and select all of the bar-placeholder class. For each instance of the data, append a rectangle with the class bar, and give it the same attributes as the placeholder bars, but set the y value to the index of 1 for each piece of data, and the height to the index of 0 minus the index of 1, with a width of 40px.
+
+layer6
+    .selectAll("bar-placeholder")
+    .data(function (d) {
+        console.log('d', d);
+        return d;
+    })
+    .enter()
+    .append("rect")
+    .attr("class", "bar")
+    .attr("y", function (d) {
+        return y6(d.data.topic) + y6.bandwidth() / 2 - 20;
+    })
+    .attr("x", function (d) {
+        return x6(d[1]);
+    })
+    .attr("width", function (d) {
+        return x6(d[0]) - x6(d[1]);
+    })
+    .attr("height", 40);
+
+
+//Then, select all the text and for each piece of the data, append text to it with the class bar-label. Give it the x value of d.data.topic plus the bandwidth/2, and y value of the index of 1 of each piece of data - 5px. Set the text to say the value of the ???
+layer6
+    .selectAll("text")
+    .data(function (d) {
+        return d;
+    })
+    .enter()
+    .append("text")
+    .attr("class", "bar-label")
+    .attr("y", function (d) {
+        return y6(d.data.topic) + y6.bandwidth() / 2 + 35;
+    })
+    .attr("x", function (d) {
+        return x6(d[1]) + ((x6(d[0]) - x6(d[1])) / 2);
+    })
+    .text(function (d) {
+        if ((d[1] - d[0]) > 2) {
+            return d[1] - d[0]
+        } else {
+            return
+        }
+    });
