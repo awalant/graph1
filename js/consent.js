@@ -94,7 +94,6 @@ var stack = d3
 //Variable layers takes stack and inserts the argument data, creating an array where the values are determined by the values of the topic underneath it.
 var layers = stack(dataMap6);
 
-//console.log(layers);
 
 
 //the domain of y is set to 0 and 1.15 times the length of the layers array, for each instance of d (data)
@@ -168,7 +167,6 @@ layer6
 layer6
     .selectAll("bar-placeholder")
     .data(function (d) {
-        console.log('d', d);
         return d;
     })
     .enter()

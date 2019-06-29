@@ -1,72 +1,34 @@
+//Selecting the legend ids and naming them as variables
 var legend1 = d3.select("#legend1");
 var legend2 = d3.select("#legend3");
 var legend3 = d3.select("#legend2");
-//var legend4 = d3.select("#legend4");
+//Legend 4 located in changemap.js
 var legend5 = d3.select("#legend5");
 var legend6 = d3.select("#legend6");
 var legend7 = d3.select("#legend7");
 
-//legend1 variables
+//Legend variables (the same general format is utilized for all of the legends, so I will explain it once here, and assume the rest are the same just with different definitions of the variables unless otherwise stated)
+//the key maps label the different options for the legend items
 var keysMap1 = ["No mandated sex ed", "Has mandated sex ed"];
 
+//The color map takes an ordinal scale and submits the keys map as the domain, and the range as the desired colors. 
 var colorMap1 = d3
     .scaleOrdinal()
     .domain(keysMap1)
     .range([nothing, colorPos]);
 
-//legend2 variables
-var keysMap2 = ["Not medically accurate by law", "Medically accurate by law"];
-
-var colorMap2 = d3
-    .scaleOrdinal()
-    .domain(keysMap2)
-    .range([nothing, colorPos]);
-
-//legend3 variables
-var keysMap3 = ["Child can be excused from sex ed", "Child can be excused from HIV ed", "Child cannot be excused from class"];
-
-var colorMap3 = d3
-    .scaleOrdinal()
-    .domain(keysMap3)
-    .range([nothing, colorMid, colorPos]);
-
-//legend4 variables located in changeMap.js, and the js files in /selected
-
-
-
-//function drawLegend() {
-//    var currentWidth = parseInt(d3.select("#legend1").style("width"), 10);
-//
-//
-//    d3.selectAll(".legend")
-//        .attr("width", currentWidth);
-//    //  legend1.attr("width", currentWidth);
-//
-//}
-//
-//drawLegend();
-//
-//window.addEventListener("resize", drawLegend);
-
-//legend1
-
-//legend1.append("ul").attr("class", "list-inline");
-
-//legend1.append("p")
-//    .attr("class", "legendTitle")
-//    .text("Key");
-
+//This variable sets up d3 to apply the data from colorMap1 to the soon-to-exist class .li-key
 var keys1 = legend1.selectAll("li-key").data(colorMap1);
 
+//Take keys1 and use the range data from colorMap1 to enter and append divs, and attribute the class .key to them, and style them with the background color of the specified strings.
+//Then, use the domain data from colorMap1 and append lists to them under the class .key, and the text from the data. 
+//Finally, use the range data from colorMap1 and use that to apply the color to the list items. If their background color is white, apply a blue to the text, otherwise the text should be white.
 keys1
     .data(colorMap1.range())
     .enter()
     .append("div")
     .attr("class", "key")
     .style("background-color", String)
-    //      function(d) {
-    // return d;
-    // })
     .data(colorMap1.domain())
     .append("li")
     .attr("class", "key")
@@ -82,14 +44,15 @@ keys1
         }
     });
 
+//legend2 variables
+var keysMap2 = ["Not medically accurate by law", "Medically accurate by law"];
+
+var colorMap2 = d3
+    .scaleOrdinal()
+    .domain(keysMap2)
+    .range([nothing, colorPos]);
 
 //legend2
-
-//legend2.append("ul").attr("class", "list-inline");
-
-//legend2.append("p")
-//    .attr("class", "legendTitle")
-//    .text("Key");
 
 var keys2 = legend2.selectAll("li-key").data(colorMap2);
 
@@ -99,9 +62,6 @@ keys2
     .append("div")
     .attr("class", "key")
     .style("background-color", String)
-    //      function(d) {
-    // return d;
-    // })
     .data(colorMap2.domain())
     .append("li")
     .attr("class", "key")
@@ -117,14 +77,15 @@ keys2
         }
     });
 
+//legend3 variables
+var keysMap3 = ["Child can be excused from sex ed", "Child can be excused from HIV ed", "Child cannot be excused from class"];
+
+var colorMap3 = d3
+    .scaleOrdinal()
+    .domain(keysMap3)
+    .range([nothing, colorMid, colorPos]);
 
 //legend3
-
-//legend3.append("ul").attr("class", "list-inline");
-
-//legend3.append("p")
-//    .attr("class", "legendTitle")
-//    .text("Key");
 
 var keys3 = legend3.selectAll("li-key").data(colorMap3);
 
@@ -134,9 +95,6 @@ keys3
     .append("div")
     .attr("class", "key")
     .style("background-color", String)
-    //      function(d) {
-    // return d;
-    // })
     .data(colorMap3.domain())
     .append("li")
     .attr("class", "key")
@@ -152,6 +110,9 @@ keys3
         }
     });
 
+
+
+//legend4 variables located in changeMap.js, and the js files in /selected
 
 //legend4
 
@@ -170,21 +131,12 @@ var legend4 = d3.select("#legend4");
 
 var keys4 = legend4.selectAll("li-key").data(colorMap4);
 
-//legend4.append("ul").attr("class", "list-inline");
-
-//legend4.append("p")
-//    .attr("class", "legendTitle")
-//    .text("Key");
-
 keys4
     .data(colorMap4.range())
     .enter()
     .append("div")
     .attr("class", "key")
     .style("background-color", String)
-    //      function(d) {
-    // return d;
-    // })
     .data(colorMap4.domain())
     .append("li")
     .attr("class",  "key")
@@ -201,10 +153,8 @@ keys4
     });
 
 
-
-
 //sexual assault chart, legend 6
-
+//chart 6 variables
 var keysMap6= ["yes, it is sexual assault", "no, it's not sexual assault", "unclear", "no opinion"];
 
 
@@ -213,13 +163,10 @@ var colorMap6 = d3
     .domain(keysMap6)
     .range([colorNeg, colorPos, colorMid, nothing]);
 
-
-
 //legend6
 var legend6 = d3.select("#legend6");
 
 var keys6 = legend6.selectAll("li-key").data(colorMap6);
-
 
 keys6
     .data(colorMap6.range())
@@ -244,8 +191,8 @@ keys6
     });
 
 
-
 //consent chart, legend 7
+//chart 7 variables
 
 var keysMap7= ["yes, indicates consent", "no, doesn't indicate consent", "unclear", "no opinion"];
 
@@ -279,6 +226,3 @@ keys7
             return "white";
         }
     });
-
-
-

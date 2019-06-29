@@ -49,6 +49,9 @@ h1 {
     font-size: 4em;
 }
 
+h2 {
+    text-indent: none;
+}
 /*mid-size header indentation*/
 h3 {
     text-indent: 0;
@@ -138,6 +141,8 @@ p.improving {
     font-size:.75em;
 }
 
+
+
 /*****/
 /*IDs*/
 /*****/
@@ -152,15 +157,14 @@ p.improving {
     margin-top: 10em;
 }
 
+/* to make sure the text does not indent*/
+#noIndent {
+    text-indent: 0;
+}
 /*the 5th legend is shorter than the rest since it is not graphical and did not need to take the same amount of space*/
 #legend5 {
     height: 60vh;
     align-items: center;
-}
-
-/* for a span to make sure the spanned text doesn't indent*/
-#noIndent {
-    text-indent: 0;
 }
 
 /*****/

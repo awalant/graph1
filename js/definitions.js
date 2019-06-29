@@ -1,9 +1,3 @@
-
-
-
-
-
-
 /* 
  * Sources: 
  * 
@@ -20,7 +14,7 @@
  */
 
 
-//Make a function for translating the data and store it as the variable translateCells to be called when binding the csv.
+//Make a function for translating the data and store it as the variable translateCells to be called when binding the csv. parseFloat returns the values as numbers rather than strings. 
 var translateCellsCsv1 = function (d) {
     return {
         id: parseFloat(d.id),
@@ -84,12 +78,6 @@ var height =
 
 
 
-//Determining different calculations to be utilized in the bar chart
-var shapeWidth = width * .1;
-var shapePadding = shapeWidth / 4;
-
-
-
 //This establishes margins for the barchart.
 var margin = {
     top: 30,
@@ -98,31 +86,28 @@ var margin = {
     left: 100
 };
 
-//Establishing variables to be defined later
+//Establishing variables to be defined later in the main.js file
 var widthGraph; 
 var heightGraph; 
 var currentWidthMap;
 var currentHeightMap;
 
 
-//Define map projection
+//Define map projection -- geoAlbersUsa is the map that puts Alaska and Hawaii near the other 48 states, even though in reality they're not geographically nearby.
 var projection= d3.geoAlbersUsa();
+
+//Path takes the geoJson file and renders it based on the projection specified in the variable "projection"
 var path = d3.geoPath().projection(projection);
 
+//This is the color scale is utilized for the various maps, depending on how I want the colors to be shown.
 var colorScale = [nothing, colorMid, colorPos];
-
-var reverseColorScale = [colorPos, colorMid, colorNeg];
 
 var reverseColorScale2 = [colorPos, colorMid, nothing];
 
 
-// Uses a quantize scale to take the value of the data and make it one of the two colors listed. By making this function its own variable, I can call it later within the function where I bind the data.
-
+// Uses a quantize scale to take the value of the data and make it one of the colors listed. By making this function its own variable, I can call it later within the function where I bind the data.
 var color = d3.scaleQuantize()
     .range(colorScale);
-
-var colorRev = d3.scaleQuantize()
-    .range(reverseColorScale);
 
 var colorRev2 = d3.scaleQuantize()
     .range(reverseColorScale2);

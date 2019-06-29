@@ -46,18 +46,13 @@ var keysMap7 = Object.keys(dataMap7[0]).filter(k => k !== "topic");
 
 
 //select the div with the id consentChart and append an svg to it, then give it the attributes of the width plus the margins and the height plus the margins, then append a group and move the whole thing over by the margins.
-var graph = d3
+var graph7 = d3
     .select("#consentChart");
-//    .append("svg")
-//    .attr("width", w)
-//    .attr("height", heightGraph - margin.bottom)
-//    .append("g")
-//    .attr("transform", "translate(" + margin.left + "," + margin.top + ")");
 
 //SCALES
 
 //Variable x is the d3 function scaleBand, which considers the padding between the bars to help determine the desired width of the bar chart. Its domain is the topics from the dataset, and the range is the width as specified above.
-var y = d3
+var y7 = d3
     .scaleBand()
     .domain(
         dataMap7.map(function (d) {
@@ -68,7 +63,7 @@ var y = d3
 
 //Variable y is the d3 function scaleLinear, which takes the input of the range (the height of the graph and 0), and outputs the domain (between 0 and 100)
 
-var x = d3
+var x7 = d3
     .scaleLinear()
     .rangeRound([widthGraph, 5])
     .domain([0, 100]);
@@ -79,10 +74,10 @@ var z = d3.scaleOrdinal().range([colorNeg, colorPos, colorMid, nothing]);
 //AXES
 
 //Variable xAxis is the d3 function axisBottom with the argument x
-var yAxis = d3.axisRight(y);
+var yAxis = d3.axisRight(y7);
 
 //Now, append a group to the variable graph and give it the class x-axis, and move it to 0 + heightGraph, then call xAxis
-graph
+graph7
     .append("g")
     .attr("class", "y-axis")
     .attr("transform", "translate(" + widthGraph + ", 0)")
@@ -90,7 +85,7 @@ graph
 
 
 //Variable yAxis is the d3 function axisLeft with the argument y
-var xAxis = d3.axisBottom(x)
+var xAxis = d3.axisBottom(x7)
     .ticks(3);
 
 
@@ -113,11 +108,11 @@ var layers = stack(dataMap7);
 
 
 //the domain of y is set to 0 and 1.15 times the length of the layers array, for each instance of d (data)
-x.domain([0, d3.max(layers[layers.length - 1], d => d[1])]);
+x7.domain([0, d3.max(layers[layers.length - 1], d => d[1])]);
 
 
 //append another group to the graph and give it the class of y-axis, and call yAxis
-graph
+graph7
     .append("g")
     .attr("class", "x-axis")
     .attr("transform", "translate(0," + heightGraph + ")")
@@ -125,7 +120,7 @@ graph
 
 //layer takes the graph, selects all of the class layer (even though it doesn't exist yet) and inserts the data from layers onto it. It then appends a group, gives it the class of layer, and fills it using the ordinal scale for z for each of the different answers.
 
-var layer = graph
+var layer = graph7
     .selectAll(".layer")
     .data(layers)
     .enter()
@@ -165,7 +160,7 @@ layer
     .append("rect")
     .attr("class", "bar-placeholder")
     .attr("y", function (d) {
-        return y(d.data.topic) + y.bandwidth() / 2 - 20;
+        return y7(d.data.topic) + y7.bandwidth() / 2 - 20;
     })
     .attr("width", function (d) {
         return currentWidthMap;
@@ -177,20 +172,19 @@ layer
 layer
     .selectAll("bar-placeholder")
     .data(function (d) {
-        console.log('d', d);
         return d;
     })
     .enter()
     .append("rect")
     .attr("class", "bar")
     .attr("y", function (d) {
-        return y(d.data.topic) + y.bandwidth() / 2 - 20;
+        return y7(d.data.topic) + y7.bandwidth() / 2 - 20;
     })
     .attr("x", function (d) {
-        return x(d[1]);
+        return x7(d[1]);
     })
     .attr("width", function (d) {
-        return x(d[0]) - x(d[1]);
+        return x7(d[0]) - x7(d[1]);
     })
     .attr("height", 30);
 
@@ -205,10 +199,10 @@ layer
     .append("text")
     .attr("class", "bar-label")
     .attr("y", function (d) {
-        return y(d.data.topic) + y.bandwidth() / 2 + 25;
+        return y7(d.data.topic) + y7.bandwidth() / 2 + 25;
     })
     .attr("x", function (d) {
-        return x(d[1]) + ((x(d[0]) - x(d[1]))/2);
+        return x7(d[1]) + ((x7(d[0]) - x7(d[1]))/2);
     })
     .text(function (d) {
         if ((d[1]-d[0])>2){
@@ -217,20 +211,4 @@ layer
        else {
            return
        }; 
-//            + d.data.no + d.data.unclear + d.data.noOpinion;
     });
-
-
-//graph.append("g")
-//    .attr("class", "legendOrdinal")
-//    .attr("transform", "translate(" + (widthGraph + legendWidth) + "," + (heightGraph - legendHeight*2) + ")" );
-//
-//var legendOrdinal = d3.legendColor()
-//    .shapeWidth(shapeWidth)
-//    .cells(4)
-//    .shapePadding(shapePadding)
-//    .orient("vertical")
-//    .scale(z);
-//
-//graph.select(".legendOrdinal")
-//    .call(legendOrdinal);
